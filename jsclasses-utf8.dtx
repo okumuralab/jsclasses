@@ -1,23 +1,23 @@
 % ^^A -*- japanese-latex -*-
 % \iffalse meta-comment
 %
-%  pLaTeX2$B&E?7%I%-%e%a%s%H%/%i%9(B
+%  pLaTeX2ε新ドキュメントクラス
 %
-%  $B$3$l$O(B LaTeX3 Project $B$N(B classes.dtx $B$H3t<02q<R%"%9%-!<$N(B jclasses.dtx
-%  $B$K4p$E$$$F!$$b$H$b$H1|B<@2I'(B <okumura@okumuralab.org> $B$K$h$j(B
-%  $B:n@.$5$l$?$b$N$G$9!#(B
-%  $B8=:_$OF|K\8l(B\TeX $B3+H/%3%_%e%K%F%#$K$h$j4IM}$5$l$F$$$^$9!#(B
+%  これは LaTeX3 Project の classes.dtx と株式会社アスキーの jclasses.dtx
+%  に基づいて，もともと奥村晴彦 <okumura@okumuralab.org> により
+%  作成されたものです。
+%  現在は日本語\TeX 開発コミュニティにより管理されています。
 %
-%  [2002-12-19] $B$$$m$$$m$J$b$N$K<}O?$7$F$$$?$@$/:]$K%i%$%;%s%9$rL@3N$K$9$k(B
-%  $BI,MW$,@8$8$F$-$^$7$?!#%"%9%-!<$N$b$N$,:G6a$O(Bmodified BSD$B%i%$%;%s%9$K$J$C(B
-%  $B$F$$$^$9$N$G!$;d$N$b$N$b$=$l$K=`$8$F(Bmodified BSD$B$H$9$k$3$H$K$7$^$9!#(B
+%  [2002-12-19] いろいろなものに収録していただく際にライセンスを明確にする
+%  必要が生じてきました。アスキーのものが最近はmodified BSDライセンスになっ
+%  ていますので，私のものもそれに準じてmodified BSDとすることにします。
 %
-%  [2016-07-11] abenori$B$5$s$K$h$k(B\texttt{nomag}$B%*%W%7%g%s$r%^!<%8$7$^$7$?!#(B
-%  $B$J$*!$%=!<%9%3!<%I$N4IM}$O(BGitHub$B$G9T$&$3$H$K$7$^$7$?!#(B
+%  [2016-07-11] abenoriさんによる\texttt{nomag}オプションをマージしました。
+%  なお，ソースコードの管理はGitHubで行うことにしました。
 %
-%  [2016-07-13] $BF|K\8l(B\TeX $B3+H/%3%_%e%K%F%#$K$h$k4IM}$K0\9T$7$^$7$?!#(B
+%  [2016-07-13] 日本語\TeX 開発コミュニティによる管理に移行しました。
 %
-%  [2016-07-20] $B1|B<HG%U%)!<%/(B
+%  [2016-07-20] 奥村版フォーク
 %
 %  Copyright 1993 1994 1995 1996 1997 1998 1999
 %  The LaTeX3 Project and any individual authors listed elsewhere
@@ -77,67 +77,67 @@
 %
 % \fi
 %
-% \title{\pLaTeXe $B?7%I%-%e%a%s%H%/%i%9(B}
-% \author{$B1|B<@2I'!$F|K\8l(B\TeX $B3+H/%3%_%e%K%F%#(B}
+% \title{\pLaTeXe 新ドキュメントクラス}
+% \author{奥村晴彦，日本語\TeX 開発コミュニティ}
 % \date{\filedate}
 % \maketitle
 %
 % \MakeShortVerb{\|}
 %
-% \section{$B$O$8$a$K(B}
+% \section{はじめに}
 %
-% $B$3$l$O(B\LaTeX3 Project$B$N(B \texttt{classes.dtx} $B$H(B
-% $B3t<02q<R%"%9%-!<$N(B \texttt{jclasses.dtx} $B$K4p$E$$$F(B
-% $B$b$H$b$H1|B<@2I'$K$h$j:n@.$5$l$?$b$N$G$9!#(B
-% $B8=:_$OF|K\8l(B\TeX $B3+H/%3%_%e%K%F%#$K$h$j(BGitHub$B$G4IM}$5$l$F$$$^$9!#(B
+% これは\LaTeX3 Projectの \texttt{classes.dtx} と
+% 株式会社アスキーの \texttt{jclasses.dtx} に基づいて
+% もともと奥村晴彦により作成されたものです。
+% 現在は日本語\TeX 開発コミュニティによりGitHubで管理されています。
 % \begin{quote}
 % |https://github.com/texjporg/jsclasses|
 % \end{quote}
-% $B%i%$%;%s%9$O(Bmodified BSD$B$G$9!#(B
+% ライセンスはmodified BSDです。
 %
-% [2009-02-22] $BEDCfBv<$;a$K$h$k(Bup\LaTeX $BBP1~%Q%C%A$r<h$j9~$_$^$7$?!#(B
+% [2009-02-22] 田中琢爾氏によるup\LaTeX 対応パッチを取り込みました。
 %
-% $B$3$3$G$O<!$N%I%-%e%a%s%H%/%i%9!J%9%?%$%k%U%!%$%k!K$r:n$j$^$9!#(B
+% ここでは次のドキュメントクラス（スタイルファイル）を作ります。
 % \begin{quote}
 %   \begin{tabular}{lll}
-%     $\langle$\textsf{article}$\rangle$ & \texttt{jsarticle.cls}  & $BO@J8!&%l%]!<%HMQ(B \\
-%     $\langle$\textsf{book}$\rangle$    & \texttt{jsbook.cls}     & $B=q@RMQ(B \\
-%     $\langle$\textsf{jspf}$\rangle$    & \texttt{jspf.cls}       & $BK?3X2q;oMQ(B \\
-%     $\langle$\textsf{kiyou}$\rangle$   & \texttt{kiyou.cls}      & $BK?5*MWMQ(B
+%     $\langle$\textsf{article}$\rangle$ & \texttt{jsarticle.cls}  & 論文・レポート用 \\
+%     $\langle$\textsf{book}$\rangle$    & \texttt{jsbook.cls}     & 書籍用 \\
+%     $\langle$\textsf{jspf}$\rangle$    & \texttt{jspf.cls}       & 某学会誌用 \\
+%     $\langle$\textsf{kiyou}$\rangle$   & \texttt{kiyou.cls}      & 某紀要用
 %   \end{tabular}
 % \end{quote}
 %
-% \LaTeXe $B$"$k$$$O(B\pLaTeXe $BI8=`$N%I%-%e%a%s%H%/%i%9$H$N0c$$$r@bL@$7$F$*(B
-% $B$-$^$9!#(B
+% \LaTeXe あるいは\pLaTeXe 標準のドキュメントクラスとの違いを説明してお
+% きます。
 %
-% \paragraph{JIS$B%U%)%s%H%a%H%j%C%/$N;HMQ(B}
+% \paragraph{JISフォントメトリックの使用}
 %
-% $B$3$3$G$OOBJ8(BTFM$B!J(B\TeX $B%U%)%s%H%a%H%j%C%/!K$H$7$FEl5~=q@R0u:~$N>.NSH%$5(B
-% $B$s$N:n$i$l$?(BJIS$B%U%)%s%H%a%H%j%C%/(B \texttt{jis.tfm}$B!$(B\texttt{jisg.tfm}
-% $B$rI8=`$G;H$$$^$9!#=>Mh$N%U%)%s%H%a%H%j%C%/(B \texttt{min10.tfm}$B!$(B
-% \texttt{goth10.tfm} $B$NN`$r;H$&$K$O(B
+% ここでは和文TFM（\TeX フォントメトリック）として東京書籍印刷の小林肇さ
+% んの作られたJISフォントメトリック \texttt{jis.tfm}，\texttt{jisg.tfm}
+% を標準で使います。従来のフォントメトリック \texttt{min10.tfm}，
+% \texttt{goth10.tfm} の類を使うには
 % \begin{quote}
 %   |\documentclass[mingoth]{jsarticle}|
 % \end{quote}
-% $B$N$h$&$K(B \texttt{mingoth} $B%*%W%7%g%s$rIU$1$^$9!#(B
+% のように \texttt{mingoth} オプションを付けます。
 %
-% \paragraph{$B%5%$%:%*%W%7%g%s$N07$$$,0c$&(B}
+% \paragraph{サイズオプションの扱いが違う}
 %
-% $BI8=`$N%I%-%e%a%s%H%/%i%9$G$OK\J8$N%]%$%s%H?t$r;XDj$9$k%*%W%7%g%s$,$"$j(B
-% $B$^$7$?$,!$%]%$%s%H?t$O(B10$B!$(B11$B!$(B12$B$7$+$J$/!$$=$l$>$lJL$N%/%i%9%*%W%7%g%s(B
-% $B%U%!%$%k$rFI$_9~$`$h$&$K$J$C$F$$$^$7$?!#$7$+$b!$I8=`$N(B10$B%]%$%s%H0J30$G(B
-% $B$OB?>/%U%)%s%H$N%P%i%s%9$,Jx$l$k$3$H$,$"$j!$$"$^$jJXMx$G$O$"$j$^$;$s$G(B
-% $B$7$?!#$3$3$G$OJ8;z%5%$%:$rA}$9$H%Z!<%8$r>.$5$/$7!$(B\TeX $B$N(B |\mag| $B%W%j(B
-% $B%_%F%#%V$GA4BNE*$K3HBg$9$k$H$$$&<j$r;H$C$F!$(B9$B%]%$%s%H$d(B21$B!$(B25$B!$(B30$B!$(B36$B!$(B
-% 43$B%]%$%s%H!$(B12Q$B!$(B14Q$B$N;XDj$r2DG=$K$7$F$$$^$9!#(B
+% 標準のドキュメントクラスでは本文のポイント数を指定するオプションがあり
+% ましたが，ポイント数は10，11，12しかなく，それぞれ別のクラスオプション
+% ファイルを読み込むようになっていました。しかも，標準の10ポイント以外で
+% は多少フォントのバランスが崩れることがあり，あまり便利ではありませんで
+% した。ここでは文字サイズを増すとページを小さくし，\TeX の |\mag| プリ
+% ミティブで全体的に拡大するという手を使って，9ポイントや21，25，30，36，
+% 43ポイント，12Q，14Qの指定を可能にしています。
 %
 % \StopEventually{}
 %
-% $B0J2<$G$O<B:]$N%3!<%I$KB($7$F@bL@$7$^$9!#(B
+% 以下では実際のコードに即して説明します。
 %
 % \begin{macro}{\jsc@clsname}
 %
-% $BJ8=q%/%i%9$NL>A0$G$9!#%(%i!<%a%C%;!<%8I=<($J$I$G;H$o$l$^$9!#(B
+% 文書クラスの名前です。エラーメッセージ表示などで使われます。
 %
 %    \begin{macrocode}
 %<article>\def\jsc@clsname{jsarticle}
@@ -147,18 +147,18 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \section{$B%*%W%7%g%s(B}
+% \section{オプション}
 %
-% $B$3$l$i$N%/%i%9$O(B |\documentclass{jsarticle}|
-% $B$"$k$$$O(B |\documentclass[$B%*%W%7%g%s(B]{jsarticle}|
-% $B$N$h$&$K8F$S=P$7$^$9!#(B
+% これらのクラスは |\documentclass{jsarticle}|
+% あるいは |\documentclass[オプション]{jsarticle}|
+% のように呼び出します。
 %
-% $B$^$:!$%*%W%7%g%s$K4XO"$9$k$$$/$D$+$N%3%^%s%I$d%9%$%C%A!JO@M}JQ?t!K$rDj(B
-% $B5A$7$^$9!#(B
+% まず，オプションに関連するいくつかのコマンドやスイッチ（論理変数）を定
+% 義します。
 %
 % \begin{macro}{\if@restonecol}
 %
-% $BCJAH$N$H$-$K??$K$J$kO@M}JQ?t$G$9!#(B
+% 段組のときに真になる論理変数です。
 %
 %    \begin{macrocode}
 \newif\if@restonecol
@@ -167,7 +167,7 @@
 %
 % \begin{macro}{\if@titlepage}
 %
-% $B$3$l$r??$K$9$k$HI=Bj!$35MW$rFHN)$7$?%Z!<%8$K=PNO$7$^$9!#(B
+% これを真にすると表題，概要を独立したページに出力します。
 %
 %    \begin{macrocode}
 \newif\if@titlepage
@@ -176,8 +176,8 @@
 %
 % \begin{macro}{\if@openright}
 %
-% |\chapter|$B!$(B|\part| $B$r4q?t%Z!<%85/$3$7$K$9$k$+$I$&$+$G$9!#(B
-% $B=q@R$G$O??$,I8=`$G$9!#(B
+% |\chapter|，|\part| を奇数ページ起こしにするかどうかです。
+% 書籍では真が標準です。
 %
 %    \begin{macrocode}
 %<book>\newif\if@openright
@@ -186,8 +186,8 @@
 %
 % \begin{macro}{\if@mainmatter}
 %
-% $B??$J$iK\J8!$56$J$iA0IU$1!&8eIU$1$G$9!#(B
-% $B56$J$i(B |\chapter| $B$G>OHV9f$,=P$^$;$s!#(B
+% 真なら本文，偽なら前付け・後付けです。
+% 偽なら |\chapter| で章番号が出ません。
 %
 %    \begin{macrocode}
 %<book>\newif\if@mainmatter \@mainmattertrue
@@ -196,35 +196,35 @@
 %
 % \begin{macro}{\if@enablejfam}
 %
-% $BOBJ8%U%)%s%H$r?t<0%U%)%s%H$H$7$FEPO?$9$k$+$I$&$+$r<($9%9%$%C%A$G$9!#(B
+% 和文フォントを数式フォントとして登録するかどうかを示すスイッチです。
 %
 %    \begin{macrocode}
 \newif\if@enablejfam \@enablejfamtrue
 %    \end{macrocode}
 % \end{macro}
 %
-% $B0J2<$G3F%*%W%7%g%s$r@k8@$7$^$9!#(B
+% 以下で各オプションを宣言します。
 %
-% \paragraph{$BMQ;f%5%$%:(B}
+% \paragraph{用紙サイズ}
 %
-% JIS$B$d(BISO$B$N(BA0$BH=$OLL@Q(B $1\,\mathrm{m}^2$$B!$=D2#Hf(B $1:\sqrt{2}$
-% $B$ND9J}7A$NJU$ND9$5$r(B mm $BC10L$K@Z$j<N$F$?$b$N$G$9!#(B
-% $B$3$l$r4p=`$H$7$F=g$KH>Y#$7$F$O(B mm $BC10L$K@Z$j<N$F$?$b$N$,(BA1$B!$(BA2$B!$!D$G$9!#(B
+% JISやISOのA0判は面積 $1\,\mathrm{m}^2$，縦横比 $1:\sqrt{2}$
+% の長方形の辺の長さを mm 単位に切り捨てたものです。
+% これを基準として順に半截しては mm 単位に切り捨てたものがA1，A2，…です。
 %
-% B$BH=$O(BJIS$B$H(BISO$B$GDj5A$,0[$J$j$^$9!#(B
-% JIS$B$G$O(BB0$BH=$NLL@Q$,(B $1.5\,\mathrm{m}^2$ $B$G$9$,!$(B
-% ISO$B$G$O(BB1$BH=$NJU$ND9$5$,(BA0$BH=$H(BA1$BH=$NJU$ND9$5$N4v2?J?6Q$G$9!#(B
-% $B$7$?$,$C$F(BISO$B$N(BB0$BH=$O(B $1000\,\mathrm{mm} \times 1414\,\mathrm{mm}$ $B$G$9!#(B
-% $B$3$N$?$a!$(B\LaTeXe $B$N(B \texttt{b5paper}
-% $B$O(B $250\,\mathrm{mm} \times 176\,\mathrm{mm}$ $B$G$9$,!$(B
-% \pLaTeXe $B$N(B \texttt{b5paper}
-% $B$O(B $257\,\mathrm{mm} \times 182\,\mathrm{mm}$ $B$K$J$C$F$$$^$9!#(B
-% $B$3$3$G$O(B\pLaTeXe $B$K$J$i$C$F(BJIS$B$K=>$$$^$7$?!#(B
+% B判はJISとISOで定義が異なります。
+% JISではB0判の面積が $1.5\,\mathrm{m}^2$ ですが，
+% ISOではB1判の辺の長さがA0判とA1判の辺の長さの幾何平均です。
+% したがってISOのB0判は $1000\,\mathrm{mm} \times 1414\,\mathrm{mm}$ です。
+% このため，\LaTeXe の \texttt{b5paper}
+% は $250\,\mathrm{mm} \times 176\,\mathrm{mm}$ ですが，
+% \pLaTeXe の \texttt{b5paper}
+% は $257\,\mathrm{mm} \times 182\,\mathrm{mm}$ になっています。
+% ここでは\pLaTeXe にならってJISに従いました。
 % 
-% $B%G%U%)%k%H$O(B \texttt{a4paper} $B$G$9!#(B
+% デフォルトは \texttt{a4paper} です。
 %
-% \texttt{b5var}$B!J(BB5$BJQ7A!$(B182mm$B!_(B230mm$B!K!$(B
-% \texttt{a4var}$B!J(BA4$BJQ7A!$(B210mm$B!_(B283mm$B!K$rDI2C$7$^$7$?!#(B
+% \texttt{b5var}（B5変形，182mm×230mm），
+% \texttt{a4var}（A4変形，210mm×283mm）を追加しました。
 %
 %    \begin{macrocode}
 \DeclareOption{a3paper}{%
@@ -277,9 +277,9 @@
   \setlength\paperwidth  {7.25in}}
 %    \end{macrocode}
 %
-% \paragraph{$B2#CV$-(B}
+% \paragraph{横置き}
 %
-% $BMQ;f$N=D$H2#$ND9$5$rF~$l49$($^$9!#(B
+% 用紙の縦と横の長さを入れ換えます。
 %
 %    \begin{macrocode}
 \newif\if@landscape
@@ -289,26 +289,26 @@
 %
 % \paragraph{slide}
 %
-% $B%*%W%7%g%s(B \texttt{slide} $B$r?7@_$7$^$7$?!#(B
+% オプション \texttt{slide} を新設しました。
 %
 %    \begin{macrocode}
 \newif\if@slide
 \@slidefalse
 %    \end{macrocode}
 %
-% \paragraph{$B%5%$%:%*%W%7%g%s(B}
+% \paragraph{サイズオプション}
 %
-% 10pt$B!$(B11pt$B!$(B12pt $B$N$[$+$K!$(B8pt$B!$(B9pt$B!$(B14pt$B!$(B17pt$B!$(B21pt$B!$(B25pt$B!$(B30pt$B!$(B36pt$B!$(B43pt $B$rDI2C$7$^$7$?!#(B
-% $B$3$l$OEyHf?tNs$K$J$k$h$&$KA*$s$@$b$N$G$9!J=>Mh$N(B 20pt $B$b;D$7$^$7$?!K!#(B
-% |\@ptsize| $B$NDj5A$,JQ$@$C$?$N$G$4LBOG$r$*$+$1$7$^$7$?$,!$(B
-% $BI8=`E*$J%I%-%e%a%s%H%/%i%9$HF1MM$K%]%$%s%H?t$+$i(B10$B$r0z$$$?$b$N$KD>$7$^$7$?!#(B
+% 10pt，11pt，12pt のほかに，8pt，9pt，14pt，17pt，21pt，25pt，30pt，36pt，43pt を追加しました。
+% これは等比数列になるように選んだものです（従来の 20pt も残しました）。
+% |\@ptsize| の定義が変だったのでご迷惑をおかけしましたが，
+% 標準的なドキュメントクラスと同様にポイント数から10を引いたものに直しました。
 %
-% [2003-03-22] 14Q$B%*%W%7%g%s$rDI2C$7$^$7$?!#(B
+% [2003-03-22] 14Qオプションを追加しました。
 %
-% [2003-04-18] 12Q$B%*%W%7%g%s$rDI2C$7$^$7$?!#(B
+% [2003-04-18] 12Qオプションを追加しました。
 %
-% [2016-07-08] |\mag| $B$r;H$o$:$K3F<o@#K!$r%9%1!<%k$5$;$k$?$a$N%*%W%7%g%s(B \texttt{nomag} $B$r?7@_$7$^$7$?!#(B
-% \texttt{usemag} $B%*%W%7%g%s$N;XDj$G=>MhDL$j$NF0:n$H$J$j$^$9!#%G%U%)%k%H$O(B \texttt{usemag} $B$G$9!#(B
+% [2016-07-08] |\mag| を使わずに各種寸法をスケールさせるためのオプション \texttt{nomag} を新設しました。
+% \texttt{usemag} オプションの指定で従来通りの動作となります。デフォルトは \texttt{usemag} です。
 %
 %    \begin{macrocode}
 \newcommand{\@ptsize}{0}
@@ -341,14 +341,14 @@
 \DeclareOption{nomag}{\jsc@magfalse}
 %    \end{macrocode}
 %
-% \paragraph{$B%H%s%\%*%W%7%g%s(B}
+% \paragraph{トンボオプション}
 %
-% $B%H%s%\!J(Bcrop marks$B!K$r=PNO$7$^$9!#(B
-% $B<B:]$N=hM}$O(B\pLaTeXe $BK\BN$G9T$$$^$9!J(B\texttt{plcore.dtx} $B;2>H!K!#(B
-% $B%*%W%7%g%s(B \texttt{tombow} $B$GF|IUIU$-$N%H%s%\!$(B
-% $B%*%W%7%g%s(B \texttt{tombo} $B$GF|IU$J$7$N%H%s%\$r=PNO$7$^$9!#(B
-% $B$3$l$i$O%"%9%-!<HG$N$^$^$G$9!#(B
-% $B%+%&%s%?(B |\hour|$B!$(B|\minute| $B$O(Bp\LaTeXe $BK\BN$G@k8@$5$l$F$$$^$9!#(B
+% トンボ（crop marks）を出力します。
+% 実際の処理は\pLaTeXe 本体で行います（\texttt{plcore.dtx} 参照）。
+% オプション \texttt{tombow} で日付付きのトンボ，
+% オプション \texttt{tombo} で日付なしのトンボを出力します。
+% これらはアスキー版のままです。
+% カウンタ |\hour|，|\minute| はp\LaTeXe 本体で宣言されています。
 %
 %    \begin{macrocode}
 \hour\time \divide\hour by 60\relax
@@ -367,10 +367,10 @@
   \maketombowbox}
 %    \end{macrocode}
 %
-% \paragraph{$BLLIU$1(B}
+% \paragraph{面付け}
 %
-% $B%*%W%7%g%s(B \texttt{mentuke} $B$GI}%<%m$N%H%s%\$r=PNO$7$^$9!#(B
-% $BLLIU$1$KJXMx$G$9!#$3$l$b%"%9%-!<HG$N$^$^$G$9!#(B
+% オプション \texttt{mentuke} で幅ゼロのトンボを出力します。
+% 面付けに便利です。これもアスキー版のままです。
 %
 %    \begin{macrocode}
 \DeclareOption{mentuke}{%
@@ -379,11 +379,11 @@
   \maketombowbox}
 %    \end{macrocode}
 %
-% \paragraph{$BN>LL!$JRLL%*%W%7%g%s(B}
+% \paragraph{両面，片面オプション}
 %
-% \texttt{twoside} $B$G4q?t%Z!<%8!&6v?t%Z!<%8$N%l%$%"%&%H$,JQ$o$j$^$9!#(B
+% \texttt{twoside} で奇数ページ・偶数ページのレイアウトが変わります。
 %
-% [2003-04-29] \texttt{vartwoside} $B$G$I$A$i$N%Z!<%8$bK5Cm$,1&B&$K$J$j$^$9!#(B
+% [2003-04-29] \texttt{vartwoside} でどちらのページも傍注が右側になります。
 %
 %    \begin{macrocode}
 \DeclareOption{oneside}{\@twosidefalse \@mparswitchfalse}
@@ -391,43 +391,43 @@
 \DeclareOption{vartwoside}{\@twosidetrue \@mparswitchfalse}
 %    \end{macrocode}
 %
-% \paragraph{$BFsCJAH(B}
+% \paragraph{二段組}
 %
-% \texttt{twocolumn} $B$GFsCJAH$K$J$j$^$9!#(B
+% \texttt{twocolumn} で二段組になります。
 %
 %    \begin{macrocode}
 \DeclareOption{onecolumn}{\@twocolumnfalse}
 \DeclareOption{twocolumn}{\@twocolumntrue}
 %    \end{macrocode}
 %
-% \paragraph{$BI=Bj%Z!<%8(B}
+% \paragraph{表題ページ}
 %
-% \texttt{titlepage} $B$GI=Bj!&35MW$rFHN)$7$?%Z!<%8$K=PNO$7$^$9!#(B
+% \texttt{titlepage} で表題・概要を独立したページに出力します。
 %
 %    \begin{macrocode}
 \DeclareOption{titlepage}{\@titlepagetrue}
 \DeclareOption{notitlepage}{\@titlepagefalse}
 %    \end{macrocode}
 %
-% \paragraph{$B1&:85/$3$7(B}
+% \paragraph{右左起こし}
 %
-% $B=q@R$G$O>O$ODL>o$O4q?t%Z!<%85/$3$7$K$J$j$^$9$,!$(B
-% \texttt{openany} $B$G6v?t%Z!<%8$+$i$G$b;O$^$k$h$&$K$J$j$^$9!#(B
+% 書籍では章は通常は奇数ページ起こしになりますが，
+% \texttt{openany} で偶数ページからでも始まるようになります。
 %
 %    \begin{macrocode}
 %<book>\DeclareOption{openright}{\@openrighttrue}
 %<book>\DeclareOption{openany}{\@openrightfalse}
 %    \end{macrocode}
 %
-% \paragraph{eqnarray$B4D6-$H?t<0$N0LCV(B}
+% \paragraph{eqnarray環境と数式の位置}
 %
-% $B?9K\$5$s$N$465<($K$7$?$,$C$FA0$K0\F0$7$^$7$?!#(B
+% 森本さんのご教示にしたがって前に移動しました。
 %
 % \begin{environment}{eqnarray}
 %
-%    \LaTeX $B$N(B |eqnarray| $B4D6-$G$O(B |&| $B$G$G$-$k%"%-$,Bg$-$9$.$k(B
-%    $B$h$&$G$9$N$G!$>/$7>.$5$/$7$^$9!#(B
-%    $B$^$?!$Cf1{$NMWAG$b(B |\displaystyle| $B$K$7$^$9!#(B
+%    \LaTeX の |eqnarray| 環境では |&| でできるアキが大きすぎる
+%    ようですので，少し小さくします。
+%    また，中央の要素も |\displaystyle| にします。
 %
 %    \begin{macrocode}
 \def\eqnarray{%
@@ -448,14 +448,14 @@
 %    \end{macrocode}
 % \end{environment}
 %
-% \texttt{leqno} $B$G?t<0HV9f$,:8B&$K$J$j$^$9!#(B
-% \texttt{fleqn} $B$G?t<0$,K\J8:8C<$+$i0lDj5wN%$N$H$3$m$K=PNO$5$l$^$9!#(B
-% $B?9K\$5$s$K$7$?$,$C$FD{@5$7$^$7$?!#(B
+% \texttt{leqno} で数式番号が左側になります。
+% \texttt{fleqn} で数式が本文左端から一定距離のところに出力されます。
+% 森本さんにしたがって訂正しました。
 %
 %    \begin{macrocode}
 \DeclareOption{leqno}{\input{leqno.clo}}
 \DeclareOption{fleqn}{\input{fleqn.clo}%
-% fleqn$BMQ$N(Beqnarray$B4D6-$N:FDj5A(B
+% fleqn用のeqnarray環境の再定義
   \def\eqnarray{%
     \stepcounter{equation}%
     \def\@currentlabel{\p@equation\theequation}%
@@ -482,10 +482,10 @@
     }}
 %    \end{macrocode}
 %
-% \paragraph{$BJ88%%j%9%H(B}
+% \paragraph{文献リスト}
 %
-% $BJ88%%j%9%H$r(Bopen$B7A<0!JCx<TL>$d=qL>$N8e$K2~9T$,F~$k!K$G=PNO$7$^$9!#(B
-% $B$3$l$O;H$o$l$k$3$H$O$J$$$N$G%3%a%s%H%"%&%H$7$F$"$j$^$9!#(B
+% 文献リストをopen形式（著者名や書名の後に改行が入る）で出力します。
+% これは使われることはないのでコメントアウトしてあります。
 %
 %    \begin{macrocode}
 % \DeclareOption{openbib}{%
@@ -498,41 +498,41 @@
 %    \renewcommand\newblock{\par}}}
 %    \end{macrocode}
 %
-% \paragraph{$B?t<0%U%)%s%H$H$7$FOBJ8%U%)%s%H$rEPO?$7$J$$%*%W%7%g%s(B}
+% \paragraph{数式フォントとして和文フォントを登録しないオプション}
 %
-% $B?t<0Cf$G$O(B16$BDL$j$N%U%)%s%H$7$+;H$($^$;$s!#(B
-% AMSFonts$B$d(B \texttt{mathptmx} $B%Q%C%1!<%8$r;H$C$F?t<0%U%)%s%H$r(B
-% $B$?$/$5$s;H$&$H(B ``Too many math alphabets \ldots'' $B$H$$$&%(%i!<$,(B
-% $B5/$3$C$F$7$^$$$^$9!#(B\texttt{disablejfam} $B%*%W%7%g%s$rIU$1$l$P!$(B
-% $BL@D+!&%4%7%C%/$r?t<0MQ%U%)%s%H$H$7$FEPO?$9$k$N$r$d$a$^$9$N$G!$(B
-% $B?t<0MQ%U%)%s%H$,Fs$D@aLs$G$-$^$9!#(B
-% $B$$$:$l$K$7$F$b(B |\textmc| $B$d(B |\mbox| $B$d(B \texttt{amsmath}
-% $B%Q%C%1!<%8$N(B |\text| $B$r;H$($P?t<0Cf$GOBJ8%U%)%s%H$,;H$($^$9$N$G!$(B
-% $B$3$N?7%I%-%e%a%s%H%/%i%9$G$OI8=`$GOBJ8%U%)%s%H$r?t<0MQ$KEPO?(B
-% $B$7$J$$$3$H$K$7$F$$$?$N$G$9$,!$=>Mh$N%I%-%e%a%s%H%/%i%9$N;EMM$K(B
-% $B9g$o$;$k$3$H$K$7$^$7$?!#(B
+% 数式中では16通りのフォントしか使えません。
+% AMSFontsや \texttt{mathptmx} パッケージを使って数式フォントを
+% たくさん使うと ``Too many math alphabets \ldots'' というエラーが
+% 起こってしまいます。\texttt{disablejfam} オプションを付ければ，
+% 明朝・ゴシックを数式用フォントとして登録するのをやめますので，
+% 数式用フォントが二つ節約できます。
+% いずれにしても |\textmc| や |\mbox| や \texttt{amsmath}
+% パッケージの |\text| を使えば数式中で和文フォントが使えますので，
+% この新ドキュメントクラスでは標準で和文フォントを数式用に登録
+% しないことにしていたのですが，従来のドキュメントクラスの仕様に
+% 合わせることにしました。
 %
 %    \begin{macrocode}
 \DeclareOption{disablejfam}{\@enablejfamfalse}
 %    \end{macrocode}
 %
-% \paragraph{$B%I%i%U%H(B}
+% \paragraph{ドラフト}
 %
-% \texttt{draft} $B$G(Boverfull box$B$N5/$-$?9TKv$K(B5pt$B$N7S@~$r0z$-$^$9!#(B
+% \texttt{draft} でoverfull boxの起きた行末に5ptの罫線を引きます。
 %
-% [2016-07-13] |\ifdraft| $B$rDj5A$9$k$N$r$d$a$^$7$?!#(B
+% [2016-07-13] |\ifdraft| を定義するのをやめました。
 %
 %    \begin{macrocode}
 \DeclareOption{draft}{\setlength\overfullrule{5pt}}
 \DeclareOption{final}{\setlength\overfullrule{0pt}}
 %    \end{macrocode}
 %
-% \paragraph{$BOBJ8%U%)%s%H%a%H%j%C%/$NA*Br(B}
+% \paragraph{和文フォントメトリックの選択}
 %
-% $B$3$3$G$O?7$7$$(B \texttt{jis} $B%U%)%s%H%a%H%j%C%/$rI8=`$G;H$$$^$9$,!$(B
-% $B8E$$(B \texttt{min10}$B!$(B\texttt{goth10} $B$J$I$r;H$$$?$$$H$-$O(B \texttt{mingoth}
-% $B$H$$$&%*%W%7%g%s$r;XDj$7$^$9!#(B
-% $B$^$?!$(B\texttt{winjis} $B%*%W%7%g%s$G(B \texttt{winjis} $B%a%H%j%C%/$,;H$($^$9!#(B
+% ここでは新しい \texttt{jis} フォントメトリックを標準で使いますが，
+% 古い \texttt{min10}，\texttt{goth10} などを使いたいときは \texttt{mingoth}
+% というオプションを指定します。
+% また，\texttt{winjis} オプションで \texttt{winjis} メトリックが使えます。
 %
 %    \begin{macrocode}
 \newif\ifwinjis
@@ -552,10 +552,10 @@
 \def\jsc@pfx@{\if@jsc@uplatex u\else \fi}
 %    \end{macrocode}
 %
-% \paragraph{papersize$B%9%Z%7%c%k$NMxMQ(B}
+% \paragraph{papersizeスペシャルの利用}
 %
-% dvips$B$d(Bdviout$B$GMQ;f@_Dj$r<+F02=$9$k$K$O(B
-% $B%*%W%7%g%s(B \texttt{papersize} $B$rM?$($^$9!#(B
+% dvipsやdvioutで用紙設定を自動化するには
+% オプション \texttt{papersize} を与えます。
 %
 %    \begin{macrocode}
 \newif\ifpapersize
@@ -563,9 +563,9 @@
 \DeclareOption{papersize}{\papersizetrue}
 %    \end{macrocode}
 %
-% \paragraph{$B1Q8l2=(B}
+% \paragraph{英語化}
 %
-% $B%*%W%7%g%s(B \texttt{english} $B$r?7@_$7$^$7$?!#(B
+% オプション \texttt{english} を新設しました。
 %
 %    \begin{macrocode}
 \newif\if@english
@@ -573,9 +573,9 @@
 \DeclareOption{english}{\@englishtrue}
 %    \end{macrocode}
 %
-% \paragraph{jsreport$BAjEv(B}
+% \paragraph{jsreport相当}
 %
-% $B%*%W%7%g%s(B \texttt{report} $B$r?7@_$7$^$7$?!#(B
+% オプション \texttt{report} を新設しました。
 %
 %    \begin{macrocode}
 %<*book>
@@ -585,11 +585,11 @@
 %</book>
 %    \end{macrocode}
 %
-% \paragraph{$B%*%W%7%g%s$N<B9T(B}
+% \paragraph{オプションの実行}
 %
-% $B%G%U%)%k%H$N%*%W%7%g%s$r<B9T$7!$(B|dvi| $B%U%!%$%k$N@hF,$K(Bdvips$B$N(Bpapersize
-% special$B$r=q$-9~$_$^$9!#$3$N(Bspecial$B$O(Bdvips$B$d:G6a$N(Bdviout$B$,BP1~$7$F$$$^$9!#(B
-% |multicols| $B$d(B |url| $B$r(B |\RequirePackage| $B$9$k$N$O$d$a$^$7$?!#(B
+% デフォルトのオプションを実行し，|dvi| ファイルの先頭にdvipsのpapersize
+% specialを書き込みます。このspecialはdvipsや最近のdvioutが対応しています。
+% |multicols| や |url| を |\RequirePackage| するのはやめました。
 %
 %    \begin{macrocode}
 %<article>\ExecuteOptions{a4paper,oneside,onecolumn,notitlepage,final}
@@ -599,7 +599,7 @@
 \ProcessOptions
 %    \end{macrocode}
 %
-% $B8e=hM}(B
+% 後処理
 %
 %    \begin{macrocode}
 \if@slide
@@ -612,11 +612,11 @@
 \fi
 %    \end{macrocode}
 %
-% \paragraph{$B;HMQ%(%s%8%s$N8!::(B}
+% \paragraph{使用エンジンの検査}
 %
-% $B%f!<%6$,(B |uplatex| $B%*%W%7%g%s$NM-L5$K$h$j;XDj$7$?%(%s%8%s$,!$<B:]$K(B
-% $B;H$o$l$F$$$k$b$N$H0lCW$7$F$$$k$+$r8!::$7!$0lCW$7$J$$>l9g$O%(%i!<(B
-% $B%a%C%;!<%8$rI=<($7$^$9!#(B
+% ユーザが |uplatex| オプションの有無により指定したエンジンが，実際に
+% 使われているものと一致しているかを検査し，一致しない場合はエラー
+% メッセージを表示します。
 %
 %    \begin{macrocode}
 \ifnum \ifx\ucs\@undefined\z@\else\ucs"3000 \fi ="3000
@@ -640,24 +640,24 @@
 \fi
 %    \end{macrocode}
 %
-% \paragraph{papersize$B%9%Z%7%c%k$N=PNO(B}
+% \paragraph{papersizeスペシャルの出力}
 %
-% dvips$B$N(Bpapersize$B%9%Z%7%c%k$r=PNO$7$^$9!#(B
-% $B$3$l$G(Bdvips$B$d?7$7$$(Bdviout$B$G=PNONN0h$,<+F0@_Dj$G$-$^$9!#(B
-% $B%H%s%\$NIU$$$?$H$-$NMQ;f%5%$%:$OL50UL#$G$9$,!$(B
-% $B$$$o$f$k!V%N%S!W%5%$%:$H$$$&=D2#(B1$B%$%s%A$:$DD9$$MQ;f$K=PNO$9$k$3$H$r9M$($F!$(B
-% 1$B%$%s%A$:$D2C$($^$7$?!#(B
-% $B$H$3$m$,(B\pLaTeXe $B$O%H%s%\=PNOI}$rN>B&$K(B1$B%$%s%A$H$C$F$$$^$9$N$G!$(B
-% dvips$B;HMQ;~$K(B
+% dvipsのpapersizeスペシャルを出力します。
+% これでdvipsや新しいdvioutで出力領域が自動設定できます。
+% トンボの付いたときの用紙サイズは無意味ですが，
+% いわゆる「ノビ」サイズという縦横1インチずつ長い用紙に出力することを考えて，
+% 1インチずつ加えました。
+% ところが\pLaTeXe はトンボ出力幅を両側に1インチとっていますので，
+% dvips使用時に
 % \begin{quote}
 %   |-O -0.5in,-0.5in|
 % \end{quote}
-% $B$H$$$&%*%W%7%g%s$rM?$($FN>B&(B0.5$B%$%s%A$N%H%s%\$K$9$k$H$$$$$G$7$g$&!#(B
+% というオプションを与えて両側0.5インチのトンボにするといいでしょう。
 %
-% [2003-05-17] $B%H%s%\$r%W%l%S%e!<$K;H$&$3$H$r9M$($F(B1$B%$%s%A$r(B2$B%$%s%A$K$7$^$7$?!#(B
+% [2003-05-17] トンボをプレビューに使うことを考えて1インチを2インチにしました。
 %
-% [2016-07-11] memoir$B%/%i%9$N%^%K%e%"%k$K$h$k$H!$%H%s%\$r4^$a$?MQ;f$N@#K!$O(B
-% |\stockwidth|$B!$(B|\stockheight|$B$H8F$V$h$&$G$9$N$G!$$3$l$r;H$&$3$H$K$7$^$7$?!#(B
+% [2016-07-11] memoirクラスのマニュアルによると，トンボを含めた用紙の寸法は
+% |\stockwidth|，|\stockheight|と呼ぶようですので，これを使うことにしました。
 %
 %    \begin{macrocode}
 \newdimen\stockwidth \newdimen\stockheight
@@ -672,11 +672,11 @@
 \fi
 %    \end{macrocode}
 %
-% \paragraph{$B4p=`$H$J$k9TAw$j(B}
+% \paragraph{基準となる行送り}
 %
 % \begin{macro}{\n@baseline}
 %
-% $B4p=`$H$J$k9TAw$j$r%]%$%s%HC10L$GI=$7$?$b$N$G$9!#(B
+% 基準となる行送りをポイント単位で表したものです。
 %
 %    \begin{macrocode}
 %<article|book>\if@slide\def\n@baseline{13}\else\def\n@baseline{16}\fi
@@ -685,23 +685,23 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \paragraph{$B3HBgN($N@_Dj(B}
+% \paragraph{拡大率の設定}
 %
-% $B%5%$%:$NJQ99$O(B\TeX $B$N%W%j%_%F%#%V(B |\mag| $B$r;H$C$F9T$$$^$9!#(B
-% 9$B%]%$%s%H$K$D$$$F$O9TAw$j$b<c43=L$a$^$7$?!#(B
-% $B%5%$%:$K$D$$$F$OA4LLE*$K8+D>$7$^$7$?!#(B
+% サイズの変更は\TeX のプリミティブ |\mag| を使って行います。
+% 9ポイントについては行送りも若干縮めました。
+% サイズについては全面的に見直しました。
 %
-% [2008-12-26] 1000 / |\mag| $B$KAjEv$9$k(B |\inv@mag| $B$rDj5A$7$^$7$?!#(B
-% |truein| $B$r;H$C$F$$$?$H$3$m$r(B |\inv@mag in| $B$KD>$7$^$7$?$N$G!$(B
-% |geometry| $B%Q%C%1!<%8$H6&B8$G$-$k$H;W$$$^$9!#(B
-% $B$J$*!$?7%I%-%e%a%s%H%/%i%9B&$G(B |10pt| $B0J30$K$9$k>l9g$NCm0U!'(B
+% [2008-12-26] 1000 / |\mag| に相当する |\inv@mag| を定義しました。
+% |truein| を使っていたところを |\inv@mag in| に直しましたので，
+% |geometry| パッケージと共存できると思います。
+% なお，新ドキュメントクラス側で |10pt| 以外にする場合の注意：
 % \begin{itemize}
-% \item |geometry| $BB&$G%*%W%7%g%s(B |truedimen| $B$r;XDj$7$F$/$@$5$$!#(B
-% \item |geometry| $BB&$G%*%W%7%g%s(B |mag| $B$O;H$($^$;$s!#(B
+% \item |geometry| 側でオプション |truedimen| を指定してください。
+% \item |geometry| 側でオプション |mag| は使えません。
 % \end{itemize}
 %
-% [2016-07-08] |\jsc@mpt| $B$*$h$S(B |\jsc@mmm| $B$K!$$=$l$>$l(B1pt$B$*$h$S(B1mm$B$r3HBg$5$;$?CM$r3JG<$7$^$9!#(B
-% $B0J9_$N%l%$%"%&%H;XDj$G$O$3$A$i$r;H$$$^$9!#(B
+% [2016-07-08] |\jsc@mpt| および |\jsc@mmm| に，それぞれ1ptおよび1mmを拡大させた値を格納します。
+% 以降のレイアウト指定ではこちらを使います。
 %
 %    \begin{macrocode}
 \newdimen\jsc@mpt
@@ -810,8 +810,8 @@
 %</kiyou>
 %    \end{macrocode}
 %
-% [2016-07-11] $B?7$7$/DI2C$7$?(B|\stockwidth|$B!$(B|\stockheight|$B$b(B|\mag|$B$K$"$o$;$F(B
-% $B%9%1!<%k$7$^$9!#(B
+% [2016-07-11] 新しく追加した|\stockwidth|，|\stockheight|も|\mag|にあわせて
+% スケールします。
 %
 %    \begin{macrocode}
 \setlength\paperwidth{\inv@mag\paperwidth}%
@@ -820,11 +820,11 @@
 \setlength\stockheight{\inv@mag\stockheight}%
 %    \end{macrocode}
 %
-% \paragraph{pagesize$B%9%Z%7%c%k$N=PNO(B}
+% \paragraph{pagesizeスペシャルの出力}
 %
-% [2003-05-17] dvipdfm(x)$B$N(Bpagesize$B%9%Z%7%c%k$r=PNO$7$^$9!#(B
+% [2003-05-17] dvipdfm(x)のpagesizeスペシャルを出力します。
 %
-% [2004-08-08] $B:#$N(Bdvipdfmx$B$O(Bdvips$BMQ%9%Z%7%c%k$rM}2r$9$k$h$&$J$N$G30$7$^$7$?!#(B
+% [2004-08-08] 今のdvipdfmxはdvips用スペシャルを理解するようなので外しました。
 %
 %    \begin{macrocode}
 % \ifpapersize
@@ -838,32 +838,32 @@
 % \fi
 %    \end{macrocode}
 %
-% \section{$BOBJ8%U%)%s%H$NJQ99(B}
+% \section{和文フォントの変更}
 %
-% JIS$B$N(B1$B%]%$%s%H$O(B0.3514mm$B!JLs(B1/72.28$B%$%s%A!K!$(B
-% PostScript$B$N(B1$B%]%$%s%H$O(B1/72$B%$%s%A$G$9$,!$(B
-% \TeX $B$G$O(B1/72.27$B%$%s%A$r(B1pt$B!J%]%$%s%H!K!$(B
-% 1/72$B%$%s%A$r(B1bp$B!J%S%C%0%]%$%s%H!K$HI=$7$^$9!#(B
-% QuarkXPress$B$J$I$N(BDTP$B%=%U%H$OI8=`$G(B1/72$B%$%s%A$r(B1$B%]%$%s%H(B
-% $B$H$7$^$9$,!$0J2<$G$O$9$Y$F(B1/72.27$B%$%s%A$r(B1pt$B$H$7$F$$$^$9!#(B
-% 1$B%$%s%A$ODj5A$K$h$j(B25.4mm$B$G$9!#(B
+% JISの1ポイントは0.3514mm（約1/72.28インチ），
+% PostScriptの1ポイントは1/72インチですが，
+% \TeX では1/72.27インチを1pt（ポイント），
+% 1/72インチを1bp（ビッグポイント）と表します。
+% QuarkXPressなどのDTPソフトは標準で1/72インチを1ポイント
+% としますが，以下ではすべて1/72.27インチを1ptとしています。
+% 1インチは定義により25.4mmです。
 %
-% $B$5$i$K$d$d$3$7$$$3$H$K!$(B\pTeX $B!J%"%9%-!<$,F|K\8l2=$7$?(B\TeX $B!K(B
-% $B$N8x>N(B10$B%]%$%s%H$NOBJ8%U%)%s%H!J(B\texttt{min10} $B$J$I!K$O!$(B
-% $B<B@#!JI8=`$N;zAw$jNL!K$,(B9.62216pt$B$G$9!#(B
-% $B$3$l$O(B3.3818mm$B!$<L8&$N<L?"5!$NC10L$G$O(B13.527$B5i!$(B
-% PostScript$B$NC10L$G$O(B9.5862$B%]%$%s%H$K$J$j$^$9!#(B
-% \texttt{jis} $B%U%)%s%H$J$I$b$3$NCM$rF'=1$7$F$$$^$9!#(B
+% さらにややこしいことに，\pTeX （アスキーが日本語化した\TeX ）
+% の公称10ポイントの和文フォント（\texttt{min10} など）は，
+% 実寸（標準の字送り量）が9.62216ptです。
+% これは3.3818mm，写研の写植機の単位では13.527級，
+% PostScriptの単位では9.5862ポイントになります。
+% \texttt{jis} フォントなどもこの値を踏襲しています。
 %
-% $B$3$N8x>N(B10$B%]%$%s%H$N%U%)%s%H$r$3$3$G$O(B13$B5i$K=L>.$7$F(B
-% $B;H$&$3$H$K$7$^$9!#$=$N$?$a$K$O!$(B$13/13.527 = 0.961$ $BG\(B
-% $B$9$l$P$$$$$3$H$K$J$j$^$9!#(B
+% この公称10ポイントのフォントをここでは13級に縮小して
+% 使うことにします。そのためには，$13/13.527 = 0.961$ 倍
+% すればいいことになります。
 %
-% $B$^$?!$$3$3$G$OOBJ8(BTFM$B$H$7$FEl5~=q@R0u:~$N>.NSH%$5$s$N(B
-% $B:n$i$l$?(BJIS$B%U%)%s%H%a%H%j%C%/!J(B\texttt{jis}$B!$(B\texttt{jisg}$B!K(B
-% $B$rI8=`$G;H$&$3$H$K$7$^$9$,!$(B\texttt{mingoth} $B%*%W%7%g%s$rIU$1$k$H(B
-% $B=>Mh$N%U%)%s%H%a%H%j%C%/!J(B\texttt{min}$B!$(B\texttt{goth}$B!K(B
-% $B$r;H$&$h$&$K$7$^$9!#(B
+% また，ここでは和文TFMとして東京書籍印刷の小林肇さんの
+% 作られたJISフォントメトリック（\texttt{jis}，\texttt{jisg}）
+% を標準で使うことにしますが，\texttt{mingoth} オプションを付けると
+% 従来のフォントメトリック（\texttt{min}，\texttt{goth}）
+% を使うようにします。
 %
 %    \begin{macrocode}
 %<*!jspf>
@@ -902,14 +902,14 @@
 %</!jspf>
 %    \end{macrocode}
 %
-% 9.62216$B%]%$%s%H$NOBJ8%U%)%s%H$r$5$i$K(B0.961$BG\$7$?$3$H$K$h$j!$(B
-% $BLs(B9.25$B%]%$%s%H!$(B
-% DTP$B$G;H$&C10L!J(B1/72$B%$%s%A!K$G$O(B9.21$B%]%$%s%H$H$$$&$3$H$K$J$j!$(B
-% $B8x>N(B10$B%]%$%s%H$H$$$C$F$b<B$O(B9$B%]%$%s%H6/$K$J$j$^$9!#(B
+% 9.62216ポイントの和文フォントをさらに0.961倍したことにより，
+% 約9.25ポイント，
+% DTPで使う単位（1/72インチ）では9.21ポイントということになり，
+% 公称10ポイントといっても実は9ポイント強になります。
 %
-% $BK?3X2q;o$G$O!$(B
-% $BOBJ8%U%)%s%H$r(BPostScript$B$N(B9$B%]%$%s%H$K$9$k$?$a$K!$(B
-% $9/(9.62216*72/72.27) = 0.93885$ $BG\$7$^$9!#(B
+% 某学会誌では，
+% 和文フォントをPostScriptの9ポイントにするために，
+% $9/(9.62216*72/72.27) = 0.93885$ 倍します。
 %
 %    \begin{macrocode}
 %<*jspf>
@@ -948,19 +948,19 @@
 %</jspf>
 %    \end{macrocode}
 %
-% $BOBJ8$G%$%?%j%C%/BN!$<PBN!$%5%s%;%j%UBN!$(B
-% $B%?%$%W%i%$%?BN$NBe$o$j$K%4%7%C%/BN$r;H$&$3$H$K$7$^$9!#(B
+% 和文でイタリック体，斜体，サンセリフ体，
+% タイプライタ体の代わりにゴシック体を使うことにします。
 %
-% [2003-03-16] $B%$%?%j%C%/BN!$<PBN$K$D$$$F!$OBJ8$G%4%7%C%/$rEv$F$F$$$^$7$?$,!$(B
-% $B?t3X$NDjM}4D6-$J$I$GB?NL$N%$%?%j%C%/BN$r;H$&$3$H$,$"$j!$%4%7%C%/$K(B
-% $B$9$k$H9u!9$H$J$C$F$7$^$&$H$$$&J@32$,$"$j$^$7$?!#(B
-% |amsthm| $B$r;H$o$J$$>l9g$ODjM}$NK\J8$,L@D+$K$J$k$h$&$K(B |\newtheorem|
-% $B4D6-$r<jD>$7$7$F$7$N$$$G$$$^$7$?$,!$(B
-% \TeX $B$,?t3X$GB?MQ$5$l$k$3$H$r9M$($k$H!$%$%?%j%C%/BN$KL@D+BN$r(B
-% $BEv$F$?$[$&$,$$$$$h$&$K;W$($F$-$^$7$?$N$G!$(B
-% $B%$%?%j%C%/BN!&<PBN$KBP1~$9$kOBJ8$rL@D+BN$KJQ$($k$3$H$K$7$^$7$?!#(B
+% [2003-03-16] イタリック体，斜体について，和文でゴシックを当てていましたが，
+% 数学の定理環境などで多量のイタリック体を使うことがあり，ゴシックに
+% すると黒々となってしまうという弊害がありました。
+% |amsthm| を使わない場合は定理の本文が明朝になるように |\newtheorem|
+% 環境を手直ししてしのいでいましたが，
+% \TeX が数学で多用されることを考えると，イタリック体に明朝体を
+% 当てたほうがいいように思えてきましたので，
+% イタリック体・斜体に対応する和文を明朝体に変えることにしました。
 %
-% [2004-11-03] |\rmfamily| $B$bOBJ8BP1~$K$7$^$7$?!#(B
+% [2004-11-03] |\rmfamily| も和文対応にしました。
 %
 %    \begin{macrocode}
 % \DeclareFontShape{\jsc@JYn}{mc}{bx}{n}{<->ssub*gt/m/n}{} % in \jsc@JYnmc
@@ -995,10 +995,10 @@
 % \begin{macro}{\textmc}
 % \begin{macro}{\textgt}
 %
-% $B<!$N%3%^%s%I$O%$%?%j%C%/Jd@5$J$I$b4^$a$FDj5A$5$l$F$$$^$9$,!$(B
-% $BOBJ8$G$O%$%?%j%C%/Jd@5$O$"$^$jLr$KN)$?$:!$(B
-% $B2$J8!&OBJ84V$N%0%k!<$,F~$i$J$$$H$$$&I{:nMQ$b$"$j$^$9$N$G!$(B
-% $BC1=c$JDj5A$KD>$7$^$9!#(B
+% 次のコマンドはイタリック補正なども含めて定義されていますが，
+% 和文ではイタリック補正はあまり役に立たず，
+% 欧文・和文間のグルーが入らないという副作用もありますので，
+% 単純な定義に直します。
 %
 %    \begin{macrocode}
 \def\textmc#1{\relax\ifmmode\hbox\fi{\mcfamily #1}}
@@ -1007,14 +1007,14 @@
 % \end{macro}
 % \end{macro}
 %
-% $B?7%/%i%9$G$b(B \texttt{disablejfam} $B%*%W%7%g%s$rM?$($J$1$l$P?t<0Fb$G(B
-% $BF|K\8l$,;H$($k$h$&$K$7$^$7$?!#(B
+% 新クラスでも \texttt{disablejfam} オプションを与えなければ数式内で
+% 日本語が使えるようにしました。
 %
-% $B$5$i$K(B2005/12/01$BHG$N(BLaTeX$B$KBP1~$7$?(BpLaTeX$B$KBP1~$7$^$7$?(B
-% $B!J(BThanks: ymt$B$5$s!K!#(B
+% さらに2005/12/01版のLaTeXに対応したpLaTeXに対応しました
+% （Thanks: ymtさん）。
 %
 % [2010-03-14] |http://oku.edu.mie-u.ac.jp/tex/mod/forum/discuss.php?d=411|
-% $B$G$N;3K\$5$s$N$4;XE&$K=>$C$F=$@5$7$^$7$?!#(B
+% での山本さんのご指摘に従って修正しました。
 %
 %    \begin{macrocode}
 \def\reDeclareMathAlphabet#1#2#3{%
@@ -1087,62 +1087,62 @@
 %
 % \begin{macro}{\textsterling}
 %
-% $B$3$l$O(B |\pounds| $BL?Na$G<B:]$K8F$S=P$5$l$kJ8;z$G$9!#(B
-% $B=>Mh$+$i$N(BOT1$B%(%s%3!<%G%#%s%0$G$O(B |\$| $B$N%$%?%j%C%/BN$,(B |\pounds|
-% $B$J$N$G(B \texttt{cmti} $B$,;H$o$l$F$$$^$7$?$,!$(B
-% 1994$BG/=U$+$i$O(B \texttt{cmu}$B!J(Bupright italic$B!$D>N)%$%?%j%C%/BN!K(B
-% $B$KJQ$o$j$^$7$?!#(B
-% $B$7$+$7(B \texttt{cmu} $B$O$=$N@-3J$+$i$7$F<B83E*$J$b$N$G$"$j!$(B
-% |\pounds| $B0J30$G;H$o$l$k$H$O;W$($J$$$N$G!$(B
-% $B$3$3$G$O(B \texttt{cmti} $B$KLa$7$F$7$^$$$^$9!#(B
+% これは |\pounds| 命令で実際に呼び出される文字です。
+% 従来からのOT1エンコーディングでは |\$| のイタリック体が |\pounds|
+% なので \texttt{cmti} が使われていましたが，
+% 1994年春からは \texttt{cmu}（upright italic，直立イタリック体）
+% に変わりました。
+% しかし \texttt{cmu} はその性格からして実験的なものであり，
+% |\pounds| 以外で使われるとは思えないので，
+% ここでは \texttt{cmti} に戻してしまいます。
 %
-% [2003-08-20] Computer Modern$B%U%)%s%H$r;H$&5!2q$b8:$j!$(BT1$B%(%s%3!<%G%#%s%0(B
-% $B$,0lHLE*$K$J$C$F$-$^$7$?!#$3$NDj5A$O$b$&$"$^$j0UL#$,$J$$$N$G>C$7$^$9!#(B
+% [2003-08-20] Computer Modernフォントを使う機会も減り，T1エンコーディング
+% が一般的になってきました。この定義はもうあまり意味がないので消します。
 %
 %    \begin{macrocode}
 % \DeclareTextCommand{\textsterling}{OT1}{{\itshape\char`\$}}
 %    \end{macrocode}
 % \end{macro}
 %
-% $B6XB'%Q%i%a!<%?$b<c43=$@5$7$^$9!#(B
+% 禁則パラメータも若干修正します。
 %
-% $B%"%9%-!<$N(B \texttt{kinsoku.dtx} $B$G$O<!$N;0$D$,(B5000$B$K@_Dj$5$l$F$$$^$9!#(B
-% $B$3$l$r(B10000$B$K:F@_Dj$7$^$9!#(B
-%
-%    \begin{macrocode}
-\prebreakpenalty\jis"2147=10000      % 5000   $B!G(B
-\postbreakpenalty\jis"2148=10000     % 5000   $B!H(B
-\prebreakpenalty\jis"2149=10000      % 5000   $B!I(B
-%    \end{macrocode}
-%
-% $B!V(B\TeX$B!*!W!V")(B515$B!W$N5-9f$H?t;z$N4V$K;MJ,%"%-$,F~$i$J$$$h$&$K$7$^$9!#(B
+% アスキーの \texttt{kinsoku.dtx} では次の三つが5000に設定されています。
+% これを10000に再設定します。
 %
 %    \begin{macrocode}
-\inhibitxspcode`$B!*(B=1
-\inhibitxspcode`$B")(B=2
+\prebreakpenalty\jis"2147=10000      % 5000   ’
+\postbreakpenalty\jis"2148=10000     % 5000   “
+\prebreakpenalty\jis"2149=10000      % 5000   ”
 %    \end{macrocode}
 %
-% $B0JA0$NHG$G$O!$$?$H$($P!V%Y!<%9L>(B.$B3HD%;R!W$N$h$&$KOBJ8J8;z$G=q$$$?$H$-!$(B
-% $B%T%j%*%I$N8e$K;MJ,%"%-$,F~$i$J$$$h$&$K$9$k$?$a$K(B
+% 「\TeX！」「〒515」の記号と数字の間に四分アキが入らないようにします。
+%
+%    \begin{macrocode}
+\inhibitxspcode`！=1
+\inhibitxspcode`〒=2
+%    \end{macrocode}
+%
+% 以前の版では，たとえば「ベース名.拡張子」のように和文文字で書いたとき，
+% ピリオドの後に四分アキが入らないようにするために
 %    \begin{macrocode}
 % \xspcode`.=0
 %    \end{macrocode}
-% $B$N$h$&$K$7$F$$$^$7$?!#$?$@!$!V(BFoo Inc.$B$O!D!D!W$N$h$&$K=q$$$?$H$-$K$b(B
-% $B%9%Z!<%9$,F~$i$J$/$J$k$N$G!$$A$g$C$H$^$:$$=$@5$@$C$?$+$b$7$l$^$;$s!#(B
-% $B85$KLa$7$^$7$?!#(B
+% のようにしていました。ただ，「Foo Inc.は……」のように書いたときにも
+% スペースが入らなくなるので，ちょっとまずい修正だったかもしれません。
+% 元に戻しました。
 %
-% $B$H$j$"$($:!V(B|$B%Y!<%9L>(B.\mbox{}$B3HD%;R(B|$B!W$H=q$$$F$/$@$5$$!#(B
+% とりあえず「|ベース名.\mbox{}拡張子|」と書いてください。
 %
-% $B!V(BC$B$d(BC++$B$G$O!D!D!W$H=q$/$H!$(BC++$B$ND>8e$K;MJ,%"%-$,F~$i$J$$$N$G%P%i%s%9$,0-$/$J$j$^$9!#(B
-% $B;MJ,%"%-$,F~$k$h$&$K$7$^$7$?!#(B\% $B$NN>B&$bF1$8$G$9!#(B
+% 「CやC++では……」と書くと，C++の直後に四分アキが入らないのでバランスが悪くなります。
+% 四分アキが入るようにしました。\% の両側も同じです。
 %
 %    \begin{macrocode}
 \xspcode`+=3
 \xspcode`\%=3
 %    \end{macrocode}
 % 
-% $B$3$l0J30$K(BT1$B%(%s%3!<%G%#%s%0$G(B80$B!A(Bff$B$NJ8;z$b$9$Y$F2$J8J8;z$G$9$N$G!$(B
-% $BN>B&$NOBJ8J8;z$H$N4V$K%9%Z!<%9$,F~$i$J$1$l$P$J$j$^$;$s!#(B
+% これ以外にT1エンコーディングで80〜ffの文字もすべて欧文文字ですので，
+% 両側の和文文字との間にスペースが入らなければなりません。
 % 
 %    \begin{macrocode}
 \xspcode`^^80=3
@@ -1277,34 +1277,34 @@
 %
 % \begin{macro}{\@}
 %
-% $B2$J8$H$$$($P!$(B\LaTeX $B$N(B |\def\@{\spacefactor\@m}| $B$H$$$&Dj5A!J(B|\@m| $B$O(B1000$B!K(B
-% $B$G$O(B |I watch TV\@.| $B$H=q$/$H(B V $B$H%T%j%*%I$N%Z%"%+!<%K%s%0$,8z$+$J$/$J$j$^$9!#(B
-% $B$=$3$G!$<!$N$h$&$JDj5A$KD>$7!$(B|I watch TV.\@| $B$H=q$/$3$H$K$7$^$9!#(B
+% 欧文といえば，\LaTeX の |\def\@{\spacefactor\@m}| という定義（|\@m| は1000）
+% では |I watch TV\@.| と書くと V とピリオドのペアカーニングが効かなくなります。
+% そこで，次のような定義に直し，|I watch TV.\@| と書くことにします。
 %
-% [2016-07-14] 2015-01-01$B$N(B\LaTeX $B$G!$(Bauxiliary files$B$K=q$-=P$5$l$?$H$-$K(B
-% $B%9%Z!<%9$,?)$o$l$J$$$h$&$K$9$k=$@5$,F~$j$^$7$?!#$3$l$K9g$o$;$F(B |{}| $B$rJd$$$^$7$?!#(B
+% [2016-07-14] 2015-01-01の\LaTeX で，auxiliary filesに書き出されたときに
+% スペースが食われないようにする修正が入りました。これに合わせて |{}| を補いました。
 %
 %    \begin{macrocode}
 \def\@{\spacefactor3000{}}
 %    \end{macrocode}
 % \end{macro}
 %
-% \section{$B%U%)%s%H%5%$%:(B}
+% \section{フォントサイズ}
 %
-% $B%U%)%s%H%5%$%:$rJQ$($kL?Na!J(B|\normalsize|$B!$(B|\small| $B$J$I!K(B
-% $B$N<B:]$N5sF0$N@_Dj$O!$;0$D$N0z?t$r$H$kL?Na(B |\@setfontsize| $B$r;H$C$F!$(B
-% $B$?$H$($P(B
+% フォントサイズを変える命令（|\normalsize|，|\small| など）
+% の実際の挙動の設定は，三つの引数をとる命令 |\@setfontsize| を使って，
+% たとえば
 % \begin{quote}
 %   |\@setfontsize{\normalsize}{10}{16}|
 % \end{quote}
-% $B$N$h$&$K$7$F9T$$$^$9!#$3$l$O(B
+% のようにして行います。これは
 % \begin{quote}
-%   |\normalsize| $B$O(B10$B%]%$%s%H$N%U%)%s%H$r;H$$!$9TAw$j$O(B16$B%]%$%s%H$G$"$k(B
+%   |\normalsize| は10ポイントのフォントを使い，行送りは16ポイントである
 % \end{quote}
-% $B$H$$$&0UL#$G$9!#(B
-% $B$?$@$7!$=hM}$rB.$/$9$k$?$a!$(B
-% $B0J2<$G$O(B10$B$HF15A$N(B\LaTeX $B$NFbItL?Na(B |\@xpt| $B$r;H$C$F$$$^$9!#(B
-% $B$3$N(B |\@xpt| $B$NN`$O<!$N$b$N$,$"$j!$(B\LaTeX $BK\BN$GDj5A$5$l$F$$$^$9!#(B
+% という意味です。
+% ただし，処理を速くするため，
+% 以下では10と同義の\LaTeX の内部命令 |\@xpt| を使っています。
+% この |\@xpt| の類は次のものがあり，\LaTeX 本体で定義されています。
 %\begin{verbatim}
 %   \@vpt      5         \@vipt    6      \@viipt   7
 %   \@viiipt   8         \@ixpt    9      \@xpt    10
@@ -1313,27 +1313,27 @@
 %
 % \begin{macro}{\@setfontsize}
 %
-% $B$3$3$G$O(B |\@setfontsize| $B$NDj5A$r>/!9JQ99$7$F!$(B
-% $BCJMn$N;z2<$2(B |\parindent|$B!$(B
-% $BOBJ8J8;z4V$N%9%Z!<%9(B |\kanjiskip|$B!$(B
-% $BOBJ8!&2$J84V$N%9%Z!<%9(B |\xkanjiskip| $B$rJQ99$7$F$$$^$9!#(B
+% ここでは |\@setfontsize| の定義を少々変更して，
+% 段落の字下げ |\parindent|，
+% 和文文字間のスペース |\kanjiskip|，
+% 和文・欧文間のスペース |\xkanjiskip| を変更しています。
 %
-% |\kanjiskip| $B$O(B\pLaTeXe $B$G(B |0pt plus .4pt minus .5pt| $B$K@_Dj$7$F$$$^$9$,!$(B
-% $B$3$l$O$=$b$=$bJ8;z%5%$%:$NJQ99$K1~$8$FJQ$o$k$Y$-$b$N$G$9!#(B
-% $B$=$l$K!$%W%i%9$K$J$C$?$j%^%$%J%9$K$J$C$?$j$9$k$N$O!$(B
-% $BDI$$=P$7$HDI$$9~$_$N:.:_$,@8$8!$E}0l@-$r7g$-$^$9!#(B
-% $B$J$k$Y$/DI$$=P$7$K$J$k$h$&$K%W%i%9$NCM$@$1$K$7$?$$$H$3$m$G$9$,!$(B
-% $B$4$/$o$:$+$J%^%$%J%9$O5v$9$3$H$K$7$^$7$?!#(B
+% |\kanjiskip| は\pLaTeXe で |0pt plus .4pt minus .5pt| に設定していますが，
+% これはそもそも文字サイズの変更に応じて変わるべきものです。
+% それに，プラスになったりマイナスになったりするのは，
+% 追い出しと追い込みの混在が生じ，統一性を欠きます。
+% なるべく追い出しになるようにプラスの値だけにしたいところですが，
+% ごくわずかなマイナスは許すことにしました。
 %
-% |\xkanjiskip| $B$K$D$$$F$O!$;MJ,$D$^$jA43Q$N(B1/4$B$rI8=`$H$7$F!$(B
-% $BDI$$=P$9$?$a$K;0J,$"$k$$$OFsJ,$^$G1d$P$9$N$,0lHLE*$G$9$,!$(B
-% $B$3$3$G$O(BTimes$B$d(BPalatino$B$N%9%Z!<%9$,$[$\;MJ,$G$"$k$3$H$KCeL\$7$F!$(B
-% $B$3$l$K0lCW$5$;$F$$$^$9!#$3$l$J$i=q$/$H$-$K%9%Z!<%9$r6u$1$F$b(B
-% $B6u$1$J$/$F$bF1$8=PNO$K$J$j$^$9!#(B
+% |\xkanjiskip| については，四分つまり全角の1/4を標準として，
+% 追い出すために三分あるいは二分まで延ばすのが一般的ですが，
+% ここではTimesやPalatinoのスペースがほぼ四分であることに着目して，
+% これに一致させています。これなら書くときにスペースを空けても
+% 空けなくても同じ出力になります。
 %
-% |\parindent| $B$K$D$$$F$O!$(B0$B!J0J2<!K$G$J$1$l$PA43QI}!J(B1zw$B!K$KD>$7$^$9!#(B
+% |\parindent| については，0（以下）でなければ全角幅（1zw）に直します。
 %
-% [2008-02-18] |english| $B%*%W%7%g%s$G(B |\parindent| $B$r(B 1em $B$K$7$^$7$?!#(B
+% [2008-02-18] |english| オプションで |\parindent| を 1em にしました。
 %
 %    \begin{macrocode}
 \def\@setfontsize#1#2#3{%
@@ -1359,16 +1359,16 @@
 % \end{macro}
 %
 % \begin{macro}{\jsc@setfontsize}
-% $B%/%i%9%U%!%$%k$NFbIt$G$O!$3HBgN($b9MN8$7$?(B |\jsc@setfontsize| $B$r(B
-% |\@setfontsize| $B$NJQ$o$j$KMQ$$$k$3$H$K$7$^$9!#(B
+% クラスファイルの内部では，拡大率も考慮した |\jsc@setfontsize| を
+% |\@setfontsize| の変わりに用いることにします。
 %    \begin{macrocode}
 \def\jsc@setfontsize#1#2#3{%
   \@setfontsize#1{#2\jsc@mpt}{#3\jsc@mpt}}
 %    \end{macrocode}
 % \end{macro}
 %
-% $B$3$l$i$N%0%k!<$r$b$C$F$7$F$b9TJ,3d$,$G$-$J$$>l9g$O!$(B
-% |\emergencystretch| $B$KAJ$($^$9!#(B
+% これらのグルーをもってしても行分割ができない場合は，
+% |\emergencystretch| に訴えます。
 %
 %    \begin{macrocode}
 \emergencystretch 3zw
@@ -1378,16 +1378,16 @@
 % \begin{macro}{\narrowbaselines}
 % \begin{macro}{\widebaselines}
 %
-% $B2$J8MQ$K9T4V$r69$/$9$kO@M}JQ?t$H!$$=$l$r??!&56$K$9$k$?$a$N%3%^%s%I$G$9!#(B
+% 欧文用に行間を狭くする論理変数と，それを真・偽にするためのコマンドです。
 %
-% [2003-06-30] $B?t<0$KF~$k$H$3$m$G(B |\narrowbaselines|
-% $B$r<B9T$7$F$$$k$N$G(B |\abovedisplayskip| $BEy$,=i4|2=(B
-% $B$5$l$F$7$^$&$H$$$&(Bshintok$B$5$s$N$4;XE&$KBP$7$F!$(B
-% $B$7$C$]0&9%2H$5$s$,<!$N=$@5$r65$($F$/$@$5$$$^$7$?!#(B
+% [2003-06-30] 数式に入るところで |\narrowbaselines|
+% を実行しているので |\abovedisplayskip| 等が初期化
+% されてしまうというshintokさんのご指摘に対して，
+% しっぽ愛好家さんが次の修正を教えてくださいました。
 %
-% [2008-02-18] |english| $B%*%W%7%g%s$G:G=i$NCJMn$N%$%s%G%s%H$r$7$J$$$h$&$K$7$^$7$?!#(B
+% [2008-02-18] |english| オプションで最初の段落のインデントをしないようにしました。
 %
-% TODO: Hasumi$B$5$s(B [qa:54539] $B$N$4;XE&$O9MN8Cf$G$9!#(B
+% TODO: Hasumiさん [qa:54539] のご指摘は考慮中です。
 %
 %    \begin{macrocode}
 \newif\ifnarrowbaselines
@@ -1413,20 +1413,20 @@
 %
 % \begin{macro}{\normalsize}
 %
-% $BI8=`$N%U%)%s%H%5%$%:$H9TAw$j$rA*$V%3%^%s%I$G$9!#(B
+% 標準のフォントサイズと行送りを選ぶコマンドです。
 %
-% $BK\J8(B10$B%]%$%s%H$N$H$-$N9TAw$j$O!$(B
-% $B2$J8$NI8=`%/%i%9%U%!%$%k$G$O(B12$B%]%$%s%H!$(B
-% $B%"%9%-!<$NOBJ8%/%i%9%U%!%$%k$G$O(B15$B%]%$%s%H$K$J$C$F$$$^$9$,!$(B
-% $B$3$3$G$O(B16$B%]%$%s%H$K$7$^$7$?!#(B
-% $B$?$@$7(B |\narrowbaselines| $B$G2$J8MQ$N(B12$B%]%$%s%H$K$J$j$^$9!#(B
+% 本文10ポイントのときの行送りは，
+% 欧文の標準クラスファイルでは12ポイント，
+% アスキーの和文クラスファイルでは15ポイントになっていますが，
+% ここでは16ポイントにしました。
+% ただし |\narrowbaselines| で欧文用の12ポイントになります。
 %
-% $B8x>N(B10$B%]%$%s%H$NOBJ8%U%)%s%H$,Ls(B9.25$B%]%$%s%H(B
-% $B!J%"%9%-!<$N$b$N$N(B0.961$BG\!K$G$"$k$3$H$b$"$j!$(B
-% $B9TAw$j$,$+$J$j$f$C$?$j$H$7$?$H;W$$$^$9!#(B
-% $B<B:]!$(B$16/9.25 \approx 1.73$ $B$G$"$j!$(B
-% $BOBJ8$N?d>)CM$N0l$D!VFsJ,;MJ,!W!J(B1.75$B!K(B
-% $B$K6a$E$-$^$7$?!#(B
+% 公称10ポイントの和文フォントが約9.25ポイント
+% （アスキーのものの0.961倍）であることもあり，
+% 行送りがかなりゆったりとしたと思います。
+% 実際，$16/9.25 \approx 1.73$ であり，
+% 和文の推奨値の一つ「二分四分」（1.75）
+% に近づきました。
 %
 %    \begin{macrocode}
 \renewcommand{\normalsize}{%
@@ -1437,14 +1437,14 @@
   \fi
 %    \end{macrocode}
 %
-% $B?t<0$N>e$N%"%-!J(B|\abovedisplayskip|$B!K!$(B
-% $BC;$$?t<0$N>e$N%"%-!J(B|\abovedisplayshortskip|$B!K!$(B
-% $B?t<0$N2<$N%"%-!J(B|\belowdisplayshortskip|$B!K$N@_Dj$G$9!#(B
+% 数式の上のアキ（|\abovedisplayskip|），
+% 短い数式の上のアキ（|\abovedisplayshortskip|），
+% 数式の下のアキ（|\belowdisplayshortskip|）の設定です。
 %
-% [2003-02-16] $B$A$g$C$HJQ$($^$7$?!#(B
+% [2003-02-16] ちょっと変えました。
 %
-% [2009-08-26] \TeX\ Q\,\&\,A 52569$B$+$i;O$^$k5DO@$K$D$$$Fmu=d$7$F(B
-% $B$$$^$7$?$,!$7k6I!$HyD4@a$7$F$_$k$3$H$K$7$^$7$?!#(B
+% [2009-08-26] \TeX\ Q\,\&\,A 52569から始まる議論について逡巡して
+% いましたが，結局，微調節してみることにしました。
 %
 %    \begin{macrocode}
   \abovedisplayskip 11\jsc@mpt \@plus3\jsc@mpt \@minus4\jsc@mpt
@@ -1453,14 +1453,14 @@
   \belowdisplayshortskip \belowdisplayskip
 %    \end{macrocode}
 %
-% $B:G8e$K!$%j%9%H4D6-$N%H%C%W%l%Y%k$N%Q%i%a!<%?(B |\@listI| $B$r!$(B
-% |\@listi| $B$K%3%T!<$7$F$*$-$^$9!#(B|\@listI| $B$N@_Dj$O8e$G=P$F$-$^$9!#(B
+% 最後に，リスト環境のトップレベルのパラメータ |\@listI| を，
+% |\@listi| にコピーしておきます。|\@listI| の設定は後で出てきます。
 %
 %    \begin{macrocode}
   \let\@listi\@listI}
 %    \end{macrocode}
 %
-% $B$3$3$G<B:]$KI8=`%U%)%s%H%5%$%:$G=i4|2=$7$^$9!#(B
+% ここで実際に標準フォントサイズで初期化します。
 %
 %    \begin{macrocode}
 \normalsize
@@ -1474,10 +1474,10 @@
 % \begin{macro}{\Cvs}
 % \begin{macro}{\Chs}
 %
-% $B4p=`$H$J$kD9$5$N@_Dj$r$7$^$9!#(B
-% \pLaTeXe $B%+!<%M%k!J(B\texttt{plfonts.dtx}$B!K$G@k8@$5$l$F$$$k(B
-% $B%Q%i%a!<%?$K<B:]$NCM$r@_Dj$7$^$9!#(B
-% $B$?$H$($P(B |\Cwd| $B$O(B |\normalfont| $B$NA43QI}!J(B1zw$B!K$G$9!#(B
+% 基準となる長さの設定をします。
+% \pLaTeXe カーネル（\texttt{plfonts.dtx}）で宣言されている
+% パラメータに実際の値を設定します。
+% たとえば |\Cwd| は |\normalfont| の全角幅（1zw）です。
 %
 %    \begin{macrocode}
 \setbox0\hbox{\char\euc"A1A1}%
@@ -1495,13 +1495,13 @@
 %
 % \begin{macro}{\small}
 %
-% |\small| $B$b(B |\normalsize| $B$HF1MM$K@_Dj$7$^$9!#(B
-% $B9TAw$j$O!$(B|\normalsize| $B$,(B16$B%]%$%s%H$J$i!$(B
-% $B3d9g$+$i$9$l$P(B $16 \times 0.9 = 14.4$ $B%]%$%s%H$K$J$j$^$9$,!$(B
-% |\small| $B$N;H$o$lJ}$r9M$($F!$$3$3$G$OOBJ8(B13$B%]%$%s%H!$(B
-% $B2$J8(B11$B%]%$%s%H$H$7$^$9!#(B
-% $B$^$?!$(B|\topsep| $B$H(B |\parsep| $B$O!$85$O$=$l$>$l(B $4 \pm 2$$B!$(B$2 \pm 1$
-% $B%]%$%s%H$G$7$?$,!$$3$3$G$O%<%m!J(B|\z@|$B!K$K$7$^$7$?!#(B
+% |\small| も |\normalsize| と同様に設定します。
+% 行送りは，|\normalsize| が16ポイントなら，
+% 割合からすれば $16 \times 0.9 = 14.4$ ポイントになりますが，
+% |\small| の使われ方を考えて，ここでは和文13ポイント，
+% 欧文11ポイントとします。
+% また，|\topsep| と |\parsep| は，元はそれぞれ $4 \pm 2$，$2 \pm 1$
+% ポイントでしたが，ここではゼロ（|\z@|）にしました。
 %
 %    \begin{macrocode}
 \newcommand{\small}{%
@@ -1525,9 +1525,9 @@
 %
 % \begin{macro}{\footnotesize}
 %
-% |\footnotesize| $B$bF1MM$G$9!#(B
-% |\topsep| $B$H(B |\parsep| $B$O!$85$O$=$l$>$l(B $3 \pm 1$$B!$(B$2 \pm 1$
-% $B%]%$%s%H$G$7$?$,!$$3$3$G$O%<%m!J(B|\z@|$B!K$K$7$^$7$?!#(B
+% |\footnotesize| も同様です。
+% |\topsep| と |\parsep| は，元はそれぞれ $3 \pm 1$，$2 \pm 1$
+% ポイントでしたが，ここではゼロ（|\z@|）にしました。
 %
 %    \begin{macrocode}
 \newcommand{\footnotesize}{%
@@ -1558,14 +1558,14 @@
 % \begin{macro}{\Huge}
 % \begin{macro}{\HUGE}
 %
-% $B$=$l0J30$N%5%$%:$O!$K\J8$K;H$&$3$H$,$J$$$N$G!$(B
-% $BC1$K%U%)%s%H%5%$%:$H9TAw$j$@$1JQ99$7$^$9!#(B
-% $BFC$KCm0U$9$Y$-$O(B |\large| $B$G!$(B
-% $B$3$l$OFsCJAH$N$H$-$K@a8+=P$7$N%U%)%s%H$H$7$F;H$$!$(B
-% $B9TAw$j$r(B |\normalsize| $B$HF1$8$K$9$k$3$H$K$h$C$F!$(B
-% $B@a8+=P$7$,J#?t9T$K$o$?$C$F$bCJ4V$G9T$,B7$&$h$&$K$7$^$9!#(B
+% それ以外のサイズは，本文に使うことがないので，
+% 単にフォントサイズと行送りだけ変更します。
+% 特に注意すべきは |\large| で，
+% これは二段組のときに節見出しのフォントとして使い，
+% 行送りを |\normalsize| と同じにすることによって，
+% 節見出しが複数行にわたっても段間で行が揃うようにします。
 %
-% [2004-11-03] |\HUGE| $B$rDI2C!#(B
+% [2004-11-03] |\HUGE| を追加。
 %
 %    \begin{macrocode}
 \newcommand{\scriptsize}{\jsc@setfontsize\scriptsize\@viipt\@viiipt}
@@ -1593,30 +1593,30 @@
 % \end{macro}
 % \end{macro}
 %
-% $BJL9TN)$F?t<0$NCf$G$O(B |\narrowbaselines| $B$K$7$^$9!#(B
-% $BOBJ8$N9TAw$j$N$^$^$G$O!$9TNs$d>l9gJ,$1$N9TAw$j!$(B
-% $BO"J,?t$N9b$5$J$I$,ITD`9g$$$KBg$-$/$J$k$?$a$G$9!#(B
+% 別行立て数式の中では |\narrowbaselines| にします。
+% 和文の行送りのままでは，行列や場合分けの行送り，
+% 連分数の高さなどが不釣合いに大きくなるためです。
 %
-% $BK\J8Cf$N?t<0$NCf$G$O(B |\narrowbaselines| $B$K$7$F$$$^$;$s!#(B
-% $BK\J8Cf$G$O$J$k$Y$/9TAw$j$,JQ$o$k$h$&$JBg$-$$$b$N$r;H$o$:!$(B
-% $B9TNs$O(B |amsmath| $B$N(B |smallmatrix| $B4D6-$r;H$&$N$,$$$$$G$7$g$&!#(B
+% 本文中の数式の中では |\narrowbaselines| にしていません。
+% 本文中ではなるべく行送りが変わるような大きいものを使わず，
+% 行列は |amsmath| の |smallmatrix| 環境を使うのがいいでしょう。
 %
 %    \begin{macrocode}
 \everydisplay=\expandafter{\the\everydisplay \narrowbaselines}
 %    \end{macrocode}
 %
-% $B$7$+$7!$$3$N$*$+$2$GJL9T?t<0$N>e2<$N%9%Z!<%9$,>/$70c$C$F$7$^$$$^$7$?!#(B
-% $B$H$j$"$($:(B |amsmath| $B$N(B |equation| $B4X78$O(B |okumacro| $B$N$[$&$GF($2$F$$$^$9$,!$(B
-% $B$b$C$H$&$^$$F($2F;$,$"$l$P$*65$($/$@$5$$!#(B
+% しかし，このおかげで別行数式の上下のスペースが少し違ってしまいました。
+% とりあえず |amsmath| の |equation| 関係は |okumacro| のほうで逃げていますが，
+% もっとうまい逃げ道があればお教えください。
 %
-% $B8+=P$7MQ$N%U%)%s%H$O(B |\bfseries| $B8GDj$G$O$J$/!$(B|\headfont|
-% $B$H$$$&L?Na$GDj$a$k$3$H$K$7$^$9!#(B
-% $B$3$l$OB@%4%7%C%/$,;H$($k$H$-$O(B |\sffamily| |\bfseries|
-% $B$G$$$$$H;W$$$^$9$,!$DL>o$NCf%4%7%C%/$G$OC1$K(B |\sffamily|
-% $B$@$1$N$[$&$,$h$5$=$&$G$9!#(B
-% $B!X(Bp\LaTeXe $BH~J8=q:n@.F~Lg!Y!J(B1997$BG/!K$G$O(B |\sffamily|
-% |\fontseries{sbc}| $B$H$7$F?7%4(BM$B$H9g$o$;$^$7$?$,!$(B
-% |\fontseries{sbc}| $B$O$A$g$C$HI}$,69$$$h$&$K46$8$^$7$?!#(B
+% 見出し用のフォントは |\bfseries| 固定ではなく，|\headfont|
+% という命令で定めることにします。
+% これは太ゴシックが使えるときは |\sffamily| |\bfseries|
+% でいいと思いますが，通常の中ゴシックでは単に |\sffamily|
+% だけのほうがよさそうです。
+% 『p\LaTeXe 美文書作成入門』（1997年）では |\sffamily|
+% |\fontseries{sbc}| として新ゴMと合わせましたが，
+% |\fontseries{sbc}| はちょっと幅が狭いように感じました。
 %
 %    \begin{macrocode}
 % \newcommand{\headfont}{\bfseries}
@@ -1624,16 +1624,16 @@
 % \newcommand{\headfont}{\sffamily\fontseries{sbc}\selectfont}
 %    \end{macrocode}
 %
-% \section{$B%l%$%"%&%H(B}
+% \section{レイアウト}
 %
-% \paragraph{$BFsCJAH(B}
+% \paragraph{二段組}
 %
 % \begin{macro}{\columnsep}
 % \begin{macro}{\columnseprule}
 %
-% |\columnsep| $B$OFsCJAH$N$H$-$N:81&$NCJ4V$NI}$G$9!#(B
-% $B85$O(B10pt$B$G$7$?$,!$(B2zw$B$K$7$^$7$?!#(B
-% $B$3$N%9%Z!<%9$NCf1{$K(B |\columnseprule| $B$NI}$N7S@~$,0z$+$l$^$9!#(B
+% |\columnsep| は二段組のときの左右の段間の幅です。
+% 元は10ptでしたが，2zwにしました。
+% このスペースの中央に |\columnseprule| の幅の罫線が引かれます。
 %
 %    \begin{macrocode}
 %<!kiyou>\setlength\columnsep{2zw}
@@ -1643,17 +1643,17 @@
 % \end{macro}
 % \end{macro}
 %
-% \paragraph{$BCJMn(B}
+% \paragraph{段落}
 %
 % \begin{macro}{\lineskip}
 % \begin{macro}{\normallineskip}
 % \begin{macro}{\lineskiplimit}
 % \begin{macro}{\normallineskiplimit}
 %
-% $B>e2<$N9T$NJ8;z$,(B |\lineskiplimit| $B$h$j@\6a$7$?$i!$(B
-% |\lineskip| $B$h$j6a$E$+$J$$$h$&$K$7$^$9!#(B
-% $B85$O(B0pt$B$G$7$?$,(B1pt$B$KJQ99$7$^$7$?!#(B
-% \texttt{normal...} $B$NIU$$$?J}$OJ]B8MQ$G$9!#(B
+% 上下の行の文字が |\lineskiplimit| より接近したら，
+% |\lineskip| より近づかないようにします。
+% 元は0ptでしたが1ptに変更しました。
+% \texttt{normal...} の付いた方は保存用です。
 %
 %    \begin{macrocode}
 \setlength\lineskip{1\jsc@mpt}
@@ -1668,14 +1668,14 @@
 %
 % \begin{macro}{\baselinestretch}
 %
-% $B<B:]$N9TAw$j$,(B |\baselineskip| $B$N2?G\$+$rI=$9%^%/%m$G$9!#$?$H$($P(B
+% 実際の行送りが |\baselineskip| の何倍かを表すマクロです。たとえば
 % \begin{quote}
 %   |\renewcommand{\baselinestretch}{2}|
 % \end{quote}
-% $B$H$9$k$H!$9TAw$j$,DL>o$N(B2$BG\$K$J$j$^$9!#$?$@$7!$(B
-% $B$3$l$r@_Dj$9$k$H!$$?$H$((B |\baselineskip| $B$,?-=L$9$k$h$&$K(B
-% $B@_Dj$7$F$b!$9TAw$j$N?-=L$,$G$-$J$/$J$j$^$9!#(B
-% $B9TAw$j$N?-=L$O$7$J$$$N$,0lHLE*$G$9!#(B
+% とすると，行送りが通常の2倍になります。ただし，
+% これを設定すると，たとえ |\baselineskip| が伸縮するように
+% 設定しても，行送りの伸縮ができなくなります。
+% 行送りの伸縮はしないのが一般的です。
 %
 %    \begin{macrocode}
 \renewcommand{\baselinestretch}{}
@@ -1685,9 +1685,9 @@
 % \begin{macro}{\parskip}
 % \begin{macro}{\parindent}
 %
-% |\parskip| $B$OCJMn4V$NDI2C%9%Z!<%9$G$9!#(B
-% $B85$O(B 0pt plus 1pt $B$K$J$C$F$$$^$7$?$,!$$3$3$G$O%<%m$K$7$^$7$?!#(B
-% |\parindent| $B$OCJMn$N@hF,$N;z2<$2I}$G$9!#(B
+% |\parskip| は段落間の追加スペースです。
+% 元は 0pt plus 1pt になっていましたが，ここではゼロにしました。
+% |\parindent| は段落の先頭の字下げ幅です。
 %
 %    \begin{macrocode}
 \setlength\parskip{0\jsc@mpt}
@@ -1704,9 +1704,9 @@
 % \begin{macro}{\@medpenalty}
 % \begin{macro}{\@highpenalty}
 %
-% |\nopagebreak|$B!$(B|\nolinebreak| $B$O0z?t$K1~$8$F<!$N%Z%J%k%F%#CM(B
-% $B$N$&$A$I$l$+$rA*$V$h$&$K$J$C$F$$$^$9!#(B
-% $B$3$3$O%*%j%8%J%kDL$j$G$9!#(B
+% |\nopagebreak|，|\nolinebreak| は引数に応じて次のペナルティ値
+% のうちどれかを選ぶようになっています。
+% ここはオリジナル通りです。
 %
 %    \begin{macrocode}
 \@lowpenalty   51
@@ -1719,7 +1719,7 @@
 %
 % \begin{macro}{\interlinepenalty}
 %
-% $BCJMnCf$N2~%Z!<%8$N%Z%J%k%F%#$G$9!#%G%U%)%k%H$O(B 0 $B$G$9!#(B
+% 段落中の改ページのペナルティです。デフォルトは 0 です。
 %
 %    \begin{macrocode}
 % \interlinepenalty 0
@@ -1728,33 +1728,33 @@
 %
 % \begin{macro}{\brokenpenalty}
 %
-% $B%Z!<%8$N:G8e$N9T$,%O%$%U%s$G=*$o$k:]$N%Z%J%k%F%#$G$9!#(B
-% $B%G%U%)%k%H$O(B 100 $B$G$9!#(B
+% ページの最後の行がハイフンで終わる際のペナルティです。
+% デフォルトは 100 です。
 %
 %    \begin{macrocode}
 % \brokenpenalty 100
 %    \end{macrocode}
 % \end{macro}
 %
-% \subsection{$B%Z!<%8%l%$%"%&%H(B}
+% \subsection{ページレイアウト}
 %
-% \paragraph{$B=DJ}8~$N%9%Z!<%9(B}
+% \paragraph{縦方向のスペース}
 %
 % \begin{macro}{\headheight}
 % \begin{macro}{\topskip}
 %
-% |\topskip| $B$OK\J8NN0h>eC<$HK\J8(B1$B9TL\$N%Y!<%9%i%$%s$H$N5wN%$G$9!#(B
-% $B$"$^$j$.$j$.$j$NCM$K$9$k$H!$K\J8Cf$K(B $\int$ $B$N$h$&$J9b$$J8;z$,(B
-% $BF~$C$?$H$-$K(B1$B9TL\$N%Y!<%9%i%$%s$,B>$N%Z!<%8$h$j2<$,$C$F$7$^$$$^$9!#(B
-% $B$3$3$G$OK\J8$N8x>N%U%)%s%H%5%$%:!J(B10pt$B!K$K$7$^$9!#(B
+% |\topskip| は本文領域上端と本文1行目のベースラインとの距離です。
+% あまりぎりぎりの値にすると，本文中に $\int$ のような高い文字が
+% 入ったときに1行目のベースラインが他のページより下がってしまいます。
+% ここでは本文の公称フォントサイズ（10pt）にします。
 %
-% [2003-06-26] |\headheight| $B$O%X%C%@$N9b$5$G!$(B
-% $B85$O(B12pt$B$G$7$?$,!$?7%I%-%e%a%s%H%/%i%9$G$O(B |\topskip|
-% $B$HEy$7$/$7$F$$$^$7$?!#$H$3$m$,!$(B|fancyhdr| $B%Q%C%1!<%8(B
-% $B$G(B |\headheight| $B$,>.$5$$$H$*$+$7$$$3$H$K$J$k$h$&$G$9(B
-% $B$N$G!$(B2$BG\$KA}$d$7$^$7$?!#Be$o$j$K!$HGLL$N>e2<B7$($N(B
-% $B7W;;$G$O(B |\headheight| $B$G$O$J$/(B |\topskip| $B$r;H$&(B
-% $B$3$H$K$7$^$7$?!#(B
+% [2003-06-26] |\headheight| はヘッダの高さで，
+% 元は12ptでしたが，新ドキュメントクラスでは |\topskip|
+% と等しくしていました。ところが，|fancyhdr| パッケージ
+% で |\headheight| が小さいとおかしいことになるようです
+% ので，2倍に増やしました。代わりに，版面の上下揃えの
+% 計算では |\headheight| ではなく |\topskip| を使う
+% ことにしました。
 %
 %    \begin{macrocode}
 \setlength\topskip{10\jsc@mpt}
@@ -1769,12 +1769,12 @@
 %
 % \begin{macro}{\footskip}
 %
-% |\footskip| $B$OK\J8NN0h2<C<$H%U%C%?2<C<$H$N5wN%$G$9!#(B
-% $BI8=`%/%i%9%U%!%$%k$G$O!$(Bbook $B$G(B0.35in$B!JLs(B8.89mm$B!K!$(B
-% book $B0J30$G(B30pt$B!JLs(B10.54mm$B!K$H$J$C$F$$$^$7$?$,!$(B
-% $B$3$3$G$O(BA4$BH=$N$H$-$A$g$&$I(B1cm$B$H$J$k$h$&$K!$(B
-% |\paperheight| $B$N(B0.03367$BG\!J:G>.(B |\baselineskip|$B!K$H$7$^$7$?!#(B
-% $B=q@R$K$D$$$F$O!$%U%C%?$O;H$o$J$$$3$H$K$7$F!$%<%m$K$7$^$7$?!#(B
+% |\footskip| は本文領域下端とフッタ下端との距離です。
+% 標準クラスファイルでは，book で0.35in（約8.89mm），
+% book 以外で30pt（約10.54mm）となっていましたが，
+% ここではA4判のときちょうど1cmとなるように，
+% |\paperheight| の0.03367倍（最小 |\baselineskip|）としました。
+% 書籍については，フッタは使わないことにして，ゼロにしました。
 %
 %    \begin{macrocode}
 %<*article|kiyou>
@@ -1803,10 +1803,10 @@
 %
 % \begin{macro}{\headsep}
 %
-% |\headsep| $B$O%X%C%@2<C<$HK\J8NN0h>eC<$H$N5wN%$G$9!#(B
-% $B85$O(B book $B$G(B18pt$B!JLs(B6.33mm$B!K!$(B
-% $B$=$l0J30$G(B25pt$B!JLs(B8.79mm$B!K$K$J$C$F$$$^$7$?!#(B
-% $B$3$3$G$O(B article $B$O(B |\footskip| $-$ |\topskip| $B$H$7$^$7$?!#(B
+% |\headsep| はヘッダ下端と本文領域上端との距離です。
+% 元は book で18pt（約6.33mm），
+% それ以外で25pt（約8.79mm）になっていました。
+% ここでは article は |\footskip| $-$ |\topskip| としました。
 %
 %    \begin{macrocode}
 %<*article>
@@ -1838,42 +1838,42 @@
 %
 % \begin{macro}{\maxdepth}
 %
-% |\maxdepth| $B$OK\J8:G2<9T$N:GBg$N?<$5$G!$(B
-% plain \TeX $B$d(B\LaTeX~2.09$B$G$O(B4pt$B$K8GDj$G$7$?!#(B
-% \LaTeX2e $B$G$O(B |\maxdepth| $+$ |\topskip| $B$rK\J8%U%)%s%H%5%$%:(B
-% $B$N(B1.5$BG\$K$7$?$$$N$G$9$,!$(B|\topskip| $B$OK\J8%U%)%s%H%5%$%:(B
-% $B!J$3$3$G$O(B10pt$B!K$KEy$7$$$N$G!$7k6I(B |\maxdepth| $B$O(B |\topskip|
-% $B$NH>J,$NCM!J6qBNE*$K$O(B5pt$B!K$K$7$^$9!#(B
+% |\maxdepth| は本文最下行の最大の深さで，
+% plain \TeX や\LaTeX~2.09では4ptに固定でした。
+% \LaTeX2e では |\maxdepth| $+$ |\topskip| を本文フォントサイズ
+% の1.5倍にしたいのですが，|\topskip| は本文フォントサイズ
+% （ここでは10pt）に等しいので，結局 |\maxdepth| は |\topskip|
+% の半分の値（具体的には5pt）にします。
 %
 %    \begin{macrocode}
 \setlength\maxdepth{.5\topskip}
 %    \end{macrocode}
 % \end{macro}
 %
-% \paragraph{$BK\J8$NI}$H9b$5(B}
+% \paragraph{本文の幅と高さ}
 %
 % \begin{macro}{\fullwidth}
 %
-% $BK\J8$NI}$,A43Q(B40$BJ8;z$rD6$($k$HFI$_$K$/$/$J$j$^$9!#(B
-% $B$=$3$G!$=q@R$N>l9g$K8B$C$F!$(B
-% $B;f$NI}$,9-$$$H$-$O30B&$N%^!<%8%s$rM>J,$K$H$C$FA43Q(B40$BJ8;z$K2!$(!$(B
-% $B%X%C%@$d%U%C%?$OK\J8NN0h$h$j9-$/<h$k$3$H$K$7$^$9!#(B
-% $B$3$N$H$-%X%C%@$d%U%C%?$NI}$rI=$9(B |\fullwidth| $B$H$$$&D9$5$rDj5A$7$^$9!#(B
+% 本文の幅が全角40文字を超えると読みにくくなります。
+% そこで，書籍の場合に限って，
+% 紙の幅が広いときは外側のマージンを余分にとって全角40文字に押え，
+% ヘッダやフッタは本文領域より広く取ることにします。
+% このときヘッダやフッタの幅を表す |\fullwidth| という長さを定義します。
 %
 %    \begin{macrocode}
 \newdimen\fullwidth
 %    \end{macrocode}
 %
-% $B$3$N(B |\fullwidth| $B$O(B article $B$G$O;fI}(B |\paperwidth|$B$N(B0.76$BG\$rD6$($J$$(B
-% $BA43QI}$N@0?tG\!JFsCJAH$G$OA43QI}$N6v?tG\!K$K$7$^$9!#(B0.76$BG\$H$$$&?tCM$O(B
-% A4$B=DCV$-$N>l9g$K;fI}$+$iLs(B2$B%$%s%A$r0z$$$?CM$K$J$k$h$&$KA*$S$^$7$?!#(B
-% book $B$G$O;fI}$+$i(B36$B%_%j$r0z$$$?CM$K$7$^$7$?!#(B
+% この |\fullwidth| は article では紙幅 |\paperwidth|の0.76倍を超えない
+% 全角幅の整数倍（二段組では全角幅の偶数倍）にします。0.76倍という数値は
+% A4縦置きの場合に紙幅から約2インチを引いた値になるように選びました。
+% book では紙幅から36ミリを引いた値にしました。
 %
 % \begin{macro}{\textwidth}
 %
-% $B=q@R0J30$G$OK\J8NN0h$NI}(B |\textwidth| $B$O(B |\fullwidth| $B$HEy$7$/$7$^$9!#(B
-% |article| $B$G$O(BA4$B=DCV$-$G(B49$BJ8;z$H$J$j$^$9!#(B
-% $BK?3X2q;o%9%?%$%k$G$O(B50zw$B!J(B25$BJ8;z!_(B2$BCJ!K!\CJ4V(B8mm$B$H$7$^$9!#(B
+% 書籍以外では本文領域の幅 |\textwidth| は |\fullwidth| と等しくします。
+% |article| ではA4縦置きで49文字となります。
+% 某学会誌スタイルでは50zw（25文字×2段）＋段間8mmとします。
 %
 %    \begin{macrocode}
 %<*article>
@@ -1920,24 +1920,24 @@
 %
 % \begin{macro}{\textheight}
 %
-% $B;f$N9b$5(B |\paperheight| $B$O!$(B1$B%$%s%A$H(B |\topmargin|
-% $B$H(B |\headheight| $B$H(B |\headsep| $B$H(B |\textheight|
-% $B$H(B |\footskip| $B$H%Z!<%82<It$NM>Gr$r2C$($?$b$N$G$9!#(B
+% 紙の高さ |\paperheight| は，1インチと |\topmargin|
+% と |\headheight| と |\headsep| と |\textheight|
+% と |\footskip| とページ下部の余白を加えたものです。
 %
-% $BK\J8ItJ,$N9b$5(B |\textheight| $B$O!$(B
-% $B;f$N9b$5(B |\paperheight| $B$N(B0.83$BG\$+$i!$(B
-% $B%X%C%@$N9b$5!$%X%C%@$HK\J8$N5wN%!$K\J8$H%U%C%?2<C<$N5wN%!$(B
-% |\topskip| $B$r0z$-!$(B
-% $B$=$l$r(B |\baselineskip| $B$NG\?t$K@Z$j<N$F!$(B
-% $B:G8e$K(B |\topskip| $B$r2C$($^$9!#(B
-% $BG0$N$?$a(B0.1$B%]%$%s%HM>J,$K2C$($F$*$-$^$9!#(B
-% 0.83$BG\$H$$$&?tCM$O!$(BA4$B=DCV$-$N>l9g$K;f$N9b$5$+$i(B
-% $B>e2<%^!<%8%s3FLs(B1$B%$%s%A$r0z$$$?CM$K$J$k$h$&$KA*$S$^$7$?!#(B
+% 本文部分の高さ |\textheight| は，
+% 紙の高さ |\paperheight| の0.83倍から，
+% ヘッダの高さ，ヘッダと本文の距離，本文とフッタ下端の距離，
+% |\topskip| を引き，
+% それを |\baselineskip| の倍数に切り捨て，
+% 最後に |\topskip| を加えます。
+% 念のため0.1ポイント余分に加えておきます。
+% 0.83倍という数値は，A4縦置きの場合に紙の高さから
+% 上下マージン各約1インチを引いた値になるように選びました。
 %
-% $BK?3X2q;o%9%?%$%k$G$O(B44$B9T$K$7$^$9!#(B
+% 某学会誌スタイルでは44行にします。
 %
-% [2003-06-26] |\headheight| $B$r(B |\topskip| $B$KD>$7$^$7$?!#(B
-% $B0JA0$O$3$NFs$D$OCM$,F1$8$G$"$C$?$N$G!$JQ2=$O$J$$$O$:$G$9!#(B
+% [2003-06-26] |\headheight| を |\topskip| に直しました。
+% 以前はこの二つは値が同じであったので，変化はないはずです。
 %
 %    \begin{macrocode}
 %<*article|book>
@@ -1963,14 +1963,14 @@
 %
 % \begin{macro}{\flushbottom}
 %
-% [2016-07-18] |\textheight| $B$KG0$N$?$a(B0.1$B%]%$%s%HM>M5$r;}$?$;$F(B
-% $B$$$k$N$HF1MM$K!$(B|\flushbottom| $B$K$bM>M5$r;}$?$;$^$9!#(B
-% $B85$N(B\LaTeXe $B$G$N40A4$J(B |\flushbottom| $B$NDj5A$O(B
+% [2016-07-18] |\textheight| に念のため0.1ポイント余裕を持たせて
+% いるのと同様に，|\flushbottom| にも余裕を持たせます。
+% 元の\LaTeXe での完全な |\flushbottom| の定義は
 %\begin{verbatim}
 %  \def\flushbottom{%
 %    \let\@textbottom\relax \let\@texttop\relax}
 %\end{verbatim}
-% $B$G$9$,!$<!$N$h$&$K$7$^$9!#(B
+% ですが，次のようにします。
 %
 %    \begin{macrocode}
 \def\flushbottom{%
@@ -1982,8 +1982,8 @@
 % \begin{macro}{\marginparsep}
 % \begin{macro}{\marginparpush}
 %
-% |\marginparsep| $B$OMs30$N=q$-9~$_$HK\J8$H$N4V3V$G$9!#(B
-% |\marginparpush| $B$OMs30$N=q$-9~$_$I$&$7$N:G>.$N4V3V$G$9!#(B
+% |\marginparsep| は欄外の書き込みと本文との間隔です。
+% |\marginparpush| は欄外の書き込みどうしの最小の間隔です。
 %
 %    \begin{macrocode}
 \setlength\marginparsep{\columnsep}
@@ -1995,12 +1995,12 @@
 % \begin{macro}{\oddsidemargin}
 % \begin{macro}{\evensidemargin}
 %
-% $B$=$l$>$l4q?t%Z!<%8!$6v?t%Z!<%8$N:8%^!<%8%s$+$i(B1$B%$%s%A0z$$$?CM$G$9!#(B
-% $BJRLL0u:~$G$O(B |\oddsidemargin| $B$,;H$o$l$^$9!#(B
-% \TeX $B$O>e!&:8%^!<%8%s$K(B |1truein| $B$rA^F~$7$^$9$,!$(B
-% $B%H%s%\4X78$N%*%W%7%g%s$,;XDj$5$l$k$H(Bp\LaTeXe $B!J(B|plcore.ltx|$B!K(B
-% $B$O%H%s%\$NFbB&$K(B |1in| $B$N%9%Z!<%9!J(B|1truein| $B$G$O$J$/!K$rA^F~$9$k$N$G!$(B
-% $B>l9gJ,$1$7$F$$$^$9!#(B
+% それぞれ奇数ページ，偶数ページの左マージンから1インチ引いた値です。
+% 片面印刷では |\oddsidemargin| が使われます。
+% \TeX は上・左マージンに |1truein| を挿入しますが，
+% トンボ関係のオプションが指定されるとp\LaTeXe （|plcore.ltx|）
+% はトンボの内側に |1in| のスペース（|1truein| ではなく）を挿入するので，
+% 場合分けしています。
 %
 %    \begin{macrocode}
 \setlength{\oddsidemargin}{\paperwidth}
@@ -2022,10 +2022,10 @@
 %
 % \begin{macro}{\marginparwidth}
 %
-% |\marginparwidth| $B$OMs30$N=q$-9~$_$N2#I}$G$9!#(B
-% $B30B&%^!<%8%s$NI}!J(B|\evensidemargin| $+$ 1$B%$%s%A!K$+$i(B1$B%;%s%A$r0z$-!$(B
-% $B$5$i$K(B |\marginparsep|$B!JMs30$N=q$-9~$_$HK\J8$N%"%-!K$r0z$$$?CM$K(B
-% $B$7$^$7$?!#:G8e$K(B1\,zw$B$N@0?tG\$K@Z$j<N$F$^$9!#(B
+% |\marginparwidth| は欄外の書き込みの横幅です。
+% 外側マージンの幅（|\evensidemargin| $+$ 1インチ）から1センチを引き，
+% さらに |\marginparsep|（欄外の書き込みと本文のアキ）を引いた値に
+% しました。最後に1\,zwの整数倍に切り捨てます。
 %
 %    \begin{macrocode}
 \setlength\marginparwidth{\paperwidth}
@@ -2042,11 +2042,11 @@
 %
 % \begin{macro}{\topmargin}
 %
-% $B>e%^!<%8%s!J;f$N>eC<$H%X%C%@>eC<$N5wN%!K(B
-% $B$+$i(B1$B%$%s%A0z$$$?CM$G$9!#(B
+% 上マージン（紙の上端とヘッダ上端の距離）
+% から1インチ引いた値です。
 %
-% [2003-06-26] |\headheight| $B$r(B |\topskip| $B$KD>$7$^$7$?!#(B
-% $B0JA0$O$3$NFs$D$OCM$,F1$8$G$"$C$?$N$G!$JQ2=$O$J$$$O$:$G$9!#(B
+% [2003-06-26] |\headheight| を |\topskip| に直しました。
+% 以前はこの二つは値が同じであったので，変化はないはずです。
 %
 %    \begin{macrocode}
 \setlength\topmargin{\paperheight}
@@ -2068,13 +2068,13 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \paragraph{$B5SCm(B}
+% \paragraph{脚注}
 %
 % \begin{macro}{\footnotesep}
 %
-% $B3F5SCm$NF,$KF~$k;YCl!J(Bstrut$B!K$N9b$5$G$9!#(B
-% $B5SCm4V$KM>J,$N%"%-$,F~$i$J$$$h$&$K!$(B
-% |\footnotesize| $B$N;YCl$N9b$5!J9TAw$j$N(B0.7$BG\!K$KEy$7$/$7$^$9!#(B
+% 各脚注の頭に入る支柱（strut）の高さです。
+% 脚注間に余分のアキが入らないように，
+% |\footnotesize| の支柱の高さ（行送りの0.7倍）に等しくします。
 %
 %    \begin{macrocode}
 {\footnotesize\global\setlength\footnotesep{\baselineskip}}
@@ -2084,27 +2084,27 @@
 %
 % \begin{macro}{\footins}
 %
-% |\skip\footins| $B$OK\J8$N:G=*9T$H:G=i$N5SCm$H$N4V$N5wN%$G$9!#(B
-% $BI8=`$N(B10$B%]%$%s%H%/%i%9$G$O(B 9 plus 4 minus 2 $B%]%$%s%H$K$J$C$F$$$^$9$,!$(B
-% $BOBJ8$N9TAw$j$r9M$($F$b$&$A$g$C$HBg$-$/$7$^$9!#(B
+% |\skip\footins| は本文の最終行と最初の脚注との間の距離です。
+% 標準の10ポイントクラスでは 9 plus 4 minus 2 ポイントになっていますが，
+% 和文の行送りを考えてもうちょっと大きくします。
 %
 %    \begin{macrocode}
 \setlength{\skip\footins}{16\jsc@mpt \@plus 5\jsc@mpt \@minus 2\jsc@mpt}
 %    \end{macrocode}
 % \end{macro}
 %
-% \paragraph{$B%U%m!<%H4XO"(B}
+% \paragraph{フロート関連}
 %
-% $B%U%m!<%H!J?^!$I=!K4XO"$N%Q%i%a!<%?$O(B\LaTeXe $BK\BN$GDj5A$5$l$F$$$^$9$,!$(B
-% $B$3$3$G@_DjJQ99$7$^$9!#K\J8%Z!<%8!JK\J8$H%U%m!<%H$,6&B8$9$k%Z!<%8!K(B
-% $B$A$J$_$K!$%+%&%s%?$OFbIt$G$O(B |\c@| $B$rL>A0$K4'$7$?%^%/%m$K$J$C$F$$$^$9!#(B
-% $B$H%U%m!<%H$@$1$N%Z!<%8$G@_Dj$,0[$J$j$^$9!#(B
+% フロート（図，表）関連のパラメータは\LaTeXe 本体で定義されていますが，
+% ここで設定変更します。本文ページ（本文とフロートが共存するページ）
+% ちなみに，カウンタは内部では |\c@| を名前に冠したマクロになっています。
+% とフロートだけのページで設定が異なります。
 %
 % \begin{macro}{\c@topnumber}
 %
-% |topnumber| $B%+%&%s%?$OK\J8%Z!<%8>eIt$N%U%m!<%H$N:GBg?t$G$9!#(B
+% |topnumber| カウンタは本文ページ上部のフロートの最大数です。
 %
-% [2003-08-23] $B$A$g$C$HA}$d$7$^$7$?!#(B
+% [2003-08-23] ちょっと増やしました。
 %
 %    \begin{macrocode}
 \setcounter{topnumber}{9}
@@ -2113,8 +2113,8 @@
 %
 % \begin{macro}{\topfraction}
 %
-% $BK\J8%Z!<%8>eIt$N%U%m!<%H$,@jM-$G$-$k:GBg$N3d9g$G$9!#(B
-% $B%U%m!<%H$,F~$j$d$9$$$h$&$K!$85$NCM(B 0.7 $B$r(B 0.8 [2003-08-23: 0.85] $B$KJQ$($F$"$j$^$9!#(B
+% 本文ページ上部のフロートが占有できる最大の割合です。
+% フロートが入りやすいように，元の値 0.7 を 0.8 [2003-08-23: 0.85] に変えてあります。
 %
 %    \begin{macrocode}
 \renewcommand{\topfraction}{.85}
@@ -2123,9 +2123,9 @@
 %
 % \begin{macro}{\c@bottomnumber}
 %
-% |bottomnumber| $B%+%&%s%?$OK\J8%Z!<%82<It$N%U%m!<%H$N:GBg?t$G$9!#(B
+% |bottomnumber| カウンタは本文ページ下部のフロートの最大数です。
 %
-% [2003-08-23] $B$A$g$C$HA}$d$7$^$7$?!#(B
+% [2003-08-23] ちょっと増やしました。
 %
 %    \begin{macrocode}
 \setcounter{bottomnumber}{9}
@@ -2134,7 +2134,7 @@
 %
 % \begin{macro}{\bottomfraction}
 %
-% $BK\J8%Z!<%82<It$N%U%m!<%H$,@jM-$G$-$k:GBg$N3d9g$G$9!#85$O(B 0.3 $B$G$7$?!#(B
+% 本文ページ下部のフロートが占有できる最大の割合です。元は 0.3 でした。
 %
 %    \begin{macrocode}
 \renewcommand{\bottomfraction}{.8}
@@ -2143,9 +2143,9 @@
 %
 % \begin{macro}{\c@totalnumber}
 %
-% |totalnumber| $B%+%&%s%?$OK\J8%Z!<%8$KF~$j$&$k%U%m!<%H$N:GBg?t$G$9!#(B
+% |totalnumber| カウンタは本文ページに入りうるフロートの最大数です。
 %
-% [2003-08-23] $B$A$g$C$HA}$d$7$^$7$?!#(B
+% [2003-08-23] ちょっと増やしました。
 %
 %    \begin{macrocode}
 \setcounter{totalnumber}{20}
@@ -2154,8 +2154,8 @@
 %
 % \begin{macro}{\textfraction}
 %
-% $BK\J8%Z!<%8$K:GDc8BF~$i$J$1$l$P$J$i$J$$K\J8$N3d9g$G$9!#(B
-% $B%U%m!<%H$,F~$j$d$9$$$h$&$K85$N(B 0.2 $B$r(B 0.1 $B$KJQ$($^$7$?!#(B
+% 本文ページに最低限入らなければならない本文の割合です。
+% フロートが入りやすいように元の 0.2 を 0.1 に変えました。
 %
 %    \begin{macrocode}
 \renewcommand{\textfraction}{.1}
@@ -2164,8 +2164,8 @@
 %
 % \begin{macro}{\floatpagefraction}
 %
-% $B%U%m!<%H$@$1$N%Z!<%8$G$N%U%m!<%H$N:G>.3d9g$G$9!#(B
-% $B$3$l$b(B 0.5 $B$r(B 0.8 $B$KJQ$($F$"$j$^$9!#(B
+% フロートだけのページでのフロートの最小割合です。
+% これも 0.5 を 0.8 に変えてあります。
 %
 %    \begin{macrocode}
 \renewcommand{\floatpagefraction}{.8}
@@ -2174,10 +2174,10 @@
 %
 % \begin{macro}{\c@dbltopnumber}
 %
-% $BFsCJAH$N$H$-K\J8%Z!<%8>eIt$K=PNO$G$-$k(B
-% $BCJH4$-%U%m!<%H$N:GBg?t$G$9!#(B
+% 二段組のとき本文ページ上部に出力できる
+% 段抜きフロートの最大数です。
 %
-% [2003-08-23] $B$A$g$C$HA}$d$7$^$7$?!#(B
+% [2003-08-23] ちょっと増やしました。
 %
 %    \begin{macrocode}
 \setcounter{dbltopnumber}{9}
@@ -2186,9 +2186,9 @@
 %
 % \begin{macro}{\dbltopfraction}
 %
-% $BFsCJAH$N$H$-K\J8%Z!<%8>eIt$K=PNO$G$-$k(B
-% $BCJH4$-%U%m!<%H$,@j$a$&$k:GBg$N3d9g$G$9!#(B
-% 0.7 $B$r(B 0.8 $B$KJQ$($F$"$j$^$9!#(B
+% 二段組のとき本文ページ上部に出力できる
+% 段抜きフロートが占めうる最大の割合です。
+% 0.7 を 0.8 に変えてあります。
 %
 %    \begin{macrocode}
 \renewcommand{\dbltopfraction}{.8}
@@ -2197,9 +2197,9 @@
 %
 % \begin{macro}{\dblfloatpagefraction}
 %
-% $BFsCJAH$N$H$-%U%m!<%H$@$1$N%Z!<%8$KF~$k$Y$-(B
-% $BCJH4$-%U%m!<%H$N:G>.3d9g$G$9!#(B
-% 0.5 $B$r(B 0.8 $B$KJQ$($F$"$j$^$9!#(B
+% 二段組のときフロートだけのページに入るべき
+% 段抜きフロートの最小割合です。
+% 0.5 を 0.8 に変えてあります。
 %
 %    \begin{macrocode}
 \renewcommand{\dblfloatpagefraction}{.8}
@@ -2210,9 +2210,9 @@
 % \begin{macro}{\textfloatsep}
 % \begin{macro}{\intextsep}
 %
-% |\floatsep| $B$O%Z!<%8>eIt!&2<It$N%U%m!<%H4V$N5wN%$G$9!#(B
-% |\textfloatsep| $B$O%Z!<%8>eIt!&2<It$N%U%m!<%H$HK\J8$H$N5wN%$G$9!#(B
-% |\intextsep| $B$OK\J8$NESCf$K=PNO$5$l$k%U%m!<%H$HK\J8$H$N5wN%$G$9!#(B
+% |\floatsep| はページ上部・下部のフロート間の距離です。
+% |\textfloatsep| はページ上部・下部のフロートと本文との距離です。
+% |\intextsep| は本文の途中に出力されるフロートと本文との距離です。
 %
 %    \begin{macrocode}
 \setlength\floatsep    {12\jsc@mpt \@plus 2\jsc@mpt \@minus 2\jsc@mpt}
@@ -2226,7 +2226,7 @@
 % \begin{macro}{\dblfloatsep}
 % \begin{macro}{\dbltextfloatsep}
 %
-% $BFsCJAH$N$H$-$NCJH4$-$N%U%m!<%H$K$D$$$F$NCM$G$9!#(B
+% 二段組のときの段抜きのフロートについての値です。
 %
 %    \begin{macrocode}
 \setlength\dblfloatsep    {12\jsc@mpt \@plus 2\jsc@mpt \@minus 2\jsc@mpt}
@@ -2239,10 +2239,10 @@
 % \begin{macro}{\@fpsep}
 % \begin{macro}{\@fpbot}
 %
-% $B%U%m!<%H$@$1$N%Z!<%8$KF~$k%0%k!<$G$9!#(B
-% |\@fptop| $B$O%Z!<%8>eIt!$(B
-% |\@fpbot| $B$O%Z!<%82<It!$(B
-% |\@fpsep| $B$O%U%m!<%H4V$KF~$j$^$9!#(B
+% フロートだけのページに入るグルーです。
+% |\@fptop| はページ上部，
+% |\@fpbot| はページ下部，
+% |\@fpsep| はフロート間に入ります。
 %
 %    \begin{macrocode}
 \setlength\@fptop{0\jsc@mpt \@plus 1fil}
@@ -2257,7 +2257,7 @@
 % \begin{macro}{\@dblfpsep}
 % \begin{macro}{\@dblfpbot}
 %
-% $BCJH4$-%U%m!<%H$K$D$$$F$NCM$G$9!#(B
+% 段抜きフロートについての値です。
 %
 %    \begin{macrocode}
 \setlength\@dblfptop{0\jsc@mpt \@plus 1fil}
@@ -2268,62 +2268,62 @@
 % \end{macro}
 % \end{macro}
 %
-% \section{$B%Z!<%8%9%?%$%k(B}\label{sec:pagestyle}
+% \section{ページスタイル}\label{sec:pagestyle}
 %
-% $B%Z!<%8%9%?%$%k$H$7$F!$(B\LaTeXe $B!J2$J8HG!K$NI8=`%/%i%9(B
-% $B$G$O(B |empty|$B!$(B|plain|$B!$(B|headings|$B!$(B|myheadings| $B$,$"$j$^$9!#(B
-% $B$3$N$&$A(B |empty|$B!$(B|plain| $B%9%?%$%k$O(B\LaTeXe $BK\BN(B
-% $B$GDj5A$5$l$F$$$^$9!#(B 
+% ページスタイルとして，\LaTeXe （欧文版）の標準クラス
+% では |empty|，|plain|，|headings|，|myheadings| があります。
+% このうち |empty|，|plain| スタイルは\LaTeXe 本体
+% で定義されています。 
 %
-% $B%"%9%-!<$N%/%i%9%U%!%$%k$G$O(B |headnombre|$B!$(B|footnombre|$B!$(B
-% |bothstyle|$B!$(B|jpl@in| $B$,DI2C$5$l$F$$$^$9$,!$(B
-% $B$3$3$G$O2$J8I8=`$N$b$N$@$1$K$7$^$7$?!#(B
+% アスキーのクラスファイルでは |headnombre|，|footnombre|，
+% |bothstyle|，|jpl@in| が追加されていますが，
+% ここでは欧文標準のものだけにしました。
 %
-% $B%Z!<%8%9%?%$%k$O(B |\ps@...| $B$N7A$N%^%/%m$GDj5A$5$l$F$$$^$9!#(B
+% ページスタイルは |\ps@...| の形のマクロで定義されています。
 %
 % \begin{macro}{\@evenhead}
 % \begin{macro}{\@oddhead}
 % \begin{macro}{\@evenfoot}
 % \begin{macro}{\@oddfoot}
 %
-% |\@oddhead|$B!$(B|\@oddfoot|$B!$(B|\@evenhead|$B!$(B|\@evenfoot| $B$O(B
-% $B6v?t!&4q?t%Z!<%8$NCl!J%X%C%@!$%U%C%?!K$r=PNO$9$kL?Na$G$9!#(B
-% $B$3$l$i$O(B |\fullwidth| $BI}$N(B |\hbox| $B$NCf$G8F$S=P$5$l$^$9!#(B
-% |\ps@...| $B$NCf$GDj5A$7$F$*$-$^$9!#(B
+% |\@oddhead|，|\@oddfoot|，|\@evenhead|，|\@evenfoot| は
+% 偶数・奇数ページの柱（ヘッダ，フッタ）を出力する命令です。
+% これらは |\fullwidth| 幅の |\hbox| の中で呼び出されます。
+% |\ps@...| の中で定義しておきます。
 %
 % \end{macro}
 % \end{macro}
 % \end{macro}
 % \end{macro}
 %
-% $BCl$NFbMF$O!$(B|\chapter| $B$,8F$S=P$9(B |\chaptermark{$B2?!9(B}|$B!$(B
-% |\section| $B$,8F$S=P$9(B |\sectionmark{$B2?!9(B}| $B$G@_Dj$7$^$9!#(B
-% $BCl$r07$&L?Na$K$O<!$N$b$N$,$"$j$^$9!#(B
+% 柱の内容は，|\chapter| が呼び出す |\chaptermark{何々}|，
+% |\section| が呼び出す |\sectionmark{何々}| で設定します。
+% 柱を扱う命令には次のものがあります。
 %
 % \begin{quote}
 %   \begin{tabbing}
-%     |\markboth{$B:8(B}{$B1&(B} | \= $BN>J}$NCl$r@_Dj$7$^$9!#(B\\
-%     |\markright{$B1&(B}|     \> $B1&$NCl$r@_Dj$7$^$9!#(B\\
-%     |\leftmark|          \> $B:8$NCl$r=PNO$7$^$9!#(B\\
-%     |\rightmark|         \> $B1&$NCl$r=PNO$7$^$9!#(B
+%     |\markboth{左}{右} | \= 両方の柱を設定します。\\
+%     |\markright{右}|     \> 右の柱を設定します。\\
+%     |\leftmark|          \> 左の柱を出力します。\\
+%     |\rightmark|         \> 右の柱を出力します。
 %   \end{tabbing}
 % \end{quote}
 %
-% $BCl$r@_Dj$9$kL?Na$O!$1&$NCl$,:8$NCl$N2<0L$K$"$k>l9g$O==J,$^$H$b$K(B
-% $BF0:n$7$^$9!#$?$H$($P:8%^!<%/$r(B |\chapter|$B!$1&%^!<%/$r(B |\section|
-% $B$GJQ99$9$k>l9g$,$3$l$K$"$?$j$^$9!#(B
-% $B$7$+$7!$F10l%Z!<%8$KJ#?t$N(B |\markboth| $B$,$"$k$H!$(B
-% $B$*$+$7$J7k2L$K$J$k$3$H$,$"$j$^$9!#(B
+% 柱を設定する命令は，右の柱が左の柱の下位にある場合は十分まともに
+% 動作します。たとえば左マークを |\chapter|，右マークを |\section|
+% で変更する場合がこれにあたります。
+% しかし，同一ページに複数の |\markboth| があると，
+% おかしな結果になることがあります。
 %
-% |\tableofcontents| $B$N$h$&$JL?Na$G;H$o$l$k(B |\@mkboth| $B$O!$(B
-% |\ps@...| $B%3%^%s%ICf$G(B |\markboth| $B$+(B |\@gobbletwo|$B!J2?$b$7$J$$!K(B
-% $B$K(B |\let| $B$5$l$^$9!#(B
+% |\tableofcontents| のような命令で使われる |\@mkboth| は，
+% |\ps@...| コマンド中で |\markboth| か |\@gobbletwo|（何もしない）
+% に |\let| されます。
 %
 % \begin{macro}{\ps@empty}
 %
-% |empty| $B%Z!<%8%9%?%$%k$NDj5A$G$9!#(B
-% \LaTeX $BK\BN$GDj5A$5$l$F$$$k$b$N$r%3%a%s%H%"%&%H$7$?7A$G(B
-% $B:\$;$F$*$-$^$9!#(B
+% |empty| ページスタイルの定義です。
+% \LaTeX 本体で定義されているものをコメントアウトした形で
+% 載せておきます。
 %
 %    \begin{macrocode}
 % \def\ps@empty{%
@@ -2339,11 +2339,11 @@
 % \begin{macro}{\ps@plainfoot}
 % \begin{macro}{\ps@plain}
 %
-% |plainhead| $B$O%7%s%W%k$J%X%C%@$@$1$N%Z!<%8%9%?%$%k$G$9!#(B
+% |plainhead| はシンプルなヘッダだけのページスタイルです。
 %
-% |plainfoot| $B$O%7%s%W%k$J%U%C%?$@$1$N%Z!<%8%9%?%$%k$G$9!#(B
+% |plainfoot| はシンプルなフッタだけのページスタイルです。
 %
-% |plain| $B$O(B |book| $B$G$O(B |plainhead|$B!$$=$l0J30$G$O(B |plainfoot| $B$K$J$j$^$9!#(B
+% |plain| は |book| では |plainhead|，それ以外では |plainfoot| になります。
 %
 %    \begin{macrocode}
 \def\ps@plainfoot{%
@@ -2371,10 +2371,10 @@
 %
 % \begin{macro}{\ps@headings}
 %
-% |headings| $B%9%?%$%k$O%X%C%@$K8+=P$7$H%Z!<%8HV9f$r=PNO$7$^$9!#(B
-% $B$3$3$G$O%X%C%@$K%"%s%@!<%i%$%s$r0z$/$h$&$K$7$F$_$^$7$?!#(B
+% |headings| スタイルはヘッダに見出しとページ番号を出力します。
+% ここではヘッダにアンダーラインを引くようにしてみました。
 %
-% $B$^$:(B article $B$N>l9g$G$9!#(B
+% まず article の場合です。
 %
 %    \begin{macrocode}
 %<*article|kiyou>
@@ -2410,9 +2410,9 @@
 %</article|kiyou>
 %    \end{macrocode}
 %
-% $B<!$O(B book $B$N>l9g$G$9!#(B
-% [2011-05-10] $B$7$C$]0&9%2H$5$s(B [qa:6370] $B$N%Q%C%A$r<h$j9~$^$;$F$$$?$@$-$^$7$?(B
-% $B!JKL8+$5$s(B [qa:55896] $B$N$4;XE&$"$j$,$H$&$4$6$$$^$9!K!#(B
+% 次は book の場合です。
+% [2011-05-10] しっぽ愛好家さん [qa:6370] のパッチを取り込ませていただきました
+% （北見さん [qa:55896] のご指摘ありがとうございます）。
 %
 %    \begin{macrocode}
 %<*book>
@@ -2443,7 +2443,7 @@
 %</book>
 %    \end{macrocode}
 %
-% $B:G8e$O3X2q;o$N>l9g$G$9!#(B
+% 最後は学会誌の場合です。
 %
 %    \begin{macrocode}
 %<*jspf>
@@ -2451,7 +2451,7 @@
   \def\@oddfoot{\normalfont\hfil\thepage\hfil}
   \def\@evenfoot{\normalfont\hfil\thepage\hfil}
   \def\@oddhead{\normalfont\hfil \@title \hfil}
-  \def\@evenhead{\normalfont\hfil $B%W%i%:%^!&3KM;9g3X2q;o(B\hfil}}
+  \def\@evenhead{\normalfont\hfil プラズマ・核融合学会誌\hfil}}
 %</jspf>
 %    \end{macrocode}
 %
@@ -2459,10 +2459,10 @@
 %
 % \begin{macro}{\ps@myheadings}
 %
-% |myheadings| $B%Z!<%8%9%?%$%k$G$O%f!<%6$,(B |\markboth| $B$d(B |\markright| $B$G(B
-% $BCl$r@_Dj$9$k$?$a!$$3$3$G$NDj5A$OHs>o$K4JC1$G$9!#(B
+% |myheadings| ページスタイルではユーザが |\markboth| や |\markright| で
+% 柱を設定するため，ここでの定義は非常に簡単です。
 %
-% [2004-01-17] $BEOJUE0$5$s$N%Q%C%A$rE,MQ$7$^$7$?!#(B
+% [2004-01-17] 渡辺徹さんのパッチを適用しました。
 %
 %    \begin{macrocode}
 \def\ps@myheadings{%
@@ -2481,16 +2481,16 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \section{$BJ8=q$N%^!<%/%"%C%W(B}
+% \section{文書のマークアップ}
 %
-% \subsection{$BI=Bj(B}
+% \subsection{表題}
 %
 % \begin{macro}{\title}
 % \begin{macro}{\author}
 % \begin{macro}{\date}
 %
-%    $B$3$l$i$O(B\LaTeX $BK\BN$G<!$N$h$&$KDj5A$5$l$F$$$^$9!#(B
-%    $B$3$3$G$O%3%a%s%H%"%&%H$7$?7A$G<($7$^$9!#(B
+%    これらは\LaTeX 本体で次のように定義されています。
+%    ここではコメントアウトした形で示します。
 %
 %    \begin{macrocode}
 % \newcommand*{\title}[1]{\gdef\@title{#1}}
@@ -2506,7 +2506,7 @@
 % \begin{macro}{\eauthor}
 % \begin{macro}{\keywords}
 %
-% $BK?3X2q;o%9%?%$%k$G;H$&1Q8l$N%?%$%H%k!$1Q8l$NCx<TL>!$%-!<%o!<%I!$%a!<%k%"%I%l%9$G$9!#(B
+% 某学会誌スタイルで使う英語のタイトル，英語の著者名，キーワード，メールアドレスです。
 %
 %    \begin{macrocode}
 %<*jspf>
@@ -2523,14 +2523,14 @@
 %
 % \begin{macro}{\plainifnotempty}
 %
-% $B=>Mh$NI8=`%/%i%9$G$O!$J8=qA4BN$N%Z!<%8%9%?%$%k$r(B |empty| $B$K(B
-% $B$7$F$bI=Bj$N$"$k%Z!<%8$@$1(B |plain| $B$K$J$C$F$7$^$&$3$H$,(B
-% $B$"$j$^$7$?!#$3$l$O(B |\maketitle| $B$NDj5ACf(B
-% $B$K(B |\thispagestyle|\hspace{0pt}|{plain}| $B$,F~$C$F$$$k(B
-% $B$?$a$G$9!#$3$NLdBj$r2r7h$9$k$?$a$K!$(B
-% $B!VA4BN$N%Z!<%8%9%?%$%k$,(B |empty| $B$G$J$$$J$i(B
-% $B$3$N%Z!<%8$N%9%?%$%k$r(B |plain| $B$K$9$k!W$H$$$&<!$N(B
-% $BL?Na$r:n$k$3$H$K$7$^$9!#(B
+% 従来の標準クラスでは，文書全体のページスタイルを |empty| に
+% しても表題のあるページだけ |plain| になってしまうことが
+% ありました。これは |\maketitle| の定義中
+% に |\thispagestyle|\hspace{0pt}|{plain}| が入っている
+% ためです。この問題を解決するために，
+% 「全体のページスタイルが |empty| でないなら
+% このページのスタイルを |plain| にする」という次の
+% 命令を作ることにします。
 %
 %    \begin{macrocode}
 \def\plainifnotempty{%
@@ -2547,10 +2547,10 @@
 %
 % \begin{macro}{\maketitle}
 %
-% $BI=Bj$r=PNO$7$^$9!#(B
-% $BCx<TL>$r=PNO$9$kItJ,$O!$2$J8$NI8=`%/%i%9%U%!%$%k$G$O(B |\large|$B!$(B
-% $BOBJ8$N$b$N$G$O(B |\Large| $B$K$J$C$F$$$^$7$?$,!$$3$3$G$O(B |\large|
-% $B$K$7$^$7$?!#(B
+% 表題を出力します。
+% 著者名を出力する部分は，欧文の標準クラスファイルでは |\large|，
+% 和文のものでは |\Large| になっていましたが，ここでは |\large|
+% にしました。
 %
 %    \begin{macrocode}
 %<*article|book|kiyou>
@@ -2642,7 +2642,7 @@
 %
 % \begin{macro}{\@maketitle}
 %
-% $BFHN)$7$?I=Bj%Z!<%8$r:n$i$J$$>l9g$NI=Bj$N=PNO7A<0$G$9!#(B
+% 独立した表題ページを作らない場合の表題の出力形式です。
 %
 %    \begin{macrocode}
   \def\@maketitle{%
@@ -2683,7 +2683,7 @@
   \global\let\@thanks\@empty
   \global\let\@author\@empty
   \global\let\@date\@empty
-% \global\let\@title\@empty % \@title $B$OCl$K;H$&(B
+% \global\let\@title\@empty % \@title は柱に使う
   \global\let\title\relax
   \global\let\author\relax
   \global\let\date\relax
@@ -2730,66 +2730,66 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \subsection{$B>O!&@a(B}
+% \subsection{章・節}
 %
-% \paragraph{$B9=@.MWAG(B}
+% \paragraph{構成要素}
 %
-% |\@startsection| $B%^%/%m$O(B6$B8D$NI,?\0z?t$H!$%*%W%7%g%s$H$7$F(B |*| $B$H(B
-% 1$B8D$N%*%W%7%g%s0z?t$H(B1$B8D$NI,?\0z?t$r$H$j$^$9!#(B
+% |\@startsection| マクロは6個の必須引数と，オプションとして |*| と
+% 1個のオプション引数と1個の必須引数をとります。
 %
 % \begin{quote}
-% |\@startsection{$BL>(B}{$B%l%Y%k(B}{$B;z2<$2(B}{$BA0%"%-(B}{$B8e%"%-(B}{$B%9%?%$%k(B}| \\
-% |              *[$BJL8+=P$7(B]{$B8+=P$7(B}|
+% |\@startsection{名}{レベル}{字下げ}{前アキ}{後アキ}{スタイル}| \\
+% |              *[別見出し]{見出し}|
 % \end{quote}
 %
-% $B$=$l$>$l$N0z?t$N0UL#$O<!$NDL$j$G$9!#(B
+% それぞれの引数の意味は次の通りです。
 %
 % \begin{description}
-% \item[$BL>(B] $B%f!<%6%l%Y%k%3%^%s%I$NL>A0$G$9!JNc(B: section$B!K!#(B
-% \item[$B%l%Y%k(B] $B8+=P$7$N?<$5$r<($9?tCM$G$9(B
-%    $B!J(Bchapter=1, section=2, \ldots $B!K!#(B
-%    $B$3$N?tCM$,(B |secnumdepth| $B0J2<$N$H$-8+=P$7HV9f$r=PNO$7$^$9!#(B
-% \item[$B;z2<$2(B] $B8+=P$7$N;z2<$2NL$G$9!#(B
-% \item[$BA0%"%-(B] $B$3$NCM$N@dBPCM$,8+=P$7>eB&$N6u$-$G$9!#(B
-%    $BIi$N>l9g$O!$8+=P$7D>8e$NCJMn$r%$%s%G%s%H$7$^$;$s!#(B
-% \item[$B8e%"%-(B] $B@5$N>l9g$O!$8+=P$7$N2<$N6u$-$G$9!#(B
-%    $BIi$N>l9g$O!$@dBPCM$,8+=P$7$N1&$N6u$-$G$9(B
-%    $B!J8+=P$7$HF1$89T$+$iK\J8$r;O$a$^$9!K!#(B
-% \item[$B%9%?%$%k(B] $B8+=P$7$NJ8;z%9%?%$%k$N@_Dj$G$9!#(B
-% \item[\texttt{*}] $B$3$N(B \texttt{*} $B0u$,$J$$$H!$8+=P$7HV9f$rIU$1!$(B
-%    $B8+=P$7HV9f$N%+%&%s%?$K(B1$B$r2C;;$7$^$9!#(B
-% \item[$BJL8+=P$7(B] $BL\<!$dCl$K=PNO$9$k8+=P$7$G$9!#(B
-% \item[$B8+=P$7(B] $B8+=P$7$G$9!#(B
+% \item[名] ユーザレベルコマンドの名前です（例: section）。
+% \item[レベル] 見出しの深さを示す数値です
+%    （chapter=1, section=2, \ldots ）。
+%    この数値が |secnumdepth| 以下のとき見出し番号を出力します。
+% \item[字下げ] 見出しの字下げ量です。
+% \item[前アキ] この値の絶対値が見出し上側の空きです。
+%    負の場合は，見出し直後の段落をインデントしません。
+% \item[後アキ] 正の場合は，見出しの下の空きです。
+%    負の場合は，絶対値が見出しの右の空きです
+%    （見出しと同じ行から本文を始めます）。
+% \item[スタイル] 見出しの文字スタイルの設定です。
+% \item[\texttt{*}] この \texttt{*} 印がないと，見出し番号を付け，
+%    見出し番号のカウンタに1を加算します。
+% \item[別見出し] 目次や柱に出力する見出しです。
+% \item[見出し] 見出しです。
 % \end{description}
 %
-% $B8+=P$7$NL?Na$ODL>o(B |\@startsection| $B$H$=$N:G=i$N(B6$B8D$N0z?t$H$7$F(B
-% $BDj5A$5$l$^$9!#(B
+% 見出しの命令は通常 |\@startsection| とその最初の6個の引数として
+% 定義されます。
 %
-% $B<!$O(B |\@startsection| $B$NDj5A$G$9!#(B
-% $B>pJs=hM}3X2qO@J8;o%9%?%$%k%U%!%$%k!J(B\texttt{ipsjcommon.sty}$B!K(B
-% $B$r;29M$K$5$;$F$$$?$@$-$^$7$?$,!$40A4$K9TAw$j$,(B |\baselineskip|
-% $B$N@0?tG\$K$J$i$J$/$F$b$$$$$+$iA0$N9T$H=E$J$i$J$$$h$&$K$7$^$7$?!#(B
+% 次は |\@startsection| の定義です。
+% 情報処理学会論文誌スタイルファイル（\texttt{ipsjcommon.sty}）
+% を参考にさせていただきましたが，完全に行送りが |\baselineskip|
+% の整数倍にならなくてもいいから前の行と重ならないようにしました。
 %
 %    \begin{macrocode}
 \def\@startsection#1#2#3#4#5#6{%
   \if@noskipsec \leavevmode \fi
   \par
-% $B8+=P$7>e$N6u$-$r(B \@tempskipa $B$K%;%C%H$9$k(B
+% 見出し上の空きを \@tempskipa にセットする
   \@tempskipa #4\relax
-% \@afterindent $B$O8+=P$7D>8e$NCJMn$r;z2<$2$9$k$+$I$&$+$rI=$9%9%$%C%A(B
+% \@afterindent は見出し直後の段落を字下げするかどうかを表すスイッチ
   \if@english \@afterindentfalse \else \@afterindenttrue \fi
-% $B8+=P$7>e$N6u$-$,Ii$J$i8+=P$7D>8e$NCJMn$r;z2<$2$7$J$$(B
+% 見出し上の空きが負なら見出し直後の段落を字下げしない
   \ifdim \@tempskipa <\z@
     \@tempskipa -\@tempskipa \@afterindentfalse
   \fi
   \if@nobreak
-%   \everypar{\everyparhook}% $B$3$l$O4V0c$$(B
+%   \everypar{\everyparhook}% これは間違い
     \everypar{}%
   \else
     \addpenalty\@secpenalty
-% $B<!$N9T$O:o=|(B
+% 次の行は削除
 %   \addvspace\@tempskipa
-% $B<!$N(B \noindent $B$^$GDI2C(B
+% 次の \noindent まで追加
     \ifdim \@tempskipa >\z@
       \if@slide\else
         \null
@@ -2799,15 +2799,15 @@
     \fi
   \fi
   \noindent
-% $BDI2C=*$o$j(B
+% 追加終わり
   \@ifstar
     {\@ssect{#3}{#4}{#5}{#6}}%
     {\@dblarg{\@sect{#1}{#2}{#3}{#4}{#5}{#6}}}}
 %    \end{macrocode}
 %
-% |\@sect| $B$H(B |\@xsect| $B$O!$(B
-% $BA0$N%"%-$,$A$g$&$I%<%m$N>l9g$K$b$&$^$/$$$/$h$&$K!$B?>/JQ$($F$"$j$^$9!#(B
-% |\everyparhook| $B$bA^F~$7$F$$$^$9!#(B
+% |\@sect| と |\@xsect| は，
+% 前のアキがちょうどゼロの場合にもうまくいくように，多少変えてあります。
+% |\everyparhook| も挿入しています。
 %
 %    \begin{macrocode}
 \def\@sect#1#2#3#4#5#6[#7]#8{%
@@ -2817,9 +2817,9 @@
     \refstepcounter{#1}%
     \protected@edef\@svsec{\@seccntformat{#1}\relax}%
   \fi
-% $B8+=P$78e$N6u$-$r(B \@tempskipa $B$K%;%C%H(B
+% 見出し後の空きを \@tempskipa にセット
   \@tempskipa #5\relax
-% $B>r7oH=CG$N=g=x$rF~$l49$($^$7$?(B
+% 条件判断の順序を入れ換えました
   \ifdim \@tempskipa<\z@
     \def\@svsechd{%
       #6{\hskip #3\relax
@@ -2829,13 +2829,13 @@
         \ifnum #2>\c@secnumdepth \else
           \protect\numberline{\csname the#1\endcsname}%
         \fi
-        #7}}% $BL\<!$K%U%k%M!<%`$r:\$;$k$J$i(B #8
+        #7}}% 目次にフルネームを載せるなら #8
   \else
     \begingroup
-      \interlinepenalty \@M % $B2<$+$i0\F0(B
+      \interlinepenalty \@M % 下から移動
       #6{%
         \@hangfrom{\hskip #3\relax\@svsec}%
-%       \interlinepenalty \@M % $B>e$K0\F0(B
+%       \interlinepenalty \@M % 上に移動
         #8\@@par}%
     \endgroup
     \csname #1mark\endcsname{#7}%
@@ -2843,19 +2843,19 @@
       \ifnum #2>\c@secnumdepth \else
         \protect\numberline{\csname the#1\endcsname}%
       \fi
-      #7}% $BL\<!$K%U%k%M!<%`$r:\$;$k$J$i$3$3$O(B #8
+      #7}% 目次にフルネームを載せるならここは #8
   \fi
   \@xsect{#5}}
 %    \end{macrocode}
 %
-% $BFs$DA^F~$7$?(B |\everyparhook| $B$N$&$A8e<T$,(B |\paragraph| $BN`$N8e$G(B2$B2s<B9T$5$l!$(B
-% $B$=$l0J9_$OA0<T$,<B9T$5$l$^$9!#(B
+% 二つ挿入した |\everyparhook| のうち後者が |\paragraph| 類の後で2回実行され，
+% それ以降は前者が実行されます。
 %
 %    \begin{macrocode}
 \def\@xsect#1{%
-% $B8+=P$7$N8e$m$N6u$-$r(B \@tempskipa $B$K%;%C%H(B
+% 見出しの後ろの空きを \@tempskipa にセット
   \@tempskipa #1\relax
-% $B>r7oH=CG$N=g=x$rJQ$($^$7$?(B
+% 条件判断の順序を変えました
   \ifdim \@tempskipa<\z@
     \@nobreakfalse
     \global\@noskipsectrue
@@ -2896,7 +2896,7 @@
   \@xsect{#3}}
 %    \end{macrocode}
 %
-% \paragraph{$BCl4X78$NL?Na(B}
+% \paragraph{柱関係の命令}
 %
 % \begin{macro}{\chaptermark}
 % \begin{macro}{\sectionmark}
@@ -2905,8 +2905,8 @@
 % \begin{macro}{\paragraphmark}
 % \begin{macro}{\subparagraphmark}
 %
-% |\...mark| $B$N7A$NL?Na$r=i4|2=$7$^$9!JBh(B\ref{sec:pagestyle}$B@a;2>H!K!#(B
-% |\chaptermark| $B0J30$O(B\LaTeX $BK\BN$GDj5A:Q$_$G$9!#(B
+% |\...mark| の形の命令を初期化します（第\ref{sec:pagestyle}節参照）。
+% |\chaptermark| 以外は\LaTeX 本体で定義済みです。
 %
 %    \begin{macrocode}
 \newcommand*\chaptermark[1]{}
@@ -2923,12 +2923,12 @@
 % \end{macro}
 % \end{macro}
 %
-% \paragraph{$B%+%&%s%?$NDj5A(B}
+% \paragraph{カウンタの定義}
 %
 % \begin{macro}{\c@secnumdepth}
 %
-% |secnumdepth| $B$OBh2?%l%Y%k$N8+=P$7$^$G(B
-% $BHV9f$rIU$1$k$+$r7h$a$k%+%&%s%?$G$9!#(B
+% |secnumdepth| は第何レベルの見出しまで
+% 番号を付けるかを決めるカウンタです。
 %
 %    \begin{macrocode}
 %<!book>\setcounter{secnumdepth}{3}
@@ -2943,10 +2943,10 @@
 % \begin{macro}{\c@paragraph}
 % \begin{macro}{\c@subparagraph}
 %
-% $B8+=P$7HV9f$N%+%&%s%?$G$9!#(B
-% |\newcounter| $B$NBh(B1$B0z?t$,?7$?$K:n$k%+%&%s%?$G$9!#(B
-% $B$3$l$OBh(B2$B0z?t$,A}2C$9$k$?$S$K(B 0 $B$KLa$5$l$^$9!#(B
-% $BBh(B2$B0z?t$ODj5A:Q$_$N%+%&%s%?$G$9!#(B
+% 見出し番号のカウンタです。
+% |\newcounter| の第1引数が新たに作るカウンタです。
+% これは第2引数が増加するたびに 0 に戻されます。
+% 第2引数は定義済みのカウンタです。
 %
 %    \begin{macrocode}
 \newcounter{part}
@@ -2973,9 +2973,9 @@
 % \begin{macro}{\theparagraph}
 % \begin{macro}{\thesubparagraph}
 %
-% $B%+%&%s%?$NCM$r=PNO$9$kL?Na(B |\the$B2?!9(B| $B$rDj5A$7$^$9!#(B
+% カウンタの値を出力する命令 |\the何々| を定義します。
 %
-% $B%+%&%s%?$r=PNO$9$k%3%^%s%I$K$O<!$N$b$N$,$"$j$^$9!#(B
+% カウンタを出力するコマンドには次のものがあります。
 %
 % \begin{quote}
 %   |\arabic{COUNTER}   | 1, 2, 3, \ldots \\
@@ -2983,10 +2983,10 @@
 %   |\Roman{COUNTER}    | I, II, III, \ldots \\
 %   |\alph{COUNTER}     | a, b, c, \ldots \\
 %   |\Alph{COUNTER}     | A, B, C, \ldots \\
-%   |\kansuji{COUNTER}  | $B0l(B, $BFs(B, $B;0(B, \ldots
+%   |\kansuji{COUNTER}  | 一, 二, 三, \ldots
 % \end{quote}
 %
-% $B0J2<$G$O%9%Z!<%9@aLs$N$?$a(B |@| $B$NIU$$$?FbItI=8=$rB?MQ$7$F$$$^$9!#(B
+% 以下ではスペース節約のため |@| の付いた内部表現を多用しています。
 %
 %    \begin{macrocode}
 \renewcommand{\thepart}{\@Roman\c@part}
@@ -3016,14 +3016,14 @@
 % \begin{macro}{\@chapapp}
 % \begin{macro}{\@chappos}
 %
-% |\@chapapp| $B$N=i4|CM$O(B |\prechaptername|$B!JBh!K$G$9!#(B
+% |\@chapapp| の初期値は |\prechaptername|（第）です。
 %
-% |\@chappos| $B$N=i4|CM$O(B |\postchaptername|$B!J>O!K$G$9!#(B
+% |\@chappos| の初期値は |\postchaptername|（章）です。
 %
-% |\appendix| $B$O(B |\@chapapp| $B$r(B |\appendixname| $B$K!$(B
-% |\@chappos| $B$r6u$K:FDj5A$7$^$9!#(B
+% |\appendix| は |\@chapapp| を |\appendixname| に，
+% |\@chappos| を空に再定義します。
 %
-% [2003-03-02] |\@secapp| $B$O30$7$^$7$?!#(B
+% [2003-03-02] |\@secapp| は外しました。
 %
 %    \begin{macrocode}
 %<book>\newcommand{\@chapapp}{\prechaptername}
@@ -3032,14 +3032,14 @@
 % \end{macro}
 % \end{macro}
 %
-% \paragraph{$BA0IU!$K\J8!$8eIU(B}
+% \paragraph{前付，本文，後付}
 %
-% $BK\$N$&$A>OHV9f$,$"$k$N$,!VK\J8!W!$(B
-% $B$=$l0J30$,!VA0IU!W!V8eIU!W$G$9!#(B
+% 本のうち章番号があるのが「本文」，
+% それ以外が「前付」「後付」です。
 %
 % \begin{macro}{\frontmatter}
 %
-% $B%Z!<%8HV9f$r%m!<%^?t;z$K$7!$>OHV9f$rIU$1$J$$$h$&$K$7$^$9!#(B
+% ページ番号をローマ数字にし，章番号を付けないようにします。
 %
 %    \begin{macrocode}
 %<*book>
@@ -3056,7 +3056,7 @@
 %
 % \begin{macro}{\mainmatter}
 %
-% $B%Z!<%8HV9f$r;;MQ?t;z$K$7!$>OHV9f$rIU$1$k$h$&$K$7$^$9!#(B
+% ページ番号を算用数字にし，章番号を付けるようにします。
 %
 %    \begin{macrocode}
 \newcommand\mainmatter{%
@@ -3072,7 +3072,7 @@
 %
 % \begin{macro}{\backmatter}
 %
-% $B>OHV9f$rIU$1$J$$$h$&$K$7$^$9!#%Z!<%8HV9f$NIU$1J}$OJQ$o$j$^$;$s!#(B
+% 章番号を付けないようにします。ページ番号の付け方は変わりません。
 %
 %    \begin{macrocode}
 \newcommand\backmatter{%
@@ -3086,33 +3086,33 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \paragraph{$BIt(B}
+% \paragraph{部}
 %
 % \begin{macro}{\part}
 %
-% $B?7$7$$It$r;O$a$^$9!#(B
+% 新しい部を始めます。
 %
-% |\secdef| $B$r;H$C$F8+=P$7$rDj5A$7$F$$$^$9!#(B
-% $B$3$N%^%/%m$OFs$D$N0z?t$r$H$j$^$9!#(B
+% |\secdef| を使って見出しを定義しています。
+% このマクロは二つの引数をとります。
 %
 % \begin{quote}
-% |\secdef{$B@1$J$7(B}{$B@1$"$j(B}|
+% |\secdef{星なし}{星あり}|
 % \end{quote}
 %
 % \begin{description}
-% \item[$B@1$J$7(B] \texttt{*} $B$N$J$$7A$NDj5A$G$9!#(B
-% \item[$B@1$"$j(B] \texttt{*} $B$N$"$k7A$NDj5A$G$9!#(B
+% \item[星なし] \texttt{*} のない形の定義です。
+% \item[星あり] \texttt{*} のある形の定義です。
 % \end{description}
 %
-% |\secdef| $B$O<!$N$h$&$K$7$F;H$$$^$9!#(B
+% |\secdef| は次のようにして使います。
 %
 %\begin{verbatim}
 %   \def\chapter { ... \secdef \CMDA \CMDB }
-%   \def\CMDA    [#1]#2{....} % \chapter[...]{...} $B$NDj5A(B
-%   \def\CMDB    #1{....}     % \chapter*{...} $B$NDj5A(B
+%   \def\CMDA    [#1]#2{....} % \chapter[...]{...} の定義
+%   \def\CMDB    #1{....}     % \chapter*{...} の定義
 %\end{verbatim}
 %
-% $B$^$:(B |book| $B%/%i%90J30$G$9!#(B
+% まず |book| クラス以外です。
 %
 %    \begin{macrocode}
 %<*!book>
@@ -3125,7 +3125,7 @@
 %</!book>
 %    \end{macrocode}
 %
-% |book| $B%9%?%$%k$N>l9g$O!$>/$7J#;($G$9!#(B
+% |book| スタイルの場合は，少し複雑です。
 %
 %    \begin{macrocode}
 %<*book>
@@ -3135,7 +3135,7 @@
   \else
     \clearpage
   \fi
-  \thispagestyle{empty}% $B2$J8MQI8=`%9%?%$%k$G$O(B plain
+  \thispagestyle{empty}% 欧文用標準スタイルでは plain
   \if@twocolumn
     \onecolumn
     \@restonecoltrue
@@ -3150,11 +3150,11 @@
 %
 % \begin{macro}{\@part}
 %
-% $BIt$N8+=P$7$r=PNO$7$^$9!#(B
-% |\bfseries| $B$r(B |\headfont| $B$KJQ$($^$7$?!#(B
+% 部の見出しを出力します。
+% |\bfseries| を |\headfont| に変えました。
 %
-% |book| $B%/%i%90J30$G$O(B |secnumdepth| $B$,(B $-1$ $B$h$jBg$-$$$H$-(B
-% $BItHV9f$rIU$1$^$9!#(B
+% |book| クラス以外では |secnumdepth| が $-1$ より大きいとき
+% 部番号を付けます。
 %
 %    \begin{macrocode}
 %<*!book>
@@ -3183,7 +3183,7 @@
 %</!book>
 %    \end{macrocode}
 %
-% |book| $B%/%i%9$G$O(B |secnumdepth| $B$,(B $-2$ $B$h$jBg$-$$$H$-ItHV9f$rIU$1$^$9!#(B
+% |book| クラスでは |secnumdepth| が $-2$ より大きいとき部番号を付けます。
 %
 %    \begin{macrocode}
 %<*book>
@@ -3211,7 +3211,7 @@
 %
 % \begin{macro}{\@spart}
 %
-% $BHV9f$rIU$1$J$$It$G$9!#(B
+% 番号を付けない部です。
 %
 %    \begin{macrocode}
 %<*!book>
@@ -3237,9 +3237,9 @@
 %
 % \begin{macro}{\@endpart}
 %
-% |\@part| $B$H(B |\@spart| $B$N:G8e$G<B9T$5$l$k%^%/%m$G$9!#(B
-% $BN>LL0u:~$N$H$-$OGr%Z!<%8$rDI2C$7$^$9!#(B
-% $BFsCJAH$N$H$-$K$O!$FsCJAH$KLa$7$^$9!#(B
+% |\@part| と |\@spart| の最後で実行されるマクロです。
+% 両面印刷のときは白ページを追加します。
+% 二段組のときには，二段組に戻します。
 %
 %    \begin{macrocode}
 %<*book>
@@ -3256,20 +3256,20 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \paragraph{$B>O(B}
+% \paragraph{章}
 %
 % \begin{macro}{\chapter}
 %
-%    $B>O$N:G=i$N%Z!<%8%9%?%$%k$O!$A4BN$,(B |empty| $B$G$J$1$l$P(B |plain| $B$K(B
-%    $B$7$^$9!#(B
-%    $B$^$?!$(B|\@topnum| $B$r(B 0 $B$K$7$F!$(B
-%    $B>O8+=P$7$N>e$K?^$dI=$,Mh$J$$$h$&$K$7$^$9!#(B
+%    章の最初のページスタイルは，全体が |empty| でなければ |plain| に
+%    します。
+%    また，|\@topnum| を 0 にして，
+%    章見出しの上に図や表が来ないようにします。
 %
 %    \begin{macrocode}
 %<*book>
 \newcommand{\chapter}{%
   \if@openright\cleardoublepage\else\clearpage\fi
-  \plainifnotempty % $B85(B: \thispagestyle{plain}
+  \plainifnotempty % 元: \thispagestyle{plain}
   \global\@topnum\z@
   \if@english \@afterindentfalse \else \@afterindenttrue \fi
   \secdef
@@ -3280,8 +3280,8 @@
 %
 % \begin{macro}{\@chapter}
 %
-% $B>O8+=P$7$r=PNO$7$^$9!#(B
-% |secnumdepth| $B$,(B0$B0J>e$+$D(B |\@mainmatter| $B$,??$N$H$->OHV9f$r=PNO$7$^$9!#(B
+% 章見出しを出力します。
+% |secnumdepth| が0以上かつ |\@mainmatter| が真のとき章番号を出力します。
 %
 %    \begin{macrocode}
 \def\@chapter[#1]#2{%
@@ -3312,30 +3312,30 @@
 %
 % \begin{macro}{\@makechapterhead}
 %
-%    $B<B:]$K>O8+=P$7$rAH$_N)$F$^$9!#(B
-%    |\bfseries| $B$r(B |\headfont| $B$KJQ$($^$7$?!#(B
+%    実際に章見出しを組み立てます。
+%    |\bfseries| を |\headfont| に変えました。
 %
 %    \begin{macrocode}
 \def\@makechapterhead#1{%
-  \vspace*{2\Cvs}% $B2$J8$O(B50pt
+  \vspace*{2\Cvs}% 欧文は50pt
   {\parindent \z@ \raggedright \normalfont
     \ifnum \c@secnumdepth >\m@ne
       \if@mainmatter
         \huge\headfont \@chapapp\thechapter\@chappos
         \par\nobreak
-        \vskip \Cvs % $B2$J8$O(B20pt
+        \vskip \Cvs % 欧文は20pt
       \fi
     \fi
     \interlinepenalty\@M
     \Huge \headfont #1\par\nobreak
-    \vskip 3\Cvs}} % $B2$J8$O(B40pt
+    \vskip 3\Cvs}} % 欧文は40pt
 %    \end{macrocode}
 % \end{macro}
 %
 % \begin{macro}{\@schapter}
 %
-% |\chapter*{...}| $B%3%^%s%I$NK\BN$G$9!#(B
-% |\chaptermark| $B$rJd$$$^$7$?!#(B
+% |\chapter*{...}| コマンドの本体です。
+% |\chaptermark| を補いました。
 %
 %    \begin{macrocode}
 \def\@schapter#1{%
@@ -3350,29 +3350,29 @@
 %
 % \begin{macro}{\@makeschapterhead}
 %
-% $BHV9f$J$7$N>O8+=P$7$G$9!#(B
+% 番号なしの章見出しです。
 %
 %    \begin{macrocode}
 \def\@makeschapterhead#1{%
-  \vspace*{2\Cvs}% $B2$J8$O(B50pt
+  \vspace*{2\Cvs}% 欧文は50pt
   {\parindent \z@ \raggedright
     \normalfont
     \interlinepenalty\@M
     \Huge \headfont #1\par\nobreak
-    \vskip 3\Cvs}} % $B2$J8$O(B40pt
+    \vskip 3\Cvs}} % 欧文は40pt
 %</book>
 %    \end{macrocode}
 % \end{macro}
 %
-% \paragraph{$B2<0L%l%Y%k$N8+=P$7(B}
+% \paragraph{下位レベルの見出し}
 %
 % \begin{macro}{\section}
 %
-% $B2$J8HG$G$O(B |\@startsection| $B$NBh(B4$B0z?t$rIi$K$7$F:G=i$NCJMn$N(B
-% $B;z2<$2$r6X;_$7$F$$$^$9$,!$(B
-% $BOBJ8HG$G$O@5$K$7$F;z2<$2$9$k$h$&$K$7$F$$$^$9!#(B
+% 欧文版では |\@startsection| の第4引数を負にして最初の段落の
+% 字下げを禁止していますが，
+% 和文版では正にして字下げするようにしています。
 %
-% $BCJAH$N$H$-$O$J$k$Y$/:81&$NCJ$,68$o$J$$$h$&$K9)IW$7$F$$$^$9!#(B
+% 段組のときはなるべく左右の段が狂わないように工夫しています。
 %
 %    \begin{macrocode}
 \if@twocolumn
@@ -3387,8 +3387,8 @@
   \newcommand{\section}{%
     \if@slide\clearpage\fi
     \@startsection{section}{1}{\z@}%
-    {\Cvs \@plus.5\Cdp \@minus.2\Cdp}% $BA0%"%-(B
-    {.5\Cvs \@plus.3\Cdp}% $B8e%"%-(B
+    {\Cvs \@plus.5\Cdp \@minus.2\Cdp}% 前アキ
+    {.5\Cvs \@plus.3\Cdp}% 後アキ
 %   {\normalfont\Large\headfont\@secapp}}
     {\normalfont\Large\headfont\raggedright}}
 \fi
@@ -3398,7 +3398,7 @@
 %
 % \begin{macro}{\subsection}
 %
-% $BF1>e$G$9!#(B
+% 同上です。
 %
 %    \begin{macrocode}
 \if@twocolumn
@@ -3407,8 +3407,8 @@
     {\normalfont\normalsize\headfont}}
 \else
   \newcommand{\subsection}{\@startsection{subsection}{2}{\z@}%
-    {\Cvs \@plus.5\Cdp \@minus.2\Cdp}% $BA0%"%-(B
-    {.5\Cvs \@plus.3\Cdp}% $B8e%"%-(B
+    {\Cvs \@plus.5\Cdp \@minus.2\Cdp}% 前アキ
+    {.5\Cvs \@plus.3\Cdp}% 後アキ
     {\normalfont\large\headfont}}
 \fi
 %    \end{macrocode}
@@ -3432,27 +3432,27 @@
 %
 % \begin{macro}{\paragraph}
 %
-%    $B8+=P$7$N8e$m$G2~9T$5$l$^$;$s!#(B
+%    見出しの後ろで改行されません。
 %
 %    \begin{macrocode}
 \if@twocolumn
   \newcommand{\paragraph}{\@startsection{paragraph}{4}{\z@}%
-    {\z@}{-1zw}% $B2~9T$;$:(B 1zw $B$N%"%-(B
+    {\z@}{-1zw}% 改行せず 1zw のアキ
 %<jspf>    {\normalfont\normalsize\headfont}}
-%<!jspf>    {\normalfont\normalsize\headfont $B"#(B}}
+%<!jspf>    {\normalfont\normalsize\headfont ■}}
 \else
   \newcommand{\paragraph}{\@startsection{paragraph}{4}{\z@}%
     {0.5\Cvs \@plus.5\Cdp \@minus.2\Cdp}%
-    {-1zw}% $B2~9T$;$:(B 1zw $B$N%"%-(B
+    {-1zw}% 改行せず 1zw のアキ
 %<jspf>    {\normalfont\normalsize\headfont}}
-%<!jspf>    {\normalfont\normalsize\headfont $B"#(B}}
+%<!jspf>    {\normalfont\normalsize\headfont ■}}
 \fi
 %    \end{macrocode}
 % \end{macro}
 %
 % \begin{macro}{\subparagraph}
 %
-%    $B8+=P$7$N8e$m$G2~9T$5$l$^$;$s!#(B
+%    見出しの後ろで改行されません。
 %
 %    \begin{macrocode}
 \newcommand{\subparagraph}{\@startsection{subparagraph}{5}{\z@}%
@@ -3461,20 +3461,20 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \subsection{$B%j%9%H4D6-(B}
+% \subsection{リスト環境}
 %
-% $BBh(B $k$ $B%l%Y%k$N%j%9%H$N=i4|2=$r$9$k$N$,(B |\@list|$k$ $B$G$9(B
-% $B!J(B$k = \mathtt{i}, \mathtt{ii}, \mathtt{iii}, \mathtt{iv}$$B!K!#(B
-% |\@list|$k$ $B$O(B |\leftmargin| $B$r(B |\leftmargin|$k$ $B$K@_Dj$7$^$9!#(B
+% 第 $k$ レベルのリストの初期化をするのが |\@list|$k$ です
+% （$k = \mathtt{i}, \mathtt{ii}, \mathtt{iii}, \mathtt{iv}$）。
+% |\@list|$k$ は |\leftmargin| を |\leftmargin|$k$ に設定します。
 %
 % \begin{macro}{\leftmargini}
 %
-% $BFsCJAH$G$"$k$+$J$$$+$K1~$8$F$=$l$>$l(B 2em$B!$(B2.5em $B$G$7$?$,!$(B
-% $B$3$3$G$OA43QI}$N(B2$BG\$K$7$^$7$?!#(B
+% 二段組であるかないかに応じてそれぞれ 2em，2.5em でしたが，
+% ここでは全角幅の2倍にしました。
 %
-% [2002-05-11] 3zw $B$KJQ99$7$^$7$?!#(B
+% [2002-05-11] 3zw に変更しました。
 %
-% [2005-03-19] $BFsCJAH$O(B 2zw $B$KLa$7$^$7$?!#(B
+% [2005-03-19] 二段組は 2zw に戻しました。
 %
 %    \begin{macrocode}
 \if@slide
@@ -3495,9 +3495,9 @@
 % \begin{macro}{\leftmarginv}
 % \begin{macro}{\leftmarginvi}
 %
-%    |ii|$B!$(B|iii|$B!$(B|iv| $B$O(B |\labelsep| $B$H(B
-%    $B$=$l$>$l(B `(m)'$B!$(B`vii.'$B!$(B`M.' $B$NI}$H$NOB$h$jBg$-$/$9$k(B
-%    $B$3$H$K$J$C$F$$$^$9!#$3$3$G$OA43QI}$N@0?tG\$K4]$a$^$7$?!#(B
+%    |ii|，|iii|，|iv| は |\labelsep| と
+%    それぞれ `(m)'，`vii.'，`M.' の幅との和より大きくする
+%    ことになっています。ここでは全角幅の整数倍に丸めました。
 %
 %    \begin{macrocode}
 \if@slide
@@ -3523,9 +3523,9 @@
 % \begin{macro}{\labelsep}
 % \begin{macro}{\labelwidth}
 %
-%    |\labelsep| $B$O%i%Y%k$HK\J8$N4V$N5wN%$G$9!#(B
-%    |\labelwidth| $B$O%i%Y%k$NI}$G$9!#(B
-%    $B$3$l$OFsJ,$KJQ$($^$7$?!#(B
+%    |\labelsep| はラベルと本文の間の距離です。
+%    |\labelwidth| はラベルの幅です。
+%    これは二分に変えました。
 %
 %    \begin{macrocode}
 \setlength  \labelsep  {0.5zw} % .5em
@@ -3537,10 +3537,10 @@
 %
 % \begin{macro}{\partopsep}
 %
-%    $B%j%9%H4D6-$NA0$K6u9T$,$"$k>l9g!$(B
-%    |\parskip| $B$H(B |\topsep| $B$K(B |\partopsep| $B$r(B
-%    $B2C$($?CM$@$1=DJ}8~$N6uGr$,$G$-$^$9!#(B
-%    0 $B$K2~JQ$7$^$7$?!#(B
+%    リスト環境の前に空行がある場合，
+%    |\parskip| と |\topsep| に |\partopsep| を
+%    加えた値だけ縦方向の空白ができます。
+%    0 に改変しました。
 %
 %    \begin{macrocode}
 \setlength\partopsep{\z@} % {2\p@ \@plus 1\p@ \@minus 1\p@}
@@ -3551,7 +3551,7 @@
 % \begin{macro}{\@endparpenalty}
 % \begin{macro}{\@itempenalty}
 %
-%    $B%j%9%H$dCJMn4D6-$NA08e!$%j%9%H9`L\4V$KA^F~$5$l$k%Z%J%k%F%#$G$9!#(B
+%    リストや段落環境の前後，リスト項目間に挿入されるペナルティです。
 %
 %    \begin{macrocode}
 \@beginparpenalty -\@lowpenalty
@@ -3565,20 +3565,20 @@
 % \begin{macro}{\@listi}
 % \begin{macro}{\@listI}
 %
-%    |\@listi| $B$O(B |\leftmargin|$B!$(B|\parsep|$B!$(B|\topsep|$B!$(B|\itemsep| $B$J$I$N(B
-%    $B%H%C%W%l%Y%k$NDj5A$r$7$^$9!#(B
-%    $B$3$NDj5A$O!$%U%)%s%H%5%$%:%3%^%s%I$K$h$C$FJQ99$5$l$^$9(B
-%    $B!J$?$H$($P(B |\small| $B$NCf$G$O>.$5$$CM$K@_Dj$5$l$^$9!K!#(B
-%    $B$3$N$?$a!$(B|\normalsize| $B$,$9$Y$F$N%Q%i%a!<%?$rLa$;$k$h$&$K!$(B
-%    |\@listI| $B$G(B |\@listi| $B$N%3%T!<$rJ]B8$7$^$9!#(B
-%    $B85$NCM$O$+$J$jJ#;($G$9$,!$$3$3$G$O4JAG2=$7$F$7$^$$$^$7$?!#(B
-%    $BFC$K:G=i$H:G8e$K9TAw$j$NH>J,$N6u$-$,F~$k$h$&$K$7$F$"$j$^$9!#(B
-%    $B%"%9%-!<$NI8=`%9%?%$%k$G$O(B
-%    $B%H%C%W%l%Y%k$N(B |itemize|$B!$(B|enumerate| $B4D6-$G$@$1(B
-%    $B:G=i$H:G8e$K9TAw$j$NH>J,$N6u$-$,F~$k$h$&$K$J$C$F$$$^$7$?!#(B
+%    |\@listi| は |\leftmargin|，|\parsep|，|\topsep|，|\itemsep| などの
+%    トップレベルの定義をします。
+%    この定義は，フォントサイズコマンドによって変更されます
+%    （たとえば |\small| の中では小さい値に設定されます）。
+%    このため，|\normalsize| がすべてのパラメータを戻せるように，
+%    |\@listI| で |\@listi| のコピーを保存します。
+%    元の値はかなり複雑ですが，ここでは簡素化してしまいました。
+%    特に最初と最後に行送りの半分の空きが入るようにしてあります。
+%    アスキーの標準スタイルでは
+%    トップレベルの |itemize|，|enumerate| 環境でだけ
+%    最初と最後に行送りの半分の空きが入るようになっていました。
 %
-%    [2004-09-27] |\topsep| $B$N%0%k!<(B $_{-0.1}^{+0.2}$ |\baselineskip|
-%    $B$r;W$$@Z$C$F30$7$^$7$?!#(B
+%    [2004-09-27] |\topsep| のグルー $_{-0.1}^{+0.2}$ |\baselineskip|
+%    を思い切って外しました。
 %
 %    \begin{macrocode}
 \def\@listi{\leftmargin\leftmargini
@@ -3588,7 +3588,7 @@
 \let\@listI\@listi
 %    \end{macrocode}
 %
-%    $BG0$N$?$a%Q%i%a!<%?$r=i4|2=$7$^$9!J<B:]$K$OITMW$N$h$&$G$9!K!#(B
+%    念のためパラメータを初期化します（実際には不要のようです）。
 %
 %    \begin{macrocode}
 \@listi
@@ -3602,7 +3602,7 @@
 % \begin{macro}{\@listv}
 % \begin{macro}{\@listvi}
 %
-%    $BBh(B2$B!A(B6$B%l%Y%k$N%j%9%H4D6-$N%Q%i%a!<%?$N@_Dj$G$9!#(B
+%    第2〜6レベルのリスト環境のパラメータの設定です。
 %
 %    \begin{macrocode}
 \def\@listii{\leftmargin\leftmarginii
@@ -3631,22 +3631,22 @@
 % \end{macro}
 % \end{macro}
 %
-% \paragraph{enumerate$B4D6-(B}
+% \paragraph{enumerate環境}
 %
-% |enumerate| $B4D6-$O%+%&%s%?(B |enumi|$B!$(B|enumii|$B!$(B|enumiii|$B!$(B
-% |enumiv| $B$r;H$$$^$9!#(B|enum|$n$ $B$OBh(B $n$ $B%l%Y%k$NHV9f$G$9!#(B
+% |enumerate| 環境はカウンタ |enumi|，|enumii|，|enumiii|，
+% |enumiv| を使います。|enum|$n$ は第 $n$ レベルの番号です。
 %
 % \begin{macro}{\theenumi}
 % \begin{macro}{\theenumii}
 % \begin{macro}{\theenumiii}
 % \begin{macro}{\theenumiv}
 %
-%    $B=PNO$9$kHV9f$N=q<0$r@_Dj$7$^$9!#(B
-%    $B$3$l$i$O(B\LaTeX $BK\BN!J(B\texttt{ltlists.dtx} $B;2>H!K$GDj5A:Q$_$G$9$,!$(B
-%    $B$3$3$G$OI=$7J}$rJQ$($F$$$^$9!#(B
-%    |\@arabic|$B!$(B|\@alph|$B!$(B|\@roman|$B!$(B|\@Alph| $B$O$=$l$>$l(B
-%    $B;;MQ?t;z!$>.J8;z%"%k%U%!%Y%C%H!$>.J8;z%m!<%^?t;z!$BgJ8;z%"%k%U%!%Y%C%H(B
-%    $B$GHV9f$r=PNO$9$kL?Na$G$9!#(B
+%    出力する番号の書式を設定します。
+%    これらは\LaTeX 本体（\texttt{ltlists.dtx} 参照）で定義済みですが，
+%    ここでは表し方を変えています。
+%    |\@arabic|，|\@alph|，|\@roman|，|\@Alph| はそれぞれ
+%    算用数字，小文字アルファベット，小文字ローマ数字，大文字アルファベット
+%    で番号を出力する命令です。
 %
 %    \begin{macrocode}
 \renewcommand{\theenumi}{\@arabic\c@enumi}
@@ -3664,16 +3664,16 @@
 % \begin{macro}{\labelenumiii}
 % \begin{macro}{\labelenumiv}
 %
-%    |enumerate| $B4D6-$NHV9f$r=PNO$9$kL?Na$G$9!#(B
-%    $BBh(B2$B%l%Y%k0J30$O:G8e$K2$J8$N%T%j%*%I$,IU$-$^$9$,!$(B
-%    $B$3$l$O9%$_$K1~$8$F<h$jJ'$C$F$/$@$5$$!#(B
-%    $BBh(B2$B%l%Y%k$NHV9f$N$+$C$3$OOBJ8MQ$K49$(!$(B
-%    $B$=$NN>B&$KF~$kM>J,$J%0%k!<$r(B |\inhibitglue| $B$G(B
-%    $B<h$j=|$$$F$$$^$9!#(B
+%    |enumerate| 環境の番号を出力する命令です。
+%    第2レベル以外は最後に欧文のピリオドが付きますが，
+%    これは好みに応じて取り払ってください。
+%    第2レベルの番号のかっこは和文用に換え，
+%    その両側に入る余分なグルーを |\inhibitglue| で
+%    取り除いています。
 %
 %    \begin{macrocode}
 \newcommand{\labelenumi}{\theenumi.}
-\newcommand{\labelenumii}{\inhibitglue$B!J(B\theenumii$B!K(B\inhibitglue}
+\newcommand{\labelenumii}{\inhibitglue（\theenumii）\inhibitglue}
 \newcommand{\labelenumiii}{\theenumiii.}
 \newcommand{\labelenumiv}{\theenumiv.}
 %    \end{macrocode}
@@ -3686,26 +3686,26 @@
 % \begin{macro}{\p@enumiii}
 % \begin{macro}{\p@enumiv}
 %
-%    |\p@enum|$n$ $B$O(B |\ref| $B%3%^%s%I$G(B |enumerate| $B4D6-$NBh(B $n$ $B%l%Y%k$N(B
-%    $B9`L\$,;2>H$5$l$k$H$-$N=q<0$G$9!#(B
-%    $B$3$l$bBh(B2$B%l%Y%k$OOBJ8MQ$+$C$3$K$7$^$7$?!#(B
+%    |\p@enum|$n$ は |\ref| コマンドで |enumerate| 環境の第 $n$ レベルの
+%    項目が参照されるときの書式です。
+%    これも第2レベルは和文用かっこにしました。
 %
 %    \begin{macrocode}
 \renewcommand{\p@enumii}{\theenumi}
-\renewcommand{\p@enumiii}{\theenumi\inhibitglue$B!J(B\theenumii$B!K(B}
+\renewcommand{\p@enumiii}{\theenumi\inhibitglue（\theenumii）}
 \renewcommand{\p@enumiv}{\p@enumiii\theenumiii}
 %    \end{macrocode}
 % \end{macro}
 % \end{macro}
 % \end{macro}
 %
-% \paragraph{itemize$B4D6-(B}
+% \paragraph{itemize環境}
 %
 % \begin{macro}{\labelitemi}
 % \begin{macro}{\labelitemii}
 % \begin{macro}{\labelitemiii}
 % \begin{macro}{\labelitemiv}
-%    |itemize| $B4D6-$NBh(B $n$ $B%l%Y%k$N%i%Y%k$r:n$k%3%^%s%I$G$9!#(B
+%    |itemize| 環境の第 $n$ レベルのラベルを作るコマンドです。
 %    \begin{macrocode}
 \newcommand\labelitemi{\textbullet}
 \newcommand\labelitemii{\normalfont\bfseries \textendash}
@@ -3717,13 +3717,13 @@
 % \end{macro}
 % \end{macro}
 %
-% \paragraph{description$B4D6-(B}
+% \paragraph{description環境}
 %
 % \begin{environment}{description}
 %
-% $BK\Mh$N(B |description| $B4D6-$G$O!$9`L\L>$,C;$$$H!$@bL@ItJ,$NF,$,(B
-% $B$=$l$K0z$-$:$i$l$F:8$K=P$F$7$^$$$^$9!#(B
-% $B$3$l$r2r7h$7$??7$7$$(B |description| $B$N<BAu$G$9!#(B
+% 本来の |description| 環境では，項目名が短いと，説明部分の頭が
+% それに引きずられて左に出てしまいます。
+% これを解決した新しい |description| の実装です。
 %
 %    \begin{macrocode}
 \newenvironment{description}{%
@@ -3737,28 +3737,28 @@
 %
 % \begin{macro}{\descriptionlabel}
 %
-%    |description| $B4D6-$N%i%Y%k$r=PNO$9$k%3%^%s%I$G$9!#(B
-%    $B9%$_$K1~$8$F(B |#1| $B$NA0$KE,Ev$J6u$-(B
-%    $B!J$?$H$($P(B |\hspace{1zw}|$B!K$rF~$l$k$N$b$$$$$H;W$$$^$9!#(B
+%    |description| 環境のラベルを出力するコマンドです。
+%    好みに応じて |#1| の前に適当な空き
+%    （たとえば |\hspace{1zw}|）を入れるのもいいと思います。
 %
 %    \begin{macrocode}
 \newcommand*\descriptionlabel[1]{\normalfont\headfont #1\hfil}
 %    \end{macrocode}
 % \end{macro}
 %
-% \paragraph{$B35MW(B}
+% \paragraph{概要}
 %
 % \begin{environment}{abstract}
 %
-% $B35MW!JMW;]!$9<35!K$r=PNO$9$k4D6-$G$9!#(B
-% |book| $B%/%i%9$G$O3F>O$N=i$a$K$A$g$C$H$7$?$3$H$r=q$/$N$K;H$$$^$9!#(B
-% |titlepage| $B%*%W%7%g%sIU$-$N(B |article| $B%/%i%9$G$O!$(B
-% $BFHN)$7$?%Z!<%8$K=PNO$5$l$^$9!#(B
-% |abstract| $B4D6-$O85$O(B |quotation| $B4D6-$G:n$i$l$F$$$^$7$?$,!$(B
-% |quotation| $B4D6-$N1&%^!<%8%s$r%<%m$K$7$?$N$G!$(B
-% |list| $B4D6-$G:n$jD>$7$^$7$?!#(B
+% 概要（要旨，梗概）を出力する環境です。
+% |book| クラスでは各章の初めにちょっとしたことを書くのに使います。
+% |titlepage| オプション付きの |article| クラスでは，
+% 独立したページに出力されます。
+% |abstract| 環境は元は |quotation| 環境で作られていましたが，
+% |quotation| 環境の右マージンをゼロにしたので，
+% |list| 環境で作り直しました。
 %
-% JSPF$B%9%?%$%k$G$O<B:]$N=PNO$O(B |\maketitle| $B$G9T$o$l$^$9!#(B
+% JSPFスタイルでは実際の出力は |\maketitle| で行われます。
 %
 %    \begin{macrocode}
 %<*book>
@@ -3831,12 +3831,12 @@
 %    \end{macrocode}
 % \end{environment}
 %
-% \paragraph{$B%-!<%o!<%I(B}
+% \paragraph{キーワード}
 %
 % \begin{environment}{keywords}
 %
-% $B%-!<%o!<%I$r=`Hw$9$k4D6-$G$9!#(B
-% $B<B:]$N=PNO$O(B |\maketitle| $B$G9T$o$l$^$9!#(B
+% キーワードを準備する環境です。
+% 実際の出力は |\maketitle| で行われます。
 %
 %    \begin{macrocode}
 %<*jspf>
@@ -3850,31 +3850,31 @@
 %    \end{macrocode}
 % \end{environment}
 %
-% \paragraph{verse$B4D6-(B}
+% \paragraph{verse環境}
 %
 % \begin{environment}{verse}
 %
-% $B;m$N$?$a$N(B |verse| $B4D6-$G$9!#(B
+% 詩のための |verse| 環境です。
 %
 %    \begin{macrocode}
 \newenvironment{verse}{%
   \let \\=\@centercr
   \list{}{%
     \itemsep \z@
-    \itemindent -2zw % $B85(B: -1.5em
+    \itemindent -2zw % 元: -1.5em
     \listparindent\itemindent
     \rightmargin \z@
-    \advance\leftmargin 2zw}% $B85(B: 1.5em
+    \advance\leftmargin 2zw}% 元: 1.5em
   \item\relax}{\endlist}
 %    \end{macrocode}
 % \end{environment}
 %
-% \paragraph{quotation$B4D6-(B}
+% \paragraph{quotation環境}
 %
 % \begin{environment}{quotation}
 %
-% $BCJMn$NF,$N;z2<$2NL$r(B1.5em$B$+$i(B |\parindent| $B$KJQ$($^$7$?!#(B
-% $B$^$?!$1&%^!<%8%s$r(B 0 $B$K$7$^$7$?!#(B
+% 段落の頭の字下げ量を1.5emから |\parindent| に変えました。
+% また，右マージンを 0 にしました。
 %
 %    \begin{macrocode}
 \newenvironment{quotation}{%
@@ -3886,12 +3886,12 @@
 %    \end{macrocode}
 % \end{environment}
 %
-% \paragraph{quote$B4D6-(B}
+% \paragraph{quote環境}
 %
 % \begin{environment}{quote}
 %
-% |quote| $B4D6-$O!$CJMn$,%$%s%G%s%H$5$l$J$$$3$H$r=|$-!$(B
-% |quotation| $B4D6-$HF1$8$G$9!#(B
+% |quote| 環境は，段落がインデントされないことを除き，
+% |quotation| 環境と同じです。
 %
 %    \begin{macrocode}
 \newenvironment{quote}%
@@ -3899,32 +3899,32 @@
 %    \end{macrocode}
 % \end{environment}
 %
-% \paragraph{$BDjM}$J$I(B}
+% \paragraph{定理など}
 %
-% |ltthm.dtx| $B;2>H!#$?$H$($P<!$N$h$&$KDj5A$7$^$9!#(B
+% |ltthm.dtx| 参照。たとえば次のように定義します。
 %\begin{verbatim}
-%  \newtheorem{definition}{$BDj5A(B}
-%  \newtheorem{axiom}{$B8xM}(B}
-%  \newtheorem{theorem}{$BDjM}(B}
+%  \newtheorem{definition}{定義}
+%  \newtheorem{axiom}{公理}
+%  \newtheorem{theorem}{定理}
 %\end{verbatim}
 %
-% [2001-04-26] $BDjM}$NCf$O%$%?%j%C%/BN$K$J$j$^$7$?$,!$(B
-% $B$3$l$G$OOBJ8$,%4%7%C%/BN$K$J$C$F$7$^$&$N$G!$(B
-% |\itshape| $B$r:o=|$7$^$7$?!#(B
+% [2001-04-26] 定理の中はイタリック体になりましたが，
+% これでは和文がゴシック体になってしまうので，
+% |\itshape| を削除しました。
 %
-% [2009-08-23] |\bfseries| $B$r(B |\headfont| $B$KD>$7!$(B
-% |\labelsep| $B$r(B 1\,zw $B$K$7!$3g8L$rA43Q$K$7$^$7$?!#(B
+% [2009-08-23] |\bfseries| を |\headfont| に直し，
+% |\labelsep| を 1\,zw にし，括弧を全角にしました。
 %
 %    \begin{macrocode}
 \def\@begintheorem#1#2{\trivlist\labelsep=1zw
    \item[\hskip \labelsep{\headfont #1\ #2}]}
 \def\@opargbegintheorem#1#2#3{\trivlist\labelsep=1zw
-      \item[\hskip \labelsep{\headfont #1\ #2$B!J(B#3$B!K(B}]}
+      \item[\hskip \labelsep{\headfont #1\ #2（#3）}]}
 %    \end{macrocode}
 %
 % \begin{environment}{titlepage}
 %
-% $B%?%$%H%k$rFHN)$N%Z!<%8$K=PNO$9$k$N$K;H$o$l$^$9!#(B
+% タイトルを独立のページに出力するのに使われます。
 %
 %    \begin{macrocode}
 \newenvironment{titlepage}{%
@@ -3944,11 +3944,11 @@
 %    \end{macrocode}
 % \end{environment}
 %
-% \paragraph{$BIUO?(B}
+% \paragraph{付録}
 %
 % \begin{macro}{\appendix}
 %
-% $BK\J8$HIUO?$rJ,N%$9$k%3%^%s%I$G$9!#(B
+% 本文と付録を分離するコマンドです。
 %
 %    \begin{macrocode}
 %<*!book>
@@ -3972,13 +3972,13 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \subsection{$B%Q%i%a!<%?$N@_Dj(B}
+% \subsection{パラメータの設定}
 %
-% \paragraph{array$B$H(Btabular$B4D6-(B}
+% \paragraph{arrayとtabular環境}
 %
 % \begin{macro}{\arraycolsep}
 %
-% |array| $B4D6-$NNs4V$K$O(B |\arraycolsep| $B$N(B2$BG\$NI}$N6u$-$,F~$j$^$9!#(B
+% |array| 環境の列間には |\arraycolsep| の2倍の幅の空きが入ります。
 %
 %    \begin{macrocode}
 \setlength\arraycolsep{5\jsc@mpt}
@@ -3987,7 +3987,7 @@
 %
 % \begin{macro}{\tabcolsep}
 %
-% |tabular| $B4D6-$NNs4V$K$O(B |\tabcolsep| $B$N(B2$BG\$NI}$N6u$-$,F~$j$^$9!#(B
+% |tabular| 環境の列間には |\tabcolsep| の2倍の幅の空きが入ります。
 %
 %    \begin{macrocode}
 \setlength\tabcolsep{6\jsc@mpt}
@@ -3996,7 +3996,7 @@
 %
 % \begin{macro}{\arrayrulewidth}
 %
-% |array|$B!$(B|tabular| $B4D6-Fb$N7S@~$NI}$G$9!#(B
+% |array|，|tabular| 環境内の罫線の幅です。
 %
 %    \begin{macrocode}
 \setlength\arrayrulewidth{.4\jsc@mpt}
@@ -4005,46 +4005,46 @@
 %
 % \begin{macro}{\doublerulesep}
 %
-% |array|$B!$(B|tabular| $B4D6-$G$NFs=E7S@~4V$N%"%-$G$9!#(B
+% |array|，|tabular| 環境での二重罫線間のアキです。
 %
 %    \begin{macrocode}
 \setlength\doublerulesep{2\jsc@mpt}
 %    \end{macrocode}
 % \end{macro}
 %
-% \paragraph{tabbing$B4D6-(B}
+% \paragraph{tabbing環境}
 %
 % \begin{macro}{\tabbingsep}
 %
-% |\'| $B%3%^%s%I$GF~$k%"%-$G$9!#(B
+% |\'| コマンドで入るアキです。
 %
 %    \begin{macrocode}
 \setlength\tabbingsep{\labelsep}
 %    \end{macrocode}
 % \end{macro}
 %
-% \paragraph{minipage$B4D6-(B}
+% \paragraph{minipage環境}
 %
 % \begin{macro}{\@mpfootins}
 %
-% |minipage| $B4D6-$N5SCm$N(B |\skip|\hspace{0pt}|\@mpfootins|
-% $B$ODL>o$N%Z!<%8$N(B |\skip|\hspace{0pt}|\footins|
-% $B$HF1$8F/$-$r$7$^$9!#(B
+% |minipage| 環境の脚注の |\skip|\hspace{0pt}|\@mpfootins|
+% は通常のページの |\skip|\hspace{0pt}|\footins|
+% と同じ働きをします。
 %
 %    \begin{macrocode}
 \skip\@mpfootins = \skip\footins
 %    \end{macrocode}
 % \end{macro}
 %
-% \paragraph{framebox$B4D6-(B}
+% \paragraph{framebox環境}
 %
 % \begin{macro}{\fboxsep}
 %
-% |\fbox|$B!$(B|\framebox| $B$GFbB&$N%F%-%9%H$HOH$H$N4V$N6u$-$G$9!#(B
+% |\fbox|，|\framebox| で内側のテキストと枠との間の空きです。
 %
 % \begin{macro}{\fboxrule}
 %
-% |\fbox|$B!$(B|\framebox| $B$N7S@~$NI}$G$9!#(B
+% |\fbox|，|\framebox| の罫線の幅です。
 %
 %    \begin{macrocode}
 \setlength\fboxsep{3\jsc@mpt}
@@ -4053,11 +4053,11 @@
 % \end{macro}
 % \end{macro}
 %
-% \paragraph{equation$B$H(Beqnarray$B4D6-(B}
+% \paragraph{equationとeqnarray環境}
 %
 % \begin{macro}{\theequation}
 %
-% $B?t<0HV9f$r=PNO$9$k%3%^%s%I$G$9!#(B
+% 数式番号を出力するコマンドです。
 %
 %    \begin{macrocode}
 %<!book>\renewcommand \theequation {\@arabic\c@equation}
@@ -4071,8 +4071,8 @@
 %
 % \begin{macro}{\jot}
 %
-%    |eqnarray| $B$N9T4V$KM>J,$KF~$k%"%-$G$9!#(B
-%    $B%G%U%)%k%H$NCM$r%3%a%s%H%"%&%H$7$F<($7$F$*$-$^$9!#(B
+%    |eqnarray| の行間に余分に入るアキです。
+%    デフォルトの値をコメントアウトして示しておきます。
 %
 %    \begin{macrocode}
 % \setlength\jot{3pt}
@@ -4081,52 +4081,52 @@
 %
 % \begin{macro}{\@eqnnum}
 %
-%    $B?t<0HV9f$N7A<0$G$9!#(B
-%    $B%G%U%)%k%H$NCM$r%3%a%s%H%"%&%H$7$F<($7$F$*$-$^$9!#(B
+%    数式番号の形式です。
+%    デフォルトの値をコメントアウトして示しておきます。
 %
-%    |\inhibitglue$B!J(B\theequation$B!K(B\inhibitglue| $B$N$h$&$KOBJ8$+$C$3(B
-%    $B$r;H$&$3$H$b2DG=$G$9!#(B
+%    |\inhibitglue（\theequation）\inhibitglue| のように和文かっこ
+%    を使うことも可能です。
 %
 %    \begin{macrocode}
 % \def\@eqnnum{(\theequation)}
 %    \end{macrocode}
 % \end{macro}
 %
-%    |amsmath| $B%Q%C%1!<%8$r;H$&>l9g$O(B |\tagform@| $B$r<!$N$h$&$K=$@5$7$^$9!#(B
+%    |amsmath| パッケージを使う場合は |\tagform@| を次のように修正します。
 %
 %    \begin{macrocode}
-% \def\tagform@#1{\maketag@@@{$B!J(B\ignorespaces#1\unskip\@@italiccorr$B!K(B}}
+% \def\tagform@#1{\maketag@@@{（\ignorespaces#1\unskip\@@italiccorr）}}
 %    \end{macrocode}
 %
-% \subsection{$B%U%m!<%H(B}
+% \subsection{フロート}
 %
-% $B%?%$%W(B \texttt{TYPE} $B$N%U%m!<%H%*%V%8%'%/%H$r(B
-% $B07$&$K$O!$<!$N%^%/%m$rDj5A$7$^$9!#(B
+% タイプ \texttt{TYPE} のフロートオブジェクトを
+% 扱うには，次のマクロを定義します。
 % \begin{description}
 % \item[\texttt{\bslash fps@TYPE}]
-%   $B%U%m!<%H$rCV$/0LCV!J(Bfloat placement specifier$B!K$G$9!#(B
+%   フロートを置く位置（float placement specifier）です。
 % \item[\texttt{\bslash ftype@TYPE}]
-%   $B%U%m!<%H$NHV9f$G$9!#(B2$B$NN_>h!J(B1$B!$(B2$B!$(B4$B!$(B\ldots $B!K$G$J$1$l$P$J$j$^$;$s!#(B
+%   フロートの番号です。2の累乗（1，2，4，\ldots ）でなければなりません。
 % \item[\texttt{\bslash ext@TYPE}]
-%   $B%U%m!<%H$NL\<!$r=PNO$9$k%U%!%$%k$N3HD%;R$G$9!#(B
+%   フロートの目次を出力するファイルの拡張子です。
 % \item[\texttt{\bslash fnum@TYPE}]
-%   $B%-%c%W%7%g%sMQ$NHV9f$r@8@.$9$k%^%/%m$G$9!#(B
+%   キャプション用の番号を生成するマクロです。
 % \item[\texttt{\bslash @makecaption}{\meta{num}}{\meta{text}}]
-%   $B%-%c%W%7%g%s$r=PNO$9$k%^%/%m$G$9!#(B
-%   \meta{num} $B$O(B |\fnum@...| $B$N@8@.$9$kHV9f!$(B
-%   \meta{text} $B$O%-%c%W%7%g%s$N%F%-%9%H$G$9!#(B
-%   $B%F%-%9%H$OE,Ev$JI}$N(B |\parbox| $B$KF~$j$^$9!#(B
+%   キャプションを出力するマクロです。
+%   \meta{num} は |\fnum@...| の生成する番号，
+%   \meta{text} はキャプションのテキストです。
+%   テキストは適当な幅の |\parbox| に入ります。
 % \end{description}
 %
-% \paragraph{figure$B4D6-(B}
+% \paragraph{figure環境}
 %
 % \begin{macro}{\c@figure}
 %
-% $B?^HV9f$N%+%&%s%?$G$9!#(B
+% 図番号のカウンタです。
 %
 % \begin{macro}{\thefigure}
 %
-% $B?^HV9f$r=PNO$9$k%3%^%s%I$G$9!#(B
+% 図番号を出力するコマンドです。
 %
 %    \begin{macrocode}
 %<*!book>
@@ -4147,9 +4147,9 @@
 % \begin{macro}{\ext@figure}
 % \begin{macro}{\fnum@figure}
 %
-%    |figure| $B$N%Q%i%a!<%?$G$9!#(B
-%    |\figurename| $B$ND>8e$K(B |~| $B$,F~$C$F$$$^$7$?$,!$(B
-%    $B$3$3$G$O30$7$^$7$?!#(B
+%    |figure| のパラメータです。
+%    |\figurename| の直後に |~| が入っていましたが，
+%    ここでは外しました。
 %
 %    \begin{macrocode}
 \def\fps@figure{tbp}
@@ -4165,7 +4165,7 @@
 % \begin{environment}{figure}
 % \begin{environment}{figure*}
 %
-% |*| $B7A<0$OCJH4$-$N%U%m!<%H$G$9!#(B
+% |*| 形式は段抜きのフロートです。
 %
 %    \begin{macrocode}
 \newenvironment{figure}%
@@ -4178,14 +4178,14 @@
 % \end{environment}
 % \end{environment}
 %
-% \paragraph{table$B4D6-(B}
+% \paragraph{table環境}
 %
 % \begin{macro}{\c@table}
 % \begin{macro}{\thetable}
 %
-% $BI=HV9f%+%&%s%?$HI=HV9f$r=PNO$9$k%3%^%s%I$G$9!#(B
-% $B%"%9%-!<HG$G$O(B |\thechapter.| $B$,(B |\thechapter{}$B!&(B| $B$K$J$C$F$$$^$9$,!$(B
-% $B$3$3$G$O%*%j%8%J%k$N$^$^$K$7$F$$$^$9!#(B
+% 表番号カウンタと表番号を出力するコマンドです。
+% アスキー版では |\thechapter.| が |\thechapter{}・| になっていますが，
+% ここではオリジナルのままにしています。
 %
 %    \begin{macrocode}
 %<*!book>
@@ -4206,9 +4206,9 @@
 % \begin{macro}{\ext@table}
 % \begin{macro}{\fnum@table}
 %
-% |table| $B$N%Q%i%a!<%?$G$9!#(B
-% |\tablename| $B$ND>8e$K(B |~| $B$,F~$C$F$$$^$7$?$,!$(B
-% $B$3$3$G$O30$7$^$7$?!#(B
+% |table| のパラメータです。
+% |\tablename| の直後に |~| が入っていましたが，
+% ここでは外しました。
 %
 %    \begin{macrocode}
 \def\fps@table{tbp}
@@ -4224,7 +4224,7 @@
 % \begin{environment}{table}
 % \begin{environment}{table*}
 %
-% |*| $B$OCJH4$-$N%U%m!<%H$G$9!#(B
+% |*| は段抜きのフロートです。
 %
 %    \begin{macrocode}
 \newenvironment{table}%
@@ -4237,37 +4237,37 @@
 % \end{environment}
 % \end{environment}
 %
-% \subsection{$B%-%c%W%7%g%s(B}
+% \subsection{キャプション}
 %
 % \begin{macro}{\@makecaption}
 %
-% |\caption| $B%3%^%s%I$K$h$j8F$S=P$5$l!$(B
-% $B<B:]$K%-%c%W%7%g%s$r=PNO$9$k%3%^%s%I$G$9!#(B
-% $BBh(B1$B0z?t$O%U%m!<%H$NHV9f!$(B
-% $BBh(B2$B0z?t$O%F%-%9%H$G$9!#(B
+% |\caption| コマンドにより呼び出され，
+% 実際にキャプションを出力するコマンドです。
+% 第1引数はフロートの番号，
+% 第2引数はテキストです。
 %
 % \begin{macro}{\abovecaptionskip}
 % \begin{macro}{\belowcaptionskip}
 %
-% $B$=$l$>$l%-%c%W%7%g%s$NA08e$KA^F~$5$l$k%9%Z!<%9$G$9!#(B
-% |\belowcaptionskip| $B$,(B0$B$K$J$C$F$$$^$7$?$N$G!$(B
-% $B%-%c%W%7%g%s$rI=$N>e$K$D$1$?>l9g$K%-%c%W%7%g%s$HI=$,(B
-% $B$/$C$D$$$F$7$^$&$N$rD>$7$^$7$?!#(B
+% それぞれキャプションの前後に挿入されるスペースです。
+% |\belowcaptionskip| が0になっていましたので，
+% キャプションを表の上につけた場合にキャプションと表が
+% くっついてしまうのを直しました。
 %
 %    \begin{macrocode}
 \newlength\abovecaptionskip
 \newlength\belowcaptionskip
-\setlength\abovecaptionskip{5\jsc@mpt} % $B85(B: 10\p@
-\setlength\belowcaptionskip{5\jsc@mpt} % $B85(B: 0\p@
+\setlength\abovecaptionskip{5\jsc@mpt} % 元: 10\p@
+\setlength\belowcaptionskip{5\jsc@mpt} % 元: 0\p@
 %    \end{macrocode}
 % \end{macro}
 % \end{macro}
 %
-% $B<B:]$N%-%c%W%7%g%s$r=PNO$7$^$9!#(B
-% $B%*%j%8%J%k$H0[$J$j!$J8;z%5%$%:$r(B |\small| $B$K$7!$(B
-% $B%-%c%W%7%g%s$NI}$r(B2cm$B69$/$7$^$7$?!#(B
+% 実際のキャプションを出力します。
+% オリジナルと異なり，文字サイズを |\small| にし，
+% キャプションの幅を2cm狭くしました。
 %
-% [2003-11-05] $B%m%8%C%/$r>/$7JQ$($F$_$^$7$?!#(B
+% [2003-11-05] ロジックを少し変えてみました。
 %
 %    \begin{macrocode}
 %<*!jspf>
@@ -4315,12 +4315,12 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \section{$B%U%)%s%H%3%^%s%I(B}
+% \section{フォントコマンド}
 %
-% $B$3$3$G$O(B\LaTeX~2.09$B$G;H$o$l$F$$$?%3%^%s%I$rDj5A$7$^$9!#(B
-% $B$3$l$i$O%F%-%9%H%b!<%I$H?t<0%b!<%I$N$I$A$i$G$bF0:n$7$^$9!#(B
-% $B$3$l$i$O8_49@-$N$?$a$N$b$N$G!$(B
-% $B$G$-$k$@$1(B |\text...| $B$H(B |\math...| $B$r;H$C$F$/$@$5$$!#(B
+% ここでは\LaTeX~2.09で使われていたコマンドを定義します。
+% これらはテキストモードと数式モードのどちらでも動作します。
+% これらは互換性のためのもので，
+% できるだけ |\text...| と |\math...| を使ってください。
 %
 % \begin{macro}{\mc}
 % \begin{macro}{\gt}
@@ -4328,7 +4328,7 @@
 % \begin{macro}{\sf}
 % \begin{macro}{\tt}
 %
-% $B%U%)%s%H%U%!%_%j$rJQ99$7$^$9!#(B
+% フォントファミリを変更します。
 %
 %    \begin{macrocode}
 \DeclareOldFontCommand{\mc}{\normalfont\mcfamily}{\mathmc}
@@ -4345,8 +4345,8 @@
 %
 % \begin{macro}{\bf}
 %
-% $B%\!<%k%I%7%j!<%:$K$7$^$9!#DL>o$N%_!<%G%#%"%`%7%j!<%:$KLa$9(B
-% $B%3%^%s%I$O(B |\mdseries| $B$G$9!#(B
+% ボールドシリーズにします。通常のミーディアムシリーズに戻す
+% コマンドは |\mdseries| です。
 %
 %    \begin{macrocode}
 \DeclareOldFontCommand{\bf}{\normalfont\bfseries}{\mathbf}
@@ -4357,10 +4357,10 @@
 % \begin{macro}{\sl}
 % \begin{macro}{\sc}
 %
-% $B%U%)%s%H%7%'%$%W$rJQ$($k%3%^%s%I$G$9!#(B
-% $B<PBN$H%9%b!<%k%-%c%C%W%9$O?t<0Cf$G$O2?$b$7$^$;$s(B
-% $B!J7Y9p%a%C%;!<%8$r=PNO$7$^$9!K!#(B
-% $BDL>o$N%"%C%W%i%$%HBN$KLa$9%3%^%s%I$O(B |\upshape| $B$G$9!#(B
+% フォントシェイプを変えるコマンドです。
+% 斜体とスモールキャップスは数式中では何もしません
+% （警告メッセージを出力します）。
+% 通常のアップライト体に戻すコマンドは |\upshape| です。
 %
 %    \begin{macrocode}
 \DeclareOldFontCommand{\it}{\normalfont\itshape}{\mathit}
@@ -4374,7 +4374,7 @@
 % \begin{macro}{\cal}
 % \begin{macro}{\mit}
 %
-% $B?t<0%b!<%I0J30$G$O2?$b$7$^$;$s!J7Y9p$r=P$7$^$9!K!#(B
+% 数式モード以外では何もしません（警告を出します）。
 %
 %    \begin{macrocode}
 \DeclareRobustCommand*{\cal}{\@fontswitch\relax\mathcal}
@@ -4383,65 +4383,65 @@
 % \end{macro}
 % \end{macro}
 %
-% \section{$BAj8_;2>H(B}
+% \section{相互参照}
 %
-% \subsection{$BL\<!$NN`(B}
+% \subsection{目次の類}
 %
-% |\section| $B%3%^%s%I$O(B |.toc| $B%U%!%$%k$K<!$N$h$&$J9T$r=PNO$7$^$9!#(B
+% |\section| コマンドは |.toc| ファイルに次のような行を出力します。
 % \begin{quote}
-%   |\contentsline{section}{$B%?%$%H%k(B}{$B%Z!<%8(B}|
+%   |\contentsline{section}{タイトル}{ページ}|
 % \end{quote}
-% $B$?$H$($P(B |\section| $B$K8+=P$7HV9f$,IU$/>l9g!$>e$N!V%?%$%H%k!W$O(B
+% たとえば |\section| に見出し番号が付く場合，上の「タイトル」は
 % \begin{quote}
-%   |\numberline{$BHV9f(B}{$B8+=P$7(B}|
+%   |\numberline{番号}{見出し}|
 % \end{quote}
-% $B$H$J$j$^$9!#(B
-% $B$3$N!VHV9f!W$O(B |\thesection| $B%3%^%s%I$G@8@.$5$l$?8+=P$7HV9f$G$9!#(B
+% となります。
+% この「番号」は |\thesection| コマンドで生成された見出し番号です。
 %
-% |figure| $B4D6-$N(B |\caption| $B%3%^%s%I$O(B |.lof| $B%U%!%$%k$K(B
-% $B<!$N$h$&$J9T$r=PNO$7$^$9!#(B
+% |figure| 環境の |\caption| コマンドは |.lof| ファイルに
+% 次のような行を出力します。
 % \begin{quote}
-% |\contentsline{figure}{\numberline{$BHV9f(B}{$B%-%c%W%7%g%s(B}{$B%Z!<%8(B}|
+% |\contentsline{figure}{\numberline{番号}{キャプション}{ページ}|
 % \end{quote}
-% $B$3$N!VHV9f!W$O(B |\thefigure| $B%3%^%s%I$G@8@.$5$l$??^HV9f$G$9!#(B
+% この「番号」は |\thefigure| コマンドで生成された図番号です。
 %
-% |table| $B4D6-$bF1MM$G$9!#(B
+% |table| 環境も同様です。
 %
-% |\contentsline{...}| $B$O(B |\l@...| $B$H$$$&%3%^%s%I$r<B9T$9$k$N$G!$(B
-% $B$"$i$+$8$a(B |\l@chapter|$B!$(B|\l@section|$B!$(B|\l@figure| $B$J$I$r(B
-% $BDj5A$7$F$*$+$J$1$l$P$J$j$^$;$s!#(B
-% $B$3$l$i$NB?$/$O(B |\@dottedtocline| $B%3%^%s%I$r;H$C$FDj5A$7$^$9!#(B
-% $B$3$l$O(B
+% |\contentsline{...}| は |\l@...| というコマンドを実行するので，
+% あらかじめ |\l@chapter|，|\l@section|，|\l@figure| などを
+% 定義しておかなければなりません。
+% これらの多くは |\@dottedtocline| コマンドを使って定義します。
+% これは
 % \begin{quote}
-%   |\@dottedtocline{$B%l%Y%k(B}{$B%$%s%G%s%H(B}{$BI}(B}{$B%?%$%H%k(B}{$B%Z!<%8(B}|
+%   |\@dottedtocline{レベル}{インデント}{幅}{タイトル}{ページ}|
 % \end{quote}
-% $B$H$$$&=q<0$G$9!#(B
+% という書式です。
 % \begin{description}
-% \item[$B%l%Y%k(B] $B$3$NCM$,(B |tocdepth| $B0J2<$N$H$-$@$1=PNO$5$l$^$9!#(B
-%   |\chapter| $B$O%l%Y%k(B0$B!$(B|\section| $B$O%l%Y%k(B1$B!$Ey!9$G$9!#(B
-% \item[$B%$%s%G%s%H(B] $B:8B&$N;z2<$2NL$G$9!#(B
-% \item[$BI}(B] $B!V%?%$%H%k!W$K(B |\numberline| $B%3%^%s%I$,4^$^$l$k>l9g!$(B
-%   $B@aHV9f$,F~$kH"$NI}$G$9!#(B
+% \item[レベル] この値が |tocdepth| 以下のときだけ出力されます。
+%   |\chapter| はレベル0，|\section| はレベル1，等々です。
+% \item[インデント] 左側の字下げ量です。
+% \item[幅] 「タイトル」に |\numberline| コマンドが含まれる場合，
+%   節番号が入る箱の幅です。
 % \end{description}
 %
 % \begin{macro}{\@pnumwidth}
 %
-% $B%Z!<%8HV9f$NF~$kH"$NI}$G$9!#(B
+% ページ番号の入る箱の幅です。
 %
 % \begin{macro}{\@tocrmarg}
 %
-% $B1&%^!<%8%s$G$9!#(B
-% |\@tocrmarg| $\ge$ |\@pnumwidth| $B$H$7$^$9!#(B
+% 右マージンです。
+% |\@tocrmarg| $\ge$ |\@pnumwidth| とします。
 %
 % \begin{macro}{\@dotsep}
 %
-% $BE@$N4V3V$G$9!JC10L(B mu$B!K!#(B
+% 点の間隔です（単位 mu）。
 %
 % \begin{macro}{\c@tocdepth}
 %
-% $BL\<!%Z!<%8$K=PNO$9$k8+=P$7%l%Y%k$G$9!#(B
-% $B85$O(B \texttt{article} $B$G(B3$B!$$=$NB>$G(B2$B$G$7$?$,!$(B
-% $B$3$3$G$O0l$D$:$D8:$i$7$F$$$^$9!#(B
+% 目次ページに出力する見出しレベルです。
+% 元は \texttt{article} で3，その他で2でしたが，
+% ここでは一つずつ減らしています。
 %
 %    \begin{macrocode}
 \newcommand\@pnumwidth{1.55em}
@@ -4455,15 +4455,15 @@
 % \end{macro}
 % \end{macro}
 %
-% \paragraph{$BL\<!(B}
+% \paragraph{目次}
 %
 % \begin{macro}{\tableofcontents}
 %
-% $BL\<!$r@8@.$7$^$9!#(B
+% 目次を生成します。
 %
 % \begin{macro}{\jsc@tocl@width}
 %
-% [2013-12-30] |\prechaptername| $B$J$I$+$i8+@Q$b$C$?L\<!$N%i%Y%k$ND9$5$G$9!#(B(by ts)
+% [2013-12-30] |\prechaptername| などから見積もった目次のラベルの長さです。(by ts)
 %
 %    \begin{macrocode}
 \newdimen\jsc@tocl@width
@@ -4497,7 +4497,7 @@
 %
 % \begin{macro}{\l@part}
 %
-% $BIt$NL\<!$G$9!#(B
+% 部の目次です。
 %
 %    \begin{macrocode}
 \newcommand*{\l@part}[2]{%
@@ -4525,10 +4525,10 @@
 %
 % \begin{macro}{\l@chapter}
 %
-% $B>O$NL\<!$G$9!#(B|\@lnumwidth| $B$r(B4.683zw$B$KA}$d$7$^$7$?!#(B
+% 章の目次です。|\@lnumwidth| を4.683zwに増やしました。
 %
-% [2013-12-30] |\@lnumwidth| $B$r(B |\jsc@tocl@width| $B$+$i(B
-% $B7h$a$k$h$&$K$7$F$_$^$7$?!#(B(by ts)
+% [2013-12-30] |\@lnumwidth| を |\jsc@tocl@width| から
+% 決めるようにしてみました。(by ts)
 %
 %    \begin{macrocode}
 %<*book>
@@ -4536,7 +4536,7 @@
   \ifnum \c@tocdepth >\m@ne
     \addpenalty{-\@highpenalty}%
     \addvspace{1.0em \@plus\jsc@mpt}
-%   \vskip 1.0em \@plus\p@   % book.cls$B$G$O",$,$3$&$J$C$F$$$k(B
+%   \vskip 1.0em \@plus\p@   % book.clsでは↑がこうなっている
     \begingroup
       \parindent\z@
 %     \rightskip\@pnumwidth
@@ -4556,7 +4556,7 @@
 %
 % \begin{macro}{\l@section}
 %
-% $B@a$NL\<!$G$9!#(B
+% 節の目次です。
 %
 %    \begin{macrocode}
 %<*!book>
@@ -4570,7 +4570,7 @@
       \rightskip\@tocrmarg
       \parfillskip-\rightskip
       \leavevmode\headfont
-      %\setlength\@lnumwidth{4zw}% $B85(B1.5em [2003-03-02]
+      %\setlength\@lnumwidth{4zw}% 元1.5em [2003-03-02]
       \setlength\@lnumwidth{\jsc@tocl@width}\advance\@lnumwidth 2zw
       \advance\leftskip\@lnumwidth \hskip-\leftskip
       #1\nobreak\hfil\nobreak\hbox to\@pnumwidth{\hss#2}\par
@@ -4579,14 +4579,14 @@
 %</!book>
 %    \end{macrocode}
 %
-% $B%$%s%G%s%H$HI}$O$=$l$>$l(B1.5em$B!$(B2.3em$B$G$7$?$,!$(B
-% 1zw$B!$(B3.683zw$B$KJQ$($^$7$?!#(B
+% インデントと幅はそれぞれ1.5em，2.3emでしたが，
+% 1zw，3.683zwに変えました。
 %    \begin{macrocode}
 %<book> % \newcommand*{\l@section}{\@dottedtocline{1}{1zw}{3.683zw}}
 %    \end{macrocode}
 %
-% [2013-12-30] $B>e$N%$%s%G%s%H$O(B |\jsc@tocl@width| $B$+$i7h$a$k$h$&$K(B
-% $B$7$^$7$?!#(B(by ts)
+% [2013-12-30] 上のインデントは |\jsc@tocl@width| から決めるように
+% しました。(by ts)
 %
 % \end{macro}
 %
@@ -4595,11 +4595,11 @@
 % \begin{macro}{\l@paragraph}
 % \begin{macro}{\l@subparagraph}
 %
-% $B$5$i$K2<0L%l%Y%k$NL\<!9`L\$NBN:[$G$9!#(B
-% $B$"$^$j;H$C$?$3$H$,$"$j$^$;$s$N$G!$MW=$@5$+$b$7$l$^$;$s!#(B
+% さらに下位レベルの目次項目の体裁です。
+% あまり使ったことがありませんので，要修正かもしれません。
 %
-% [2013-12-30] $B$3$3$b(B  |\jsc@tocl@width| $B$+$i7h$a$k$h$&$K(B
-% $B$7$F$_$^$7$?!#(B(by ts)
+% [2013-12-30] ここも  |\jsc@tocl@width| から決めるように
+% してみました。(by ts)
 %
 %    \begin{macrocode}
 %<*!book>
@@ -4656,12 +4656,12 @@
 % \begin{macro}{\numberline}
 % \begin{macro}{\@lnumwidth}
 %
-% $B2$J8HG(B\LaTeX $B$G$O(B |\numberline{...}| $B$OI}(B |\@tempdima| $B$NH"$K:85M$a(B
-% $B$G=PNO$9$kL?Na$G$9$,!$(B
-% $B%"%9%-!<HG$G$O(B |\@tempdima| $B$NBe$o$j$K(B |\@lnumwidth| $B$H$$$&JQ?t(B
-% $B$GI}$r7h$a$k$h$&$K:FDj5A$7$F$$$^$9!#(B
-% $B8eB3J8;z$,A43Q$+H>3Q$+$G%9%Z!<%9$,JQ$o$i$J$$$h$&$K(B |\hspace|
-% $B$rF~$l$F$*$-$^$7$?!#(B
+% 欧文版\LaTeX では |\numberline{...}| は幅 |\@tempdima| の箱に左詰め
+% で出力する命令ですが，
+% アスキー版では |\@tempdima| の代わりに |\@lnumwidth| という変数
+% で幅を決めるように再定義しています。
+% 後続文字が全角か半角かでスペースが変わらないように |\hspace|
+% を入れておきました。
 %
 %    \begin{macrocode}
 \newdimen\@lnumwidth
@@ -4672,8 +4672,8 @@
 %
 % \begin{macro}{\@dottedtocline}
 %
-% \LaTeX $BK\BN!J(B\texttt{ltsect.dtx} $B;2>H!K$G$NDj5A$HF1$8$G$9$,!$(B
-% |\@tempdima| $B$r(B |\@lnumwidth| $B$KJQ$($F$$$^$9!#(B
+% \LaTeX 本体（\texttt{ltsect.dtx} 参照）での定義と同じですが，
+% |\@tempdima| を |\@lnumwidth| に変えています。
 %
 %    \begin{macrocode}
 \def\@dottedtocline#1#2#3#4#5{\ifnum #1>\c@tocdepth \else
@@ -4691,11 +4691,11 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \paragraph{$B?^L\<!$HI=L\<!(B}
+% \paragraph{図目次と表目次}
 %
 % \begin{macro}{\listoffigures}
 %
-% $B?^L\<!$r=PNO$7$^$9!#(B
+% 図目次を出力します。
 %
 %    \begin{macrocode}
 \newcommand{\listoffigures}{%
@@ -4717,7 +4717,7 @@
 %
 % \begin{macro}{\l@figure}
 %
-% $B?^L\<!$N9`L\$r=PNO$7$^$9!#(B
+% 図目次の項目を出力します。
 %
 %    \begin{macrocode}
 \newcommand*{\l@figure}{\@dottedtocline{1}{1zw}{3.683zw}}
@@ -4726,7 +4726,7 @@
 %
 % \begin{macro}{\listoftables}
 %
-% $BI=L\<!$r=PNO$7$^$9!#(B
+% 表目次を出力します。
 %
 %    \begin{macrocode}
 \newcommand{\listoftables}{%
@@ -4748,19 +4748,19 @@
 %
 % \begin{macro}{\l@table}
 %
-% $BI=L\<!$O?^L\<!$HF1$8$G$9!#(B
+% 表目次は図目次と同じです。
 %
 %    \begin{macrocode}
 \let\l@table\l@figure
 %    \end{macrocode}
 % \end{macro}
 %
-% \subsection{$B;29MJ88%(B}
+% \subsection{参考文献}
 %
 % \begin{macro}{\bibindent}
 %
-% $B%*!<%W%s%9%?%$%k$N;29MJ88%$G;H$&%$%s%G%s%HI}$G$9!#(B
-% $B85$O(B 1.5em $B$G$7$?!#(B
+% オープンスタイルの参考文献で使うインデント幅です。
+% 元は 1.5em でした。
 %
 %    \begin{macrocode}
 \newdimen\bibindent
@@ -4770,7 +4770,7 @@
 %
 % \begin{environment}{thebibliography}
 %
-% $B;29MJ88%%j%9%H$r=PNO$7$^$9!#(B
+% 参考文献リストを出力します。
 %
 %    \begin{macrocode}
 \newenvironment{thebibliography}[1]{%
@@ -4806,7 +4806,7 @@
 %
 % \begin{macro}{\newblock}
 %
-% |\newblock| $B$O%G%U%)%k%H$G$O>.$5$J%9%Z!<%9$r@8@.$7$^$9!#(B
+% |\newblock| はデフォルトでは小さなスペースを生成します。
 %
 %    \begin{macrocode}
 \newcommand{\newblock}{\hskip .11em\@plus.33em\@minus.07em}
@@ -4815,8 +4815,8 @@
 %
 % \begin{macro}{\@openbib@code}
 %
-% |\@openbib@code| $B$O%G%U%)%k%H$G$O2?$b$7$^$;$s!#(B
-% $B$3$NDj5A$O(B |openbib| $B%*%W%7%g%s$K$h$C$FJQ99$5$l$^$9!#(B
+% |\@openbib@code| はデフォルトでは何もしません。
+% この定義は |openbib| オプションによって変更されます。
 %
 %    \begin{macrocode}
 \let\@openbib@code\@empty
@@ -4825,13 +4825,13 @@
 %
 % \begin{macro}{\@biblabel}
 %
-% |\bibitem[...]| $B$N%i%Y%k$r:n$j$^$9!#(B
-% \texttt{ltbibl.dtx} $B$NDj5A$NH>3Q(B [] $B$rA43Q!N!O$KJQ$(!$(B
-% $BM>J,$J%9%Z!<%9$,F~$i$J$$$h$&$K(B |\inhibitglue| $B$G$O$5$_$^$7$?!#(B
-% $B$H$j$"$($:%3%a%s%H%"%&%H$7$F$*$-$^$9$N$G!$I,MW$K1~$8$F@8$+$7$F$/$@$5$$!#(B
+% |\bibitem[...]| のラベルを作ります。
+% \texttt{ltbibl.dtx} の定義の半角 [] を全角［］に変え，
+% 余分なスペースが入らないように |\inhibitglue| ではさみました。
+% とりあえずコメントアウトしておきますので，必要に応じて生かしてください。
 %
 %    \begin{macrocode}
-% \def\@biblabel#1{\inhibitglue$B!N(B#1$B!O(B\inhibitglue}
+% \def\@biblabel#1{\inhibitglue［#1］\inhibitglue}
 %    \end{macrocode}
 % \end{macro}
 %
@@ -4839,18 +4839,18 @@
 % \begin{macro}{\@cite}
 % \begin{macro}{\@citex}
 %
-% $BJ88%$NHV9f$r=PNO$9$kItJ,$O(B \texttt{ltbibl.dtx} $B$GDj5A$5$l$F$$$^$9$,!$(B
-% $B%3%s%^$H$+$C$3$rOBJ8%U%)%s%H$K$9$k$K$O<!$N$h$&$K$7$^$9!#(B
-% $B$H$j$"$($:%3%a%s%H%"%&%H$7$F$*$-$^$7$?$N$G!$I,MW$K1~$8$F@8$+$7$F$/$@$5$$!#(B
-% $B$+$C$3$NA08e$KF~$k%0%k!<$r(B |\inhibitglue| $B$G<h$C$F$$$^$9$N$G!$(B
-% $B%*%j%8%J%kF1MM!$(B\verb*+Knuth~\cite{knu} + $B$N$h$&$KH>3Q6uGr(B
-% $B$G0O$s$G$/$@$5$$!#(B
+% 文献の番号を出力する部分は \texttt{ltbibl.dtx} で定義されていますが，
+% コンマとかっこを和文フォントにするには次のようにします。
+% とりあえずコメントアウトしておきましたので，必要に応じて生かしてください。
+% かっこの前後に入るグルーを |\inhibitglue| で取っていますので，
+% オリジナル同様，\verb*+Knuth~\cite{knu} + のように半角空白
+% で囲んでください。
 %
 %    \begin{macrocode}
 % \def\@citex[#1]#2{%
 %   \let\@citea\@empty
 %   \@cite{\@for\@citeb:=#2\do
-%     {\@citea\def\@citea{$B!$(B\inhibitglue\penalty\@m\ }%
+%     {\@citea\def\@citea{，\inhibitglue\penalty\@m\ }%
 %      \edef\@citeb{\expandafter\@firstofone\@citeb}%
 %      \if@filesw\immediate\write\@auxout{\string\citation{\@citeb}}\fi
 %      \@ifundefined{b@\@citeb}{\mbox{\normalfont\bfseries ?}%
@@ -4858,32 +4858,32 @@
 %        \@latex@warning
 %          {Citation `\@citeb' on page \thepage \space undefined}}%
 %        {\hbox{\csname b@\@citeb\endcsname}}}}{#1}}
-% \def\@cite#1#2{\inhibitglue$B!N(B{#1\if@tempswa $B!$(B#2\fi}$B!O(B\inhibitglue}
+% \def\@cite#1#2{\inhibitglue［{#1\if@tempswa ，#2\fi}］\inhibitglue}
 %    \end{macrocode}
 %
-% $B0zMQHV9f$r>e%D%-$N(B 1$B!K$N$h$&$J%9%?%$%k$K$9$k$K$O<!$N$h$&$K$7$^$9!#(B
-% |\cite| $B$N@hF,$K(B |\unskip| $B$rIU$1$F@h9T$N%9%Z!<%9!J(B\verb|~| $B$b!K(B
-% $B$rD">C$7$K$7$F$$$^$9!#(B
+% 引用番号を上ツキの 1）のようなスタイルにするには次のようにします。
+% |\cite| の先頭に |\unskip| を付けて先行のスペース（\verb|~| も）
+% を帳消しにしています。
 %
 %    \begin{macrocode}
 % \DeclareRobustCommand\cite{\unskip
 %   \@ifnextchar [{\@tempswatrue\@citex}{\@tempswafalse\@citex[]}}
 % \def\@cite#1#2{$^{\hbox{\scriptsize{#1\if@tempswa
-%   $B!$(B\inhibitglue\ #2\fi}$B!K(B}}$}
+%   ，\inhibitglue\ #2\fi}）}}$}
 %    \end{macrocode}
 % \end{macro}
 % \end{macro}
 % \end{macro}
 %
-% \subsection{$B:w0z(B}
+% \subsection{索引}
 %
 % \begin{environment}{theindex}
 %
-% 2$B!A(B3$BCJAH$N:w0z$r:n@.$7$^$9!#(B
-% $B:G8e$,6v?t%Z!<%8$N$H$-$K%^!<%8%s$,$:$l$k8=>]$rD>$7$^$7$?!J(BThanks: $BF#B<$5$s!K!#(B
+% 2〜3段組の索引を作成します。
+% 最後が偶数ページのときにマージンがずれる現象を直しました（Thanks: 藤村さん）。
 %
 %    \begin{macrocode}
-\newenvironment{theindex}{% $B:w0z$r(B3$BCJAH$G=PNO$9$k4D6-(B
+\newenvironment{theindex}{% 索引を3段組で出力する環境
     \if@twocolumn
       \onecolumn\@restonecolfalse
     \else
@@ -4934,12 +4934,12 @@
 % \begin{macro}{\subitem}
 % \begin{macro}{\subsubitem}
 %
-% $B:w0z9`L\$N;z2<$2I}$G$9!#(B|\@idxitem| $B$O(B |\item| $B$N9`L\$N;z2<$2I}$G$9!#(B
+% 索引項目の字下げ幅です。|\@idxitem| は |\item| の項目の字下げ幅です。
 %
 %    \begin{macrocode}
-\newcommand{\@idxitem}{\par\hangindent 4zw} % $B85(B 40pt
-\newcommand{\subitem}{\@idxitem \hspace*{2zw}} % $B85(B 20pt
-\newcommand{\subsubitem}{\@idxitem \hspace*{3zw}} % $B85(B 30pt
+\newcommand{\@idxitem}{\par\hangindent 4zw} % 元 40pt
+\newcommand{\subitem}{\@idxitem \hspace*{2zw}} % 元 20pt
+\newcommand{\subsubitem}{\@idxitem \hspace*{3zw}} % 元 30pt
 %    \end{macrocode}
 % \end{macro}
 % \end{macro}
@@ -4947,7 +4947,7 @@
 %
 % \begin{macro}{\indexspace}
 %
-% $B:w0z$G@hF,J8;z$4$H$N%V%m%C%/$N4V$KF~$k%9%Z!<%9$G$9!#(B
+% 索引で先頭文字ごとのブロックの間に入るスペースです。
 %
 %    \begin{macrocode}
 \newcommand{\indexspace}{\par \vskip 10\jsc@mpt \@plus5\jsc@mpt \@minus3\jsc@mpt\relax}
@@ -4957,26 +4957,26 @@
 % \begin{macro}{\seename}
 % \begin{macro}{\alsoname}
 %
-% $B:w0z$N(B |\see|$B!$(B|\seealso| $B%3%^%s%I$G=PNO$5$l$k$b$N$G$9!#(B
-% $B%G%U%)%k%H$O$=$l$>$l(B \emph{see}$B!$(B\emph{see also} $B$H$$$&1Q8l$G$9$,!$(B
-% $B$3$3$G$O$H$j$"$($:N>J}$H$b!V"*!W$KJQ$($^$7$?!#(B
-% $\Rightarrow$$B!J(B|$\Rightarrow$|$B!K$J$I$G$b$$$$$G$7$g$&!#(B
+% 索引の |\see|，|\seealso| コマンドで出力されるものです。
+% デフォルトはそれぞれ \emph{see}，\emph{see also} という英語ですが，
+% ここではとりあえず両方とも「→」に変えました。
+% $\Rightarrow$（|$\Rightarrow$|）などでもいいでしょう。
 %
 %    \begin{macrocode}
-\newcommand\seename{\if@english see\else $B"*(B\fi}
-\newcommand\alsoname{\if@english see also\else $B"*(B\fi}
+\newcommand\seename{\if@english see\else →\fi}
+\newcommand\alsoname{\if@english see also\else →\fi}
 %    \end{macrocode}
 % \end{macro}
 % \end{macro}
 %
-% \subsection{$B5SCm(B}
+% \subsection{脚注}
 %
 % \begin{macro}{\footnote}
 % \begin{macro}{\footnotemark}
 %
-% $BOBJ8$N6gFIE@!&JD$8$+$C$3N`$ND>8e$GMQ$$$?:]$K(B
-% $BM>J,$J%"%-$,F~$k$N$rKI$0$?$a!$(B
-% |\inhibitglue| $B$rF~$l$k$3$H$K$7$^$9!#(B
+% 和文の句読点・閉じかっこ類の直後で用いた際に
+% 余分なアキが入るのを防ぐため，
+% |\inhibitglue| を入れることにします。
 %
 %    \begin{macrocode}
 \let\footnotes@ve=\footnote
@@ -4989,21 +4989,21 @@
 %
 % \begin{macro}{\@makefnmark}
 %
-% $B5SCmHV9f$rIU$1$kL?Na$G$9!#(B
-% $B$3$3$G$O5SCmHV9f$NA0$K5-9f(B $*$ $B$rIU$1$F$$$^$9!#(B
-% $B!VCm(B1$B!W$N7A<0$K$9$k$K$O(B |\textasteriskcentered|
-%  $B$r(B |$BCm(B\kern0.1em| $B$K$7$F$/$@$5$$!#(B
-% |\@xfootnotenext| $B$H9g$o$;$F!$(B
-% $B$b$75SCmHV9f$,6u$J$i5-9f$b=PNO$7$J$$$h$&$K$7$F$"$j$^$9!#(B
+% 脚注番号を付ける命令です。
+% ここでは脚注番号の前に記号 $*$ を付けています。
+% 「注1」の形式にするには |\textasteriskcentered|
+%  を |注\kern0.1em| にしてください。
+% |\@xfootnotenext| と合わせて，
+% もし脚注番号が空なら記号も出力しないようにしてあります。
 %
-% [2002-04-09] $B%$%s%W%j%a%s%H$N;EJ}$rJQ$($?$?$a>C$7$^$7$?!#(B
+% [2002-04-09] インプリメントの仕方を変えたため消しました。
 %
-% [2013-04-23] $B?7$7$$(B\pTeX $B$G$O5SCmHV9f$N$^$o$j$K%9%Z!<%9$,F~$j$9$.$k$3$H$rKI$0$?$a!$(B
-% $BKL@n$5$s$N%Q%C%A(B [qa:57090] $B$r<h$j9~$_$^$7$?!#(B
+% [2013-04-23] 新しい\pTeX では脚注番号のまわりにスペースが入りすぎることを防ぐため，
+% 北川さんのパッチ [qa:57090] を取り込みました。
 %
-% [2013-05-14] plcore.ltx $B$KJo$C$?7A$K=q$-D>$7$^$7$?!J(BThanks: $BKL@n$5$s!K!#(B
+% [2013-05-14] plcore.ltx に倣った形に書き直しました（Thanks: 北川さん）。
 %
-% [2016-07-11] $B%3%_%e%K%F%#HG(Bp\LaTeX $B$NJQ99$KDI?o$7$^$7$?!J(BThanks: $B3QF#$5$s!K!#(B
+% [2016-07-11] コミュニティ版p\LaTeX の変更に追随しました（Thanks: 角藤さん）。
 %
 %    \begin{macrocode}
 \renewcommand\@makefnmark{%
@@ -5014,27 +5014,27 @@
 %
 % \begin{macro}{\thefootnote}
 %
-% $B5SCmHV9f$K(B * $B0u$,IU$/$h$&$K$7$^$7$?!#(B
-% $B$?$@$7!$HV9f$,%<%m$N$H$-$O(B * $B0u$b5SCmHV9f$bIU$-$^$;$s!#(B
+% 脚注番号に * 印が付くようにしました。
+% ただし，番号がゼロのときは * 印も脚注番号も付きません。
 %
-% [2003-08-15] |\textasteriskcentered| $B$G$O%U%)%s%H$K$h$C$F(B
-% $B2<$,$j$9$.$k$N$GJQ99$7$^$7$?!#(B
+% [2003-08-15] |\textasteriskcentered| ではフォントによって
+% 下がりすぎるので変更しました。
 %
 %    \begin{macrocode}
 \def\thefootnote{\ifnum\c@footnote>\z@\leavevmode\lower.5ex\hbox{*}\@arabic\c@footnote\fi}
 %    \end{macrocode}
 %
-% $B!VCm(B1$B!W$N7A<0$K$9$k$K$O<!$N$h$&$K$7$F$/$@$5$$!#(B
+% 「注1」の形式にするには次のようにしてください。
 %
 %    \begin{macrocode}
-% \def\thefootnote{\ifnum\c@footnote>\z@$BCm(B\kern0.1zw\@arabic\c@footnote\fi}
+% \def\thefootnote{\ifnum\c@footnote>\z@注\kern0.1zw\@arabic\c@footnote\fi}
 %    \end{macrocode}
 %
 % \end{macro}
 %
 % \begin{macro}{\footnoterule}
 %
-% $BK\J8$H5SCm$N4V$N7S@~$G$9!#(B
+% 本文と脚注の間の罫線です。
 %
 %    \begin{macrocode}
 \renewcommand{\footnoterule}{%
@@ -5046,7 +5046,7 @@
 %
 % \begin{macro}{\c@footnote}
 %
-% $B5SCmHV9f$O>O$4$H$K%j%;%C%H$5$l$^$9!#(B
+% 脚注番号は章ごとにリセットされます。
 %
 %    \begin{macrocode}
 %<book>\@addtoreset{footnote}{chapter}
@@ -5055,9 +5055,9 @@
 %
 % \begin{macro}{\@footnotetext}
 %
-% $B5SCm$G(B |\verb| $B$,;H$($k$h$&$K2~JQ$7$F$"$j$^$9!#(B
+% 脚注で |\verb| が使えるように改変してあります。
 % Jeremy Gibbons, \textit{\TeX\ and TUG NEWS},
-%  Vol.~2, No.~4 (1993), p.~9$B!K(B
+%  Vol.~2, No.~4 (1993), p.~9）
 %
 %    \begin{macrocode}
 \long\def\@footnotetext{%
@@ -5084,9 +5084,9 @@
 %
 % \begin{macro}{\@makefntext}
 %
-% $B<B:]$K5SCm$r=PNO$9$kL?Na$G$9!#(B
-% |\@makefnmark| $B$O5SCm$NHV9f$r=PNO$9$kL?Na$G$9!#(B
-% $B$3$3$G$O5SCm$,:8C<$+$i0lDj5wN%$KMh$k$h$&$K$7$F$"$j$^$9!#(B
+% 実際に脚注を出力する命令です。
+% |\@makefnmark| は脚注の番号を出力する命令です。
+% ここでは脚注が左端から一定距離に来るようにしてあります。
 %
 %    \begin{macrocode}
 \newcommand\@makefntext[1]{%
@@ -5099,15 +5099,15 @@
 %
 % \begin{macro}{\@xfootnotenext}
 %
-% $B:G=i$N(B |\footnotetext{...}| $B$OHV9f$,IU$-$^$;$s!#(B
-% $BCx<T$N=jB0$J$I$r5SCm$NMs$K=q$/$H$-$KJXMx$G$9!#(B
+% 最初の |\footnotetext{...}| は番号が付きません。
+% 著者の所属などを脚注の欄に書くときに便利です。
 %
-% $B$9$G$K(B |\footnote| $B$r;H$C$?8e$J$i(B |\footnotetext[0]{...}|
-% $B$H$9$l$PHV9f$rIU$1$J$$5SCm$K$J$j$^$9!#(B
-% $B$?$@$7!$$3$N>l9g$O5SCmHV9f$,%j%;%C%H$5$l$F$7$^$&$N$G!$(B
-% $B9)IW$,I,MW$G$9!#(B
+% すでに |\footnote| を使った後なら |\footnotetext[0]{...}|
+% とすれば番号を付けない脚注になります。
+% ただし，この場合は脚注番号がリセットされてしまうので，
+% 工夫が必要です。
 %
-% [2002-04-09] $B%$%s%W%j%a%s%H$N;EJ}$rJQ$($?$?$a>C$7$^$7$?!#(B
+% [2002-04-09] インプリメントの仕方を変えたため消しました。
 %
 %    \begin{macrocode}
 % \def\@xfootnotenext[#1]{%
@@ -5123,9 +5123,9 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \section{$BCJMn$NF,$X$N%0%k!<A^F~6X;_(B}
+% \section{段落の頭へのグルー挿入禁止}
 %
-% $BCJMnF,$N$+$.$+$C$3$J$I$r8+$+$1(B1$B;zH>2<$2$+$iA43Q(B1$B;z2<$2$KD>$7$^$9!#(B
+% 段落頭のかぎかっこなどを見かけ1字半下げから全角1字下げに直します。
 %
 %    \begin{macrocode}
 \def\@inhibitglue{%
@@ -5159,10 +5159,10 @@
 \AtBeginDocument{\everypar{\everyparhook}}
 %    \end{macrocode}
 %
-% $B$3$l$@$1$G$O$$$1$J$$$h$&$G$9!#$"$A$3$A$K(B |\everypar| $B$r=i4|2=$9$k%3%^%s%I$,(B
-% $B1#$5$l$F$$$^$7$?!#(B
+% これだけではいけないようです。あちこちに |\everypar| を初期化するコマンドが
+% 隠されていました。
 %
-% $B$^$:!$4D6-$ND>8e$NCJMn$G$9!#(B
+% まず，環境の直後の段落です。
 %
 %    \begin{macrocode}
 \def\@doendpe{%
@@ -5172,7 +5172,7 @@
   \everypar{{\setbox\z@\lastbox}\everypar{\everyparhook}\@endpefalse\everyparhook}}
 %    \end{macrocode}
 %
-% |\item| $BL?Na$ND>8e$G$9!#(B
+% |\item| 命令の直後です。
 %
 %    \begin{macrocode}
 \def\@item[#1]{%
@@ -5239,8 +5239,8 @@
   \ignorespaces}
 %    \end{macrocode}
 %
-% $BFs$DA^F~$7$?(B |\everyparhook| $B$N$&$A8e<T$,(B |\section| $BN`$ND>8e$K(B2$B2s!$(B
-% $BA0<T$,(B3$B2sL\0J9_$K<B9T$5$l$^$9!#(B
+% 二つ挿入した |\everyparhook| のうち後者が |\section| 類の直後に2回，
+% 前者が3回目以降に実行されます。
 %
 %    \begin{macrocode}
 \def\@afterheading{%
@@ -5258,14 +5258,14 @@
     \fi\everyparhook}}
 %    \end{macrocode}
 %
-% |\@gnewline| $B$K$D$$$F$O$A$g$C$HJ#;($J?46-$G$9!#(B
-% $B$b$H$b$H$N(Bp\LaTeXe $B$OCJMn$NF,$K%0%k!<$,F~$kJ}$GE}0l$5$l$F$$$^$7$?!#(B
-% $B$7$+$7(B |\\| $B$ND>8e$K$O%0%k!<$,F~$i$:!$ITE}0l$G$7$?!#(B
-% $B$=$3$G(B |\\| $B$ND>8e$K$b%0%k!<$rF~$l$k$h$&$KD>$7$F$$$?$@$$$?7P0^$,$"$j$^$9!#(B
-% $B$7$+$7!$$3$3$G$O5U$K%0%k!<$rF~$l$J$$J}$GE}0l$7$?$$$N$G!$(B
-% $B$^$?85$KLa$7$F$7$^$$$^$7$?!#(B
+% |\@gnewline| についてはちょっと複雑な心境です。
+% もともとのp\LaTeXe は段落の頭にグルーが入る方で統一されていました。
+% しかし |\\| の直後にはグルーが入らず，不統一でした。
+% そこで |\\| の直後にもグルーを入れるように直していただいた経緯があります。
+% しかし，ここでは逆にグルーを入れない方で統一したいので，
+% また元に戻してしまいました。
 %
-% $B$7$+$7C1$KLa$9$@$1$G$bBLL\$_$?$$$J$N$G!$$3$3$G$b:G8e$K%0%k!<$r>C$7$F$*$-$^$9!#(B
+% しかし単に戻すだけでも駄目みたいなので，ここでも最後にグルーを消しておきます。
 %
 %    \begin{macrocode}
 \def\@gnewline #1{%
@@ -5277,41 +5277,41 @@
   \fi}
 %    \end{macrocode}
 %
-% \section{$B$$$m$$$m$J%m%4(B}
+% \section{いろいろなロゴ}
 %
-% \LaTeX $B4XO"$N%m%4$r:n$jD>$7$^$9!#(B
+% \LaTeX 関連のロゴを作り直します。
 %
-% [2016-07-14] $B%m%4$NDj5A$O(B\texttt{jslogo}$B%Q%C%1!<%8$K0\E>$7$^$7$?!#(B
-% $B8eJ}8_49$N$?$a!$(B\texttt{jsclasses}$B$G$O%G%U%)%k%H$G$3$l$rFI$_9~$_$^$9!#(B
+% [2016-07-14] ロゴの定義は\texttt{jslogo}パッケージに移転しました。
+% 後方互換のため，\texttt{jsclasses}ではデフォルトでこれを読み込みます。
 %
-% $BJ8;z$r>.$5$a$K=P$7$?$j>e4s$j$K>.$5$a$K=P$7$?$j$9$kL?Na$r!$(B
-% \texttt{jslogo}$B$G$OL>>NJQ99$7$F$"$j$^$9$N$G!$%3%T!<$7$^$9!#(B
+% 文字を小さめに出したり上寄りに小さめに出したりする命令を，
+% \texttt{jslogo}では名称変更してありますので，コピーします。
 %
-% \begin{macro}{\$B>.(B}
-% \begin{macro}{\$B>e>.(B}
+% \begin{macro}{\小}
+% \begin{macro}{\上小}
 %    \begin{macrocode}
 \RequirePackage{jslogo}
-\def\$B>.(B{\jslg@small}
-\def\$B>e>.(B{\jslg@uppersmall}
+\def\小{\jslg@small}
+\def\上小{\jslg@uppersmall}
 %    \end{macrocode}
 % \end{macro}
 % \end{macro}
 %
 %
-% \section{\texttt{amsmath} $B$H$N>WFM$N2sHr(B}
+% \section{\texttt{amsmath} との衝突の回避}
 %
 % \begin{macro}{\ltx@ifnextchar}
 % \begin{macro}{\ProvidesFile}
 %
-% \texttt{amsmath} $B%Q%C%1!<%8$G$O9TNsCf$G(B |\@ifnextchar|
-% $B$r:FDj5A$7$F$$$^$9$,!$$3$l$,(B\LaTeX $B$N(B |\ProvidesFile|
-% $B$G0-$5$r$9$kNc$,(BFTeX$B$GJs9p$5$l$F$$$^$9!#(B
-% $B$3$l$rHr$1$k$?$a$N(BtDB$B$5$s$N%U%#%C%/%9$rA^F~$7$F$*$-$^$9!#(B
-% $BI{:nMQ$,$"$j$^$7$?$i$*CN$i$;$/$@$5$$!#(B
+% \texttt{amsmath} パッケージでは行列中で |\@ifnextchar|
+% を再定義していますが，これが\LaTeX の |\ProvidesFile|
+% で悪さをする例がFTeXで報告されています。
+% これを避けるためのtDBさんのフィックスを挿入しておきます。
+% 副作用がありましたらお知らせください。
 %
-% $B$3$N8=>]$K$D$$$F$O;d$N(BTeX$B7G<(HD(B 4273$B!A!$(B16058$B!A(B $B$G5DO@$,$"$j$^$7$?!#(B
-% $B$J$*!$(BAMS$B4X78$N%Q%C%1!<%8$rFI$_9~$`:]$K(B psamsfonts $B%*%W%7%g%s$r(B
-% $BM?$($F$b2sHr$G$-$^$9!J(BThanks: $B$7$C$]0&9%2H$5$s!K!#(B
+% この現象については私のTeX掲示板 4273〜，16058〜 で議論がありました。
+% なお，AMS関係のパッケージを読み込む際に psamsfonts オプションを
+% 与えても回避できます（Thanks: しっぽ愛好家さん）。
 %
 %    \begin{macrocode}
 \let\ltx@ifnextchar\@ifnextchar
@@ -5330,9 +5330,9 @@
 % \end{macro}
 % \end{macro}
 %
-% \section{$B=i4|@_Dj(B}
+% \section{初期設定}
 %
-% \paragraph{$B$$$m$$$m$J8l(B}
+% \paragraph{いろいろな語}
 %
 % \begin{macro}{\prepartname}
 % \begin{macro}{\postpartname}
@@ -5341,12 +5341,12 @@
 % \begin{macro}{\presectionname}
 % \begin{macro}{\postsectionname}
 %    \begin{macrocode}
-\newcommand{\prepartname}{\if@english Part~\else $BBh(B\fi}
-\newcommand{\postpartname}{\if@english\else $BIt(B\fi}
-%<book>\newcommand{\prechaptername}{\if@english Chapter~\else $BBh(B\fi}
-%<book>\newcommand{\postchaptername}{\if@english\else $B>O(B\fi}
-\newcommand{\presectionname}{}%  $BBh(B
-\newcommand{\postsectionname}{}% $B@a(B
+\newcommand{\prepartname}{\if@english Part~\else 第\fi}
+\newcommand{\postpartname}{\if@english\else 部\fi}
+%<book>\newcommand{\prechaptername}{\if@english Chapter~\else 第\fi}
+%<book>\newcommand{\postchaptername}{\if@english\else 章\fi}
+\newcommand{\presectionname}{}%  第
+\newcommand{\postsectionname}{}% 節
 %    \end{macrocode}
 % \end{macro}
 % \end{macro}
@@ -5359,9 +5359,9 @@
 % \begin{macro}{\listfigurename}
 % \begin{macro}{\listtablename}
 %    \begin{macrocode}
-\newcommand{\contentsname}{\if@english Contents\else $BL\<!(B\fi}
-\newcommand{\listfigurename}{\if@english List of Figures\else $B?^L\<!(B\fi}
-\newcommand{\listtablename}{\if@english List of Tables\else $BI=L\<!(B\fi}
+\newcommand{\contentsname}{\if@english Contents\else 目次\fi}
+\newcommand{\listfigurename}{\if@english List of Figures\else 図目次\fi}
+\newcommand{\listtablename}{\if@english List of Tables\else 表目次\fi}
 %    \end{macrocode}
 % \end{macro}
 % \end{macro}
@@ -5371,9 +5371,9 @@
 % \begin{macro}{\bibname}
 % \begin{macro}{\indexname}
 %    \begin{macrocode}
-\newcommand{\refname}{\if@english References\else $B;29MJ88%(B\fi}
-\newcommand{\bibname}{\if@english Bibliography\else $B;29MJ88%(B\fi}
-\newcommand{\indexname}{\if@english Index\else $B:w0z(B\fi}
+\newcommand{\refname}{\if@english References\else 参考文献\fi}
+\newcommand{\bibname}{\if@english Bibliography\else 参考文献\fi}
+\newcommand{\indexname}{\if@english Index\else 索引\fi}
 %    \end{macrocode}
 % \end{macro}
 % \end{macro}
@@ -5382,9 +5382,9 @@
 % \begin{macro}{\figurename}
 % \begin{macro}{\tablename}
 %    \begin{macrocode}
-%<!jspf>\newcommand{\figurename}{\if@english Fig.~\else $B?^(B\fi}
+%<!jspf>\newcommand{\figurename}{\if@english Fig.~\else 図\fi}
 %<jspf>\newcommand{\figurename}{Fig.~}
-%<!jspf>\newcommand{\tablename}{\if@english Table~\else $BI=(B\fi}
+%<!jspf>\newcommand{\tablename}{\if@english Table~\else 表\fi}
 %<jspf>\newcommand{\tablename}{Table~}
 %    \end{macrocode}
 % \end{macro}
@@ -5393,24 +5393,24 @@
 % \begin{macro}{\appendixname}
 % \begin{macro}{\abstractname}
 %    \begin{macrocode}
-% \newcommand{\appendixname}{\if@english Appendix~\else $BIUO?(B\fi}
-\newcommand{\appendixname}{\if@english \else $BIUO?(B\fi}
-%<!book>\newcommand{\abstractname}{\if@english Abstract\else $B35MW(B\fi}
+% \newcommand{\appendixname}{\if@english Appendix~\else 付録\fi}
+\newcommand{\appendixname}{\if@english \else 付録\fi}
+%<!book>\newcommand{\abstractname}{\if@english Abstract\else 概要\fi}
 %    \end{macrocode}
 % \end{macro}
 % \end{macro}
 %
-% \paragraph{$B:#F|$NF|IU(B}
+% \paragraph{今日の日付}
 %
-% \LaTeX $B$G=hM}$7$?F|IU$r=PNO$7$^$9!#(B
-% |jarticle| $B$J$I$H0c$C$F!$I8=`$r@>Nq$K$7!$M>J,$J6uGr$,F~$i$J$$$h$&$K2~NI$7$^$7$?!#(B
-% $BOBNq$K$9$k$K$O(B |\$BOBNq(B| $B$H=q$$$F$/$@$5$$!#(B
+% \LaTeX で処理した日付を出力します。
+% |jarticle| などと違って，標準を西暦にし，余分な空白が入らないように改良しました。
+% 和暦にするには |\和暦| と書いてください。
 %
 % \begin{macro}{\today}
 %    \begin{macrocode}
-\newif\if$B@>Nq(B \$B@>Nq(Btrue
-\def\$B@>Nq(B{\$B@>Nq(Btrue}
-\def\$BOBNq(B{\$B@>Nq(Bfalse}
+\newif\if西暦 \西暦true
+\def\西暦{\西暦true}
+\def\和暦{\西暦false}
 \newcount\heisei \heisei\year \advance\heisei-1988\relax
 \def\today{%
   \if@english
@@ -5419,30 +5419,30 @@
       July\or August\or September\or October\or November\or December\fi
       \space\number\day, \number\year
   \else
-    \if$B@>Nq(B
-      \number\year $BG/(B
-      \number\month $B7n(B
-      \number\day $BF|(B
+    \if西暦
+      \number\year 年
+      \number\month 月
+      \number\day 日
     \else
-      $BJ?@.(B\number\heisei $BG/(B
-      \number\month $B7n(B
-      \number\day $BF|(B
+      平成\number\heisei 年
+      \number\month 月
+      \number\day 日
     \fi
   \fi}
 %    \end{macrocode}
 % \end{macro}
 %
-% \paragraph{$B%O%$%U%M!<%7%g%sNc30(B}
+% \paragraph{ハイフネーション例外}
 %
-% \TeX $B$N%O%$%U%M!<%7%g%s%k!<%k$NJdB-$G$9!J%Z%s%G%#%s%0!'(Beng-lish$B!K(B
+% \TeX のハイフネーションルールの補足です（ペンディング：eng-lish）
 %
 %    \begin{macrocode}
 \hyphenation{ado-be post-script ghost-script phe-nom-e-no-log-i-cal man-u-script}
 %    \end{macrocode}
 %
-% \paragraph{$B%Z!<%8@_Dj(B}
+% \paragraph{ページ設定}
 %
-% $B%Z!<%8@_Dj$N=i4|2=$G$9!#(B
+% ページ設定の初期化です。
 %
 %    \begin{macrocode}
 %<article|kiyou>\if@slide \pagestyle{empty} \else \pagestyle{plain} \fi
@@ -5465,7 +5465,7 @@
 \fi
 %    \end{macrocode}
 %
-% $B0J>e$G$9!#(B
+% 以上です。
 %
 % \Finale
 %
